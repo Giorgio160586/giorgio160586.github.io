@@ -12364,7 +12364,7 @@ a.more-link .link-arrow .bi {
 /* Dark/Light Mode Toggle */
 .mode-toggle {
   position: absolute;
-  left: 50px;
+  right: 4px;
   top: 1.2rem;
 }
 .mode-toggle .toggle {
