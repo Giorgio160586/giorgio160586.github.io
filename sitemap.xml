@@ -1,69 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url> 
-    <loc>https://giorgio160586.github.io/google6eccc44b24e7f16c.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/index.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/blog-home.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/contact.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/index.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/iprice-case-study.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/logexpress-case-study.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/mongodb-blog-post.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/projects.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/resume.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/solid-blog-post.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/en/webprice-case-study.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/blog-home.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/contact.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/index.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/iprice-case-study.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/logexpress-case-study.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/mongodb-blog-post.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/projects.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/resume.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/solid-blog-post.html</loc> 
-  </url> 
-  <url> 
-    <loc>https://giorgio160586.github.io/it/webprice-case-study.html</loc> 
-  </url> 
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://giorgio160586.github.io/en/blog-home.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/contact.html</loc>
+	<lastmod>2025-09-22T07:44:06+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/</loc>
+	<lastmod>2025-09-21T15:31:06+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/index.html</loc>
+	<lastmod>2025-09-21T15:31:06+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/iprice-case-study.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/logexpress-case-study.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/mongodb-blog-post.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/projects.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/resume.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/solid-blog-post.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/en/webprice-case-study.html</loc>
+	<lastmod>2025-09-21T15:33:26+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/</loc>
+	<lastmod>2025-09-21T15:46:25+02:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/index.html</loc>
+	<lastmod>2025-09-21T15:46:25+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/blog-home.html</loc>
+	<lastmod>2025-09-21T13:43:40+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/contact.html</loc>
+	<lastmod>2025-09-22T07:42:36+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/</loc>
+	<lastmod>2025-09-21T14:25:37+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/index.html</loc>
+	<lastmod>2025-09-21T14:25:37+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/iprice-case-study.html</loc>
+	<lastmod>2025-09-21T14:02:30+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/logexpress-case-study.html</loc>
+	<lastmod>2025-09-21T14:19:50+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/mongodb-blog-post.html</loc>
+	<lastmod>2025-09-21T13:47:25+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/projects.html</loc>
+	<lastmod>2025-09-21T14:24:31+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/resume.html</loc>
+	<lastmod>2025-09-21T14:51:47+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/solid-blog-post.html</loc>
+	<lastmod>2025-09-21T13:47:44+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://giorgio160586.github.io/it/webprice-case-study.html</loc>
+	<lastmod>2025-09-21T12:02:06+02:00</lastmod>
+	<priority>1.0</priority>
+</url>
 </urlset>
