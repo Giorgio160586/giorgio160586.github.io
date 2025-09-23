@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://giorgio160586.github.io/</loc>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/en/</loc>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
     <loc>https://giorgio160586.github.io/en/blog-home.html</loc>
     <lastmod>2025-09-21</lastmod>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/contact.html</loc>
     <lastmod>2025-09-22</lastmod>
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/en/index.html</loc>
-    <lastmod>2025-09-21</lastmod>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/iprice-case-study.html</loc>
@@ -40,12 +44,9 @@
     <loc>https://giorgio160586.github.io/en/webprice-case-study.html</loc>
     <lastmod>2025-09-21</lastmod>
   </url>
+
   <url>
-    <loc>https://giorgio160586.github.io/google6eccc44b24e7f16c.html</loc>
-    <lastmod>2025-09-21</lastmod>
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/index.html</loc>
+    <loc>https://giorgio160586.github.io/it/</loc>
     <lastmod>2025-09-21</lastmod>
   </url>
   <url>
@@ -55,10 +56,6 @@
   <url>
     <loc>https://giorgio160586.github.io/it/contact.html</loc>
     <lastmod>2025-09-22</lastmod>
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/index.html</loc>
-    <lastmod>2025-09-21</lastmod>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/it/iprice-case-study.html</loc>
