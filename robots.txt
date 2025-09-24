@@ -1,4 +1,3 @@
-Sitemap: https://giorgio160586.github.io/sitemap.xml
-
 User-agent: *
-Disallow:
+Disallow: /admin/
+Sitemap: https://giorgio160586.github.io/sitemap.xml
