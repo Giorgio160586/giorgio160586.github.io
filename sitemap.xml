@@ -1,124 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--Url Extract: 23-->
   <url>
-    <loc>https://giorgio160586.github.io/en/blog-home.html</loc>
+    <loc>https://giorgio160586.github.io/</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/blog-home.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/blog-home.html" />
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://giorgio160586.github.io/it/blog-home.html</loc>
+    <loc>https://giorgio160586.github.io/en/</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/blog-home.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/blog-home.html" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://giorgio160586.github.io/en/contact.html</loc>
+    <loc>https://giorgio160586.github.io/it/</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/contact.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/contact.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/contact.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/contact.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/contact.html" />
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/index.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/index.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/index.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/index.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/index.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/index.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/en/iprice-case-study.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/iprice-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/iprice-case-study.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/iprice-case-study.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/iprice-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/iprice-case-study.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/en/logexpress-case-study.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/logexpress-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/logexpress-case-study.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/logexpress-case-study.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/logexpress-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/logexpress-case-study.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/en/mongodb-blog-post.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/mongodb-blog-post.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/mongodb-blog-post.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/mongodb-blog-post.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/mongodb-blog-post.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/mongodb-blog-post.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/projects.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/projects.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/projects.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://giorgio160586.github.io/it/projects.html</loc>
+    <loc>https://giorgio160586.github.io/en/blog-home.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/projects.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/projects.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/resume.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/resume.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/resume.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://giorgio160586.github.io/it/resume.html</loc>
+    <loc>https://giorgio160586.github.io/en/contact.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/resume.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/resume.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://giorgio160586.github.io/en/solid-blog-post.html</loc>
+    <loc>https://giorgio160586.github.io/en/iprice-case-study.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/solid-blog-post.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/solid-blog-post.html" />
-  </url>
-  <url>
-    <loc>https://giorgio160586.github.io/it/solid-blog-post.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/solid-blog-post.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/solid-blog-post.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/en/webprice-case-study.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/webprice-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/webprice-case-study.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/en/logexpress-case-study.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/en/solid-blog-post.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/en/mongodb-blog-post.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/index.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/projects.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/blog-home.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/resume.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/contact.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/iprice-case-study.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://giorgio160586.github.io/it/webprice-case-study.html</loc>
     <lastmod>2025-09-24</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/webprice-case-study.html" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/webprice-case-study.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/logexpress-case-study.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/solid-blog-post.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://giorgio160586.github.io/it/mongodb-blog-post.html</loc>
+    <lastmod>2025-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
