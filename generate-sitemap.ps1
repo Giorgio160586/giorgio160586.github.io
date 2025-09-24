@@ -1,37 +1,32 @@
-param(
-    [string]$SiteUrl = "https://giorgio160586.github.io",
-    [string]$Output = "sitemap.xml",
-    [string]$Root = (Get-Location).Path
-)
 
-$SiteUrl = $SiteUrl.TrimEnd('/')
-$entries = @()
+# Ottieni tutti i file .html nella directory corrente e sottodirectory
+$htmlFiles = Get-ChildItem -Path . -Recurse -Include *.html
 
-function Escape-Xml([string]$str) {
-    $str -replace '&','&amp;' -replace '<','&lt;' -replace '>','&gt;' -replace '"','&quot;' -replace "'","&apos;"
+# Inizio contenuto sitemap XML
+$sitemapContent = @"
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+"@
+
+# Aggiungi ogni file HTML come entry nel sitemap
+foreach ($file in $htmlFiles) {
+    $url = "https://giorgio160586.github.io/" + $file.FullName.Substring($PWD.Path.Length + 1).Replace("\", "/")
+    $lastmod = (Get-Item $file.FullName).LastWriteTime.ToString("yyyy-MM-dd")
+    $sitemapContent += "  <url>
+"
+    $sitemapContent += "    <loc>$url</loc>
+"
+    $sitemapContent += "    <lastmod>$lastmod</lastmod>
+"
+    $sitemapContent += "  </url>
+"
 }
 
-Get-ChildItem -Path $Root -Recurse -Filter "*.html" | Sort-Object FullName | ForEach-Object {
-    $p = $_
-    $rel = $p.FullName.Substring($Root.Length).TrimStart('\').Replace('\','/')
-    $lastmod = $p.LastWriteTime.ToString("yyyy-MM-ddTHH:mm:sszzz")
-    $entries += @{ loc = "$SiteUrl/$($rel | Escape-Xml)"; lastmod = $lastmod }
-}
+# Chiudi il tag urlset
+$sitemapContent += "</urlset>"
 
-$sb = New-Object System.Text.StringBuilder
-$sb.AppendLine('<?xml version="1.0" encoding="UTF-8"?>') | Out-Null
-$sb.AppendLine('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">') | Out-Null
+# Scrivi il contenuto nel file sitemap.xml con codifica UTF-8 senza BOM
+[System.IO.File]::WriteAllText("sitemap.xml", $sitemapContent, (New-Object System.Text.UTF8Encoding($false)))
 
-foreach ($e in $entries) {
-    $sb.AppendLine('  <url>') | Out-Null
-    $sb.AppendLine("    <loc>$($e.loc)</loc>") | Out-Null
-    $sb.AppendLine("    <lastmod>$($e.lastmod)</lastmod>") | Out-Null
-    $sb.AppendLine('  </url>') | Out-Null
-}
-
-$sb.AppendLine('</urlset>') | Out-Null
-
-# Convert CRLF to LF
-[System.IO.File]::WriteAllText((Join-Path $Root $Output), ($sb.ToString() -replace "`r`n", "`n"), [System.Text.Encoding]::UTF8)
-
-Write-Host "Sitemap generated: $Output"
+Write-Output "Il file sitemap.xml è stato generato correttamente."
