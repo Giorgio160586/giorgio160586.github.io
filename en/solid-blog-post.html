@@ -28,7 +28,7 @@
     <script defer src="../assets/fontawesome/js/all.js"></script>
     
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="../assets/plugins/highlight/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet" href="../assets/plugins/highlight/styles/vs2015-custom.min.css">
 
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
@@ -138,7 +138,7 @@
 
 										<p><strong class="text-highlight">Esempio Errato</strong><br>La classe <code class="hljs-title">ProductModel</code> combina sia i dati del prodotto che la logica per il calcolo delle tasse. </p>
 										<pre>
-											<code>
+											<code class="language-csharp rounded">
 	public class ProductModel
 	{
 		public int Id { get; set; }
@@ -155,7 +155,7 @@
 										</pre>
 										<p><strong class="text-highlight">Esempio Corretto</strong><br>Occorre separare le responsabilità, la classe <code class="hljs-title">ProductModel</code> rappresenta esclusivamente l'entità del database, mentre il calcolo delle tasse è una classe separata <code class="hljs-title">PriceCalculator</code>. </p>	 
 										<pre>
-											<code class="language-csharp">
+											<code class="language-csharp rounded">
 	public class ProductModel
 	{
 		public int Id { get; set; }
@@ -178,7 +178,7 @@
 										<p>Le classi dovrebbero essere aperte all'estensione ma chiuse alla modifica.</p>
 										<p><strong class="text-highlight">Esempio Errato</strong><br>Ogni volta che si aggiunge un nuovo tipo di prodotto è necessario modificare il codice della classe. </p>
 										<pre>
-											<code>public class PriceCalculator
+											<code class="language-csharp rounded">public class PriceCalculator
 {
     public decimal Price { get; set; }
 
@@ -195,7 +195,7 @@
 										</pre>
 										<p><strong class="text-highlight">Esempio Corretto</strong><br>Creando le classi <code class="hljs-title">LuxuryPriceCalculator</code> e <code class="hljs-title">StandardPriceCalculator</code> implementazioni dell'interfaccia <code class="hljs-title">IPriceCalculator</code> è possibile estendere i metodi di calcolo senza modificare la classe <code class="hljs-title">PriceCalculator</code>.</p>	 
 										<pre>
-											<code class="language-csharp">public interface IPriceCalculator { decimal CalculatePrice(decimal price); }
+											<code class="language-csharp rounded">public interface IPriceCalculator { decimal CalculatePrice(decimal price); }
 
 public class StandardPriceCalculator : IPriceCalculator
 {
@@ -222,7 +222,7 @@ public class PriceCalculator
 										<p>Le sottoclassi debbano essere sostituibili dalle loro classi d'origine.</p>
 										<p><strong class="text-highlight">Esempio Errato</strong><br>La classe derivata <code class="hljs-title">FreeProductModel</code> non è completamente sostituibile con la classe base <code class="hljs-title">ProductModel</code>, lanciando una exception <code class="hljs-keyword">InvalidOperationException</code>. </p>
 										<pre>
-											<code>public class ProductModel
+											<code class="language-csharp rounded">public class ProductModel
 {
     public int Id { get; set; }
     public decimal Price { get; set; }
@@ -242,7 +242,7 @@ public class FreeProductModel : ProductModel
 										</pre>
 										<p><strong class="text-highlight">Esempio Corretto</strong><br>Le sottoclassi <code class="hljs-title">DefaultDiscount</code> e <code class="hljs-title">NoDiscount</code> possono essere utilizzate senza dover gestire eccezioni inaspettate.</p>	 
 										<pre>
-											<code class="language-csharp">public interface IDiscount
+											<code class="language-csharp rounded">public interface IDiscount
 {
     decimal CalculateDiscount(decimal price);
 }
@@ -265,8 +265,8 @@ public class NoDiscount : IDiscount
 										<h3 class="mt-5 mb-3">I - Interface Segregation Principle (ISP)</h3>
 										<p>E' necessario separare le responsabilità in interfacce più piccole e specifiche.</p>
 										<p><strong class="text-highlight">Esempio Errato</strong><br>L'interfaccia <code class="hljs-title">IProductOperations</code> obbliga le classi a implementare metodi non necessari, come <code class="hljs-title">SaveProduct</code> e <code class="hljs-title">PrintProductDetails</code>. </p>
-										<pre>
-											<code>public interface IProductOperations
+										<pre >
+											<code class="language-csharp rounded">public interface IProductOperations
 {
     // This methods violates the Interface Segregation Principle (ISP)
     decimal CalculatePrice(decimal taxRate);
@@ -276,7 +276,7 @@ public class NoDiscount : IDiscount
 										</pre>
 										<p><strong class="text-highlight">Esempio Corretto</strong><br>Occorre separare le responsabilità in interfacce più specifiche. Ogni interfaccia dovrebbe avere una sola responsabilità.</p>	 
 										<pre>
-											<code class="language-csharp">public interface IPriceable
+											<code class="language-csharp rounded">public interface IPriceable
 {
     decimal CalculatePrice(decimal taxRate);
 }
@@ -299,7 +299,7 @@ public interface IProductPrinter
 										<p>Le dipendenze dovrebbero essere gestite tramite astrazioni, non dipendenze dagli oggetti.</p>
 										<p><strong class="text-highlight">Esempio Errato</strong><br>La classe <code class="hljs-title">ProductService</code> dipende direttamente da <code class="hljs-title">PriceCalculator</code>, anziché dipendere da un'astrazione. </p>
 										<pre>
-											<code>public class ProductService
+											<code class="language-csharp rounded">public class ProductService
 {
     // This property violates the Dependency Inversion Principle (DIP)
     private readonly PriceCalculator _taxCalculator = new PriceCalculator();
@@ -316,7 +316,7 @@ public class PriceCalculator
 										</pre>
 										<p><strong class="text-highlight">Esempio Corretto</strong><br>La classe <code class="hljs-title">ProductService</code> dipende dall'astrazione <code class="hljs-title">IPriceCalculator</code>, e l'implementazione concreta di <code class="hljs-title">IPriceCalculator</code> viene iniettata tramite il costruttore.</p>	 
 										<pre>
-											<code class="language-csharp">public interface IPriceCalculator
+											<code class="language-csharp rounded">public interface IPriceCalculator
 {
     decimal CalculatePrice(ProductModel product, decimal taxRate);
 }
@@ -371,7 +371,7 @@ public class ProductService
 	</div><!--//container-->
 	
 	<footer class="footer text-center py-4">
-		<small class="copyright">Template Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a> All rights reserved. All trademarks or registered trademarks are property of their respective owners.</small>
+		<small class="copyright">Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a> All rights reserved. All trademarks or registered trademarks are property of their respective owners.</small>
 	</footer>
 	
 	<!-- Javascript -->

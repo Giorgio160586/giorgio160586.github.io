@@ -28,7 +28,7 @@
     <script defer src="../assets/fontawesome/js/all.js"></script>
     
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="../assets/plugins/tiny-slider/tiny-slider.css">
+    <link rel="stylesheet" href="../assets/plugins/highlight/styles/github-dark-dimmed.min.css">
 
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
@@ -37,10 +37,7 @@
 
 
 <body>
-	
 	<div class="container-fluid">
-
-	
 			<div class="side-panel position-relative">
 				 
 				<nav class="navbar">
@@ -52,7 +49,7 @@
 									<a class="nav-link d-flex flex-column" href="index.html"><span class="icon-holder"><i class="fa-solid fa-circle-user"></i></span><span class="nav-text">About</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link active d-flex flex-column" href="projects.html"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span><span class="nav-text">Projects</span></a>
+									<a class="nav-link d-flex flex-column" href="projects.html"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span><span class="nav-text">Projects</span></a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link d-flex flex-column" href="blog-home.html"><span class="icon-holder"><i class="fa-solid fa-pen-fancy"></i></span><span class="nav-text">Blog</span></a>
@@ -83,15 +80,16 @@
 								  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
 								</svg>
 					        </a>
-							<!--//mode-toggle-->
-							<div class="mode-toggle d-flex">  
+					        <!--//mode-toggle-->
+							
+							<div class="top-bar-cta d-flex justify-content-center">  
 								<a href="/it/" class="d-flex align-items-center me-3">
 									<img src="../assets/images/flag-it-svgrepo-com.svg" alt="Italian Flag" height="24" class="me-1">
-									<span>ITA</span>
+									<span class="d-none d-md-inline">Italiano</span>
 								</a>
 								<a href="/en/" class="d-flex align-items-center me-3">
 									<img src="../assets/images/flag-for-flag-united-kingdom-svgrepo-com.svg" alt="American Flag" height="24" class="me-1">
-									<span>ENG</span>
+									<span class="d-none d-md-inline">English</span>
 								</a>
 							</div>
 							<ul class="social-list list-inline mx-auto d-none d-lg-block">
@@ -108,50 +106,93 @@
 						
 					</div><!--//top-bar-->
 					
-					<section class="page-intro-section section has-profile-image mx-auto ">
-						
+					<section class="blog-post-section section has-profile-image mx-auto">
 						<div class="profile-holder text-center">
 							<img class="profile-pic rounded-circle" src="../assets/images/profile.png" alt="image">
-						</div>
+						</div><!--//profile-holder-->
 						
-						
-						<!--//profile-holder-->
+						<div class="blog-breadcrumb">
+		                    <a class="blog-home-link" href="blog-home.html"><i class="bi bi-arrow-left"></i> Back To Blog Home</a>
+	                    </div>
+			                    
+						<div class="blog-entry">                 
+			                <article class="post">
+			                    <h2 class="post-title text-center py-2">Il mio percorso<br>di studio su Angular</h2>
+			                    <div class="post-author text-center mb-3">By <a href="index.html">Giorgio Saad</a></div>
+																
+								<div class="post-content">
 
-						<div class="intro-holder">
-							<h2 class="intro-name text-center mb-4">LogExpress</h2>
-							<div class="img-fluid mb-3"><img class="img-fluid rounded" src="../assets/images/projects/logexpress-1.jpg"></div>
-							<div class="case-study-intro">
-								
-							    <p class="mb-4">LogExpress è uno strumento avanzato per l'analisi e la gestione dei log delle applicazioni, progettato per aiutare sviluppatori e team di supporto a identificare e risolvere bug con maggiore velocità e precisione. Con un'interfaccia user-friendly e una gestione avanzata dei colori per facilitare la visualizzazione, LogExpress consente di individuare rapidamente problemi specifici all'interno di grandi volumi di dati di log. </p>
+									<div class="img-fluid mb-3">
+										<img class="img-fluid rounded" src="../assets/images/blog/angular-1.jpg" alt="Angular Study Resources">
+									</div>
+									<p>Condivido il materiale che ho utilizzato per iniziare a lavorare con Angular e i principali riferimenti che mi hanno guidato nel mio percorso di apprendimento:</p>
+									<div class="container my-4">
+									  <div class="row row-cols-1 g-4">
+										
+										<div class="col">
+										  <div class="card h-100 border-0">
+											<div class="card-body">
+											  <a href="https://www.udemy.com/course/the-complete-guide-to-angular-2" target="_blank" class="card-title h6 text-decoration-none">
+												<em>Angular – The Complete Guide (2025 Edition)</em>
+											  </a>
+											  <p class="mb-1">di Maximilian Schwarzmüller</p>
+											  <p class="mb-0">–> <a href="https://www.udemy.com/course/the-complete-guide-to-angular-2" target="_blank">Udemy: €13,99 (Originale €87,99, sconto 84%)</a></p>
+											</div>
+										  </div>
+										</div>
 
-							</div>
-							
-						</div><!--//intro-holder-->
-						
-						<div class="section-cta text-center mt-4">
-							<a class="btn btn-primary" href="https://github.com/Giorgio160586/LogExpress">GitHub Repository<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-								<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>    
-							</svg></a>
-						</div>
-						
-					</section><!--//page-intro-section-->
-					
-					
-					
-			
-                    <section class="leadgen-section section mx-auto">
-	   
-					   <h3 class="section-heading text-start text-md-center text-highlight"> Come posso aiutarti?</h3>
-					   <div class="intro text-md-center">Scrivimi per farmi sapere di cosa hai bisogno, sarò felice di aiutarti. </div>
-						<div class="text-center mt-4">
-									<a class="btn btn-secondary" href="contact.html">Contattami <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
-</svg></a>
-						</div>
-	                    
-                   </section><!--//leadgen-section-->
-                   
-                   
+										<div class="col">
+										  <div class="card h-100 border-0 d-flex flex-row align-items-start">
+											<img src="../assets/images/blog/angular-2.jpg" class="card-img-left rounded" alt="Learning Angular" style="width:100px; object-fit: cover; margin-right: 15px;">
+											<div class="card-body p-0">
+											  <a href="https://www.amazon.it/dp/1835087485" target="_blank" class="card-title h6 text-decoration-none">
+												<em>Learning Angular</em>
+											  </a>
+											  <p class="mb-1">di Aristeidis Bampakos</p>
+											  <p class="mb-0">–> <a href="https://www.amazon.it/dp/1835087485" target="_blank">prezzo su Amazon.it: €31,99</a></p>
+											</div>
+										  </div>
+										</div>
+
+										<div class="col">
+										  <div class="card h-100 border-0 d-flex flex-row align-items-start">
+											<img src="../assets/images/blog/angular-3.jpg" class="card-img-left rounded" alt="Angular Design Patterns and Best Practice" style="width:100px; object-fit: cover; margin-right: 15px;">
+											<div class="card-body p-0">
+											  <a href="https://www.amazon.it/dp/1837631972" target="_blank" class="card-title h6 text-decoration-none">
+												<em>Angular Design Patterns and Best Practice</em>
+											  </a>
+											  <p class="mb-1">di Alvaro Camillo Neto</p>
+											  <p class="mb-0">–> <a href="https://www.amazon.it/dp/1837631972">prezzo su Amazon.it: €30,99</a></p>
+											</div>
+										  </div>
+										</div>
+
+									  </div>
+									</div>
+
+									<p>
+										Tra queste risorse, il corso di Udemy rappresenta il materiale più immediato e semplice, ideale per acquisire una panoramica completa.  
+									</p>
+									<p>
+										Il volume <em>Learning Angular</em> è utile come strumento di approfondimento e ripasso: consente infatti di consolidare concetti già affrontati e di rivedere argomenti studiati in precedenza.  
+									</p>
+									<p>
+										Infine, <em>Angular Design Patterns and Best Practice</em> propone temi avanzati, in parte già affrontati nelle altre risorse. È risultato comunque utile per la sua struttura più compatta e per il fatto che alcuni concetti fondamentali vengono rimarcati.  
+									</p>
+								</div><!--//post-content-->
+
+								<div class="post-tags py-5">
+									  <ul class="list-inline">
+										<li class="list-inline-item"><strong>Tags:</strong></li>
+										<li class="list-inline-item"><span class="badge tag-badge">Angular</span></li>
+										<li class="list-inline-item"><span class="badge tag-badge">TypeScript</span></li>
+										<li class="list-inline-item"><span class="badge tag-badge">Frontend</span></li>
+									</ul>
+								</div><!--//post-tags-->
+
+			            </div><!--//blog-entry-->
+					</section><!--//blog-post-section-->
+
 					
 				</div>
 			</div><!--//main-content-wrapper-->
@@ -169,9 +210,10 @@
 	<script src="../assets/plugins/popper.min.js"></script> 
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	
-	<!-- Page Specific JS -->
-	<script src="../assets/plugins/tiny-slider/min/tiny-slider.js"></script> 
-	<script src="../assets/js/tinyslider-custom.js"></script> 
+    <!-- highlight -->
+	<script src="../assets/plugins/highlight/highlight.min.js"></script>
+	<script src="../assets/plugins/highlight/languages/csharp.min.js"></script>
+	<script>hljs.highlightAll();</script>
 	
 	<!-- Dark/Light Mode Toggle  -->
 	<script src="../assets/plugins/js-cookie.min.js"></script>
