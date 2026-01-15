@@ -715,6 +715,10 @@ progress {
   height: auto;
 }
 
+.clickable-img {
+    cursor: pointer !important;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: var(--bs-body-bg);
