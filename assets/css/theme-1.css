@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*************************** Theme Colours****************************/
 /*************************** Variables Section. *****************************/
 /* Override BS5 sass color */
@@ -3074,7 +3074,7 @@ textarea.form-control-lg {
 .btn-secondary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #1A1A1A;
-  --bs-btn-border-color: #1A1A1A;
+  --bs-btn-border-color: #232323;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #3D3D3D;
   --bs-btn-hover-border-color: #383838;
@@ -3085,7 +3085,7 @@ textarea.form-control-lg {
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #1A1A1A;
-  --bs-btn-disabled-border-color: #1A1A1A;
+  --bs-btn-disabled-border-color: #232323;
 }
 
 .btn-success {
@@ -3209,18 +3209,18 @@ textarea.form-control-lg {
 
 .btn-outline-secondary {
   --bs-btn-color: #1A1A1A;
-  --bs-btn-border-color: #1A1A1A;
+  --bs-btn-border-color: #232323;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #1A1A1A;
-  --bs-btn-hover-border-color: #1A1A1A;
+  --bs-btn-hover-border-color: #232323;
   --bs-btn-focus-shadow-rgb: 79, 101, 145;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #1A1A1A;
-  --bs-btn-active-border-color: #1A1A1A;
+  --bs-btn-active-border-color: #232323;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #1A1A1A;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #1A1A1A;
+  --bs-btn-disabled-border-color: #232323;
   --bs-gradient: none;
 }
 
@@ -4395,7 +4395,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #1F1F1F;
+  --bs-card-bg: #282828;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -12041,7 +12041,7 @@ textarea.form-control-lg {
 /*********** Theme Generic **********/
 body {
   color: #AAAAAA;
-  background: #111111;
+  background: #1A1A1A;
   font-family: "Inter", sans-serif;
 }
 
@@ -12126,8 +12126,8 @@ small, .small {
 .form-control {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
-  border-color: #1F1F1F;
-  background-color: #1F1F1F;
+  border-color: #282828;
+  background-color: #282828;
   color: white;
 }
 .form-control::-webkit-input-placeholder { /* WebKit browsers */
@@ -12144,8 +12144,8 @@ small, .small {
 }
 .form-control:focus {
   box-shadow: none;
-  border: 1px solid #1F1F1F;
-  background-color: #252525;
+  border: 1px solid #282828;
+  background-color: #2E2E2E;
   color: white;
 }
 
@@ -12276,7 +12276,7 @@ a.more-link .link-arrow .bi {
   padding-left: 1rem;
 }
 .side-panel .main-nav {
-  background: #1A1A1A;
+  background: #232323;
   padding: 1rem 0.5rem;
   border-radius: 6px;
 }
@@ -12319,7 +12319,7 @@ a.more-link .link-arrow .bi {
 }
 
 .section {
-  background: #1A1A1A;
+  background: #232323;
   padding: 3rem;
   border-radius: 0.5rem;
   color: #AAAAAA;
@@ -12337,7 +12337,7 @@ a.more-link .link-arrow .bi {
   left: 50%;
   margin-left: -80px;
   top: -80px;
-  border: 8px solid #1A1A1A;
+  border: 8px solid #232323;
 }
 
 .section-heading {
@@ -12440,12 +12440,12 @@ a.more-link .link-arrow .bi {
   display: none;
 }
 .mode-toggle .toggle:checked + .toggle-btn {
-  border: 2px solid #2D2D2D;
+  border: 2px solid #363636;
   background: none;
 }
 .mode-toggle .toggle:checked + .toggle-btn:after {
   left: 50%;
-  background: #2D2D2D;
+  background: #363636;
 }
 .mode-toggle .toggle:checked + .toggle-btn .toggle-icon {
   color: #2D2D2D;
@@ -12677,7 +12677,7 @@ a.more-link .link-arrow .bi {
   margin-top: 90px;
   position: relative;
   padding-top: calc(75px + 1rem);
-  background: #1A1A1A;
+  background: #232323;
 }
 
 .resume-profile-pic {
@@ -12687,7 +12687,7 @@ a.more-link .link-arrow .bi {
   left: 50%;
   margin-left: -80px;
   top: -80px;
-  border: 8px solid #1A1A1A;
+  border: 8px solid #232323;
 }
 
 .resume-name {
@@ -12821,7 +12821,7 @@ a.more-link .link-arrow .bi {
 .resume-progress {
   border-radius: 0.25rem;
   height: 0.3rem;
-  background: #111111;
+  background: #1A1A1A;
   margin-bottom: 1rem;
 }
 
@@ -12831,7 +12831,7 @@ a.more-link .link-arrow .bi {
 }
 
 .resume-skill-badge {
-  background: #111111;
+  background: #1A1A1A;
   background: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.8);
   padding: 0.5rem 0.65rem;
@@ -12884,7 +12884,7 @@ a.more-link .link-arrow .bi {
   min-height: 10px;
   border-radius: 2px;
   display: inline-block;
-  background: #111111;
+  background: #1A1A1A;
   position: relative;
 }
 .resume-level-indicator .item:last-child {
@@ -12920,13 +12920,13 @@ a.more-link .link-arrow .bi {
 }
 
 .post-item .post-item-inner {
-  background: #1A1A1A;
+  background: #232323;
   border-radius: 0.5rem;
   position: relative;
   min-height: 100%;
 }
 .post-item .post-item-inner:hover {
-  background: #1C1C1C;
+  background: #252525;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -12970,11 +12970,11 @@ a.more-link .link-arrow .bi {
 }
 
 .featured-post-item {
-  background: #1A1A1A;
+  background: #232323;
   position: relative;
 }
 .featured-post-item:hover {
-  background: #1C1C1C;
+  background: #252525;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -13047,7 +13047,7 @@ a.more-link .link-arrow .bi {
 }
 
 .blog-quote-holder {
-  background: #1F1F1F;
+  background: #282828;
   position: relative;
 }
 .blog-quote-holder .blockquote {
@@ -13069,13 +13069,13 @@ a.more-link .link-arrow .bi {
 }
 
 .comment-reply-holder {
-  background: #1A1A1A;
+  background: #232323;
 }
 .comment-reply-holder .reply-title {
   font-size: 1.25rem;
 }
 .comment-reply-holder .form-control {
-  border-color: #1F1F1F;
+  border-color: #282828;
 }
 
 .blog-comment-area .title {
@@ -13091,7 +13091,7 @@ a.more-link .link-arrow .bi {
   margin-bottom: 30px;
 }
 .blog-comment-area .comment-container .comment-item .comment-item-box {
-  background: #1F1F1F;
+  background: #282828;
   margin-bottom: 1rem;
 }
 .blog-comment-area .comment-container .comment-item .comment-author img {
@@ -13113,7 +13113,7 @@ a.more-link .link-arrow .bi {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   border: #252525;
-  background: #252525;
+  background: #2E2E2E;
 }
 .blog-comment-area .comment-container .comment-item .comment-body .comment-reply-link:hover {
   color: #111111;
@@ -13159,7 +13159,7 @@ a.more-link .link-arrow .bi {
 }
 .theme-pagination-nav .pagination .page-item .page-link:hover {
   color: white;
-  background: #1A1A1A;
+  background: #232323;
   text-decoration: none;
 }
 .theme-pagination-nav .pagination .page-item.disabled .page-link {
@@ -13457,8 +13457,8 @@ a.more-link .link-arrow .bi {
 }
 .light-mode .blog-comment-area .comment-container .comment-item .comment-body .comment-reply-link:hover {
   color: white;
-  border-color: #1A1A1A;
-  background-color: #1A1A1A;
+  border-color: #232323;
+  background-color: #232323;
 }
 .light-mode .comment-reply-holder {
   background: white;
@@ -13501,7 +13501,7 @@ a.more-link .link-arrow .bi {
   color: #121822;
 }
 .light-mode .resume-skill-badge {
-  background: #1A1A1A;
+  background: #232323;
   color: white;
 }
 .light-mode .resume-level-indicator .item {
@@ -13665,3 +13665,5 @@ body {
   color: #fff;
   color: rgba(255, 255, 255, 0.8);
 }
+
+
