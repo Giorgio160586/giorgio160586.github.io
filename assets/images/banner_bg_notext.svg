@@ -1,0 +1,22 @@
+<svg width="100%" viewBox="0 0 680 170" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d6ebd"/>
+      <stop offset="100%" style="stop-color:#1a8fe3"/>
+    </linearGradient>
+    <linearGradient id="shapeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f9af0;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#0a5fa0;stop-opacity:0.4"/>
+    </linearGradient>
+    <linearGradient id="shapeGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2aaff8;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#0e7ac9;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="680" height="170" fill="url(#bgGrad)"/>
+  <polygon points="-30,0 180,0 110,170 -100,170" fill="url(#shapeGrad1)"/>
+  <polygon points="80,0 290,0 220,170 10,170" fill="url(#shapeGrad2)" opacity="0.6"/>
+  <polygon points="200,-10 370,0 280,170 130,170" fill="#1a8fe3" opacity="0.25"/>
+  <line x1="370" y1="-10" x2="270" y2="180" stroke="white" stroke-width="0.6" opacity="0.25"/>
+  <line x1="420" y1="-10" x2="320" y2="180" stroke="white" stroke-width="0.6" opacity="0.15"/>
+</svg>

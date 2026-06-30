@@ -1,61 +1,109 @@
-<!DOCTYPE html>
-<html lang="it"> 
+﻿<!DOCTYPE html>
+<html lang="it">
 <head>
-	<title>WebPrice Case Study – Web App ad Alte Prestazioni | Giorgio Saad</title>
+	<title>WebPrice Case Study – SPA Angular per il Monitoraggio Prezzi | Giorgio Saad</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Case study: WebPrice, applicazione web ottimizzata per la personalizzazione dei dati realizzata con Bootstrap e DevExpress da Giorgio Saad.">
+	<meta name="description" content="Case study: WebPrice, SPA Angular con ASP.NET Core Minimal API per il monitoraggio competitivo dei prezzi nella GDO. Sviluppato da Giorgio Saad per DE.MI Europe.">
 	<meta name="author" content="Giorgio Saad">
 	<link rel="canonical" href="https://giorgio160586.github.io/it/webprice-case-study.html" />
 	<link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/webprice-case-study.html" />
 	<link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/webprice-case-study.html" />
 	<link rel="alternate" hreflang="x-default" href="https://giorgio160586.github.io/en/webprice-case-study.html" />
-	<meta property="og:title" content="WebPrice Case Study – Web App ad Alte Prestazioni | Giorgio Saad" />
-	<meta property="og:description" content="Case study: WebPrice, applicazione web ottimizzata per la personalizzazione dei dati realizzata con Bootstrap e DevExpress da Giorgio Saad." />
+	<meta property="og:title" content="WebPrice Case Study – SPA Angular per il Monitoraggio Prezzi | Giorgio Saad" />
+	<meta property="og:description" content="Case study: WebPrice, SPA Angular con ASP.NET Core Minimal API per il monitoraggio competitivo dei prezzi nella GDO. Sviluppato da Giorgio Saad per DE.MI Europe." />
 	<meta property="og:url" content="https://giorgio160586.github.io/it/webprice-case-study.html" />
 	<meta property="og:type" content="article" />
 	<meta property="og:image" content="https://giorgio160586.github.io/assets/images/share-image.png" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="WebPrice Case Study – Web App ad Alte Prestazioni | Giorgio Saad" />
-	<meta name="twitter:description" content="Case study: WebPrice, applicazione web ottimizzata per la personalizzazione dei dati realizzata con Bootstrap e DevExpress da Giorgio Saad." />
+	<meta name="twitter:title" content="WebPrice Case Study – SPA Angular per il Monitoraggio Prezzi | Giorgio Saad" />
+	<meta name="twitter:description" content="Case study: WebPrice, SPA Angular con ASP.NET Core Minimal API per il monitoraggio competitivo dei prezzi nella GDO. Sviluppato da Giorgio Saad per DE.MI Europe." />
 	<meta name="twitter:image" content="https://giorgio160586.github.io/assets/images/share-image.png" />
 	<link rel="shortcut icon" href="https://giorgio160586.github.io/favicon.ico">
-	
+
 	<!-- Google Fonts -->
-	
 	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
+
 	<!-- Bootstrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-	
+
 	<!-- FontAwesome JS -->
     <script defer src="../assets/fontawesome/js/all.js"></script>
-    
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="../assets/plugins/tiny-slider/tiny-slider.css">
 
-	<!-- Theme CSS -->  
+	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
-</head> 
+	<style>
+		/* ── Carousel ── */
+		.wp-carousel { position: relative; margin-bottom: 1rem; }
+		.wpc-slide { display: none; }
+		.wpc-slide.active { display: block; }
+		.wpc-controls {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: .75rem;
+			margin-top: .6rem;
+		}
+		.wpc-btn {
+			background: none;
+			border: 2px solid var(--bs-primary);
+			color: var(--bs-primary);
+			border-radius: 50%;
+			width: 34px; height: 34px;
+			font-size: 20px; line-height: 1;
+			cursor: pointer;
+			display: flex; align-items: center; justify-content: center;
+			opacity: .65;
+			transition: opacity .2s;
+			padding: 0;
+		}
+		.wpc-btn:hover { opacity: 1; }
+		.wpc-dots { display: flex; gap: 6px; align-items: center; }
+		.wpc-dot {
+			width: 8px; height: 8px;
+			border-radius: 50%;
+			background: var(--bs-primary);
+			opacity: .3;
+			cursor: pointer;
+			transition: opacity .2s;
+		}
+		.wpc-dot.active { opacity: 1; }
+		.wpc-caption {
+			font-size: .8rem;
+			text-align: center;
+			margin-top: .4rem;
+			opacity: .55;
+		}
+
+		/* ── Screenshot images ── */
+		.wp-carousel img,
+		.case-study-screenshot {
+			width: 100%;
+			border-radius: .375rem;
+			display: block;
+		}
+
+	</style>
+</head>
 
 
 <body>
-	
+
 	<div class="container-fluid">
 
-	
+
 			<div class="side-panel position-relative">
-				 
+
 				<nav class="navbar">
 			        <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start show d-flex" id="offcanvasNavbar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
 			            <div class="offcanvas-body d-flex align-items-center ">
 			                <ul class="main-nav navbar-nav text-center">
-				                
+
 								<li class="nav-item">
 									<a class="nav-link d-flex flex-column" href="index.html"><span class="icon-holder"><i class="fa-solid fa-circle-user"></i></span><span class="nav-text">About</span></a>
 								</li>
@@ -77,22 +125,21 @@
 							</ul>
 			            </div>
 			        </div>
-				  
+
 				</nav>
 			</div><!--//side-panel-->
-			
+
 			<div class="main-content-wrapper">
 				<div class="container-fluid">
 					<div class="top-bar text-center position-relative">
 						<div class="top-bar-inner">
-							
+
 							<a class="menu-toggler" data-bs-toggle="offcanvas" href="#offcanvasNavbar" role="button" aria-controls="offcanvasNavbar">
 								 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
 								  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
 								</svg>
 					        </a>
-							<!--//mode-toggle-->
-							<div class="mode-toggle d-flex">  
+							<div class="mode-toggle d-flex">
 								<a href="/it/" class="d-flex align-items-center me-3">
 									<img src="../assets/images/flag-it-svgrepo-com.svg" alt="Italian Flag" height="24" class="me-1">
 									<span>ITA</span>
@@ -103,175 +150,303 @@
 								</a>
 							</div>
 							<ul class="social-list list-inline mx-auto d-none d-lg-block">
-								<!--<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-x-twitter fa-fw"></i></a></li>-->
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://github.com/giorgio160586"><i class="fa-brands fa-github fa-fw"></i></a></li>
-								
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://www.linkedin.com/in/giorgio160586"><i class="fa-brands fa-linkedin-in fa-fw"></i></a></li>
-								
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://wa.me/393807475873" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp fa-fw"></i></a></li>
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="mailto:giorgio160586@email.com"><i class="fa-solid fa-envelope fa-fw"></i></a></li>
-							</ul><!--//social-list-->
-							
+							</ul>
+
 						</div><!--//top-bar-inner-->
-						
+
 					</div><!--//top-bar-->
-					
-					<section class="page-intro-section section has-profile-image mx-auto ">
-						
+
+					<section class="page-intro-section section has-profile-image mx-auto">
+
 						<div class="profile-holder text-center">
 							<img class="profile-pic rounded-circle" src="../assets/images/profile.png" alt="image">
 						</div>
-						
-						
-						<!--//profile-holder-->
 
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">WebPrice</h1>
-							<div class="post-author text-center mb-3">Su richiesta di <a href="https://demieurope.eu/">Demi Europe</a></div>
-							<div class="img-fluid mb-3"><img class="img-fluid rounded" src="../assets/images/projects/webprice-4.jpg"></div>
-							<div class="case-study-intro">
-								
-							    <p class="mb-4">Webprice è un’applicazione web ottimizzata, sviluppata con un forte focus sulla personalizzazione e le prestazioni. Grazie a Bootstrap per un design intuitivo e responsive e <a href="https://www.devexpress.com" targert="_blank">DevExpress</a> per gestire efficacemente grandi volumi di dati, Webprice offre un'esperienza senza interruzioni. È realizzata su misura per rispondere alle specifiche richieste del cliente, garantendo tempi di caricamento rapidi e un’interfaccia moderna e facile da usare. </p>
-							   
-							    
+							<div class="post-author text-center mb-3">Su richiesta di <a href="https://demieurope.eu/">DE.MI Europe</a></div>
+
+							<!-- Hero image: Dashboard -->
+							<div class="mb-4">
+								<div class="img-blur-container">
+									<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp26-articoli-chart.png" alt="WebPrice Andamento Prezzi">
+								</div>
 							</div>
-							
+
+							<div class="case-study-intro">
+								<p class="mb-4">WebPrice è l'applicazione web che i clienti di <a href="https://demieurope.eu/" target="_blank">DE.MI Europe</a> usano per tenere sotto controllo i prezzi della concorrenza. Permette di consultare i rilevamenti effettuati nei supermercati rivali, vedere come variano i prezzi nel tempo e tenere traccia delle promozioni in corso.</p>
+							</div>
+
 						</div><!--//intro-holder-->
-						
+
 					</section><!--//page-intro-section-->
 
+					<!-- ── La Sfida ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12 col-lg-3">
 								<h3 class="case-study-heading mb-3">La Sfida</h3>
 							</div>
-							<div class="col-12 col-lg-9  case-study-section-content">
-								<p>Il precedente sistema presentava significative criticità nell'usabilità. La navigazione era complessa e poco intuitiva, rendendo difficile per i clienti orientarsi e utilizzare efficacemente la piattaforma.</p>
-								
-								<h4 class="py-3">Obiettivi del Progetto</h4>
+							<div class="col-12 col-lg-9 case-study-section-content">
+								<p>Il precedente sistema era costruito su una architettura tradizionale con rendering server-side e una UX frammentata che rendeva difficile l'analisi rapida dei dati. La richiesta era di ripartire da zero con un'applicazione moderna, reattiva e pensata per un uso quotidiano intensivo.</p>
+
+								<h4 class="py-3">Obiettivi</h4>
 								<ul class="py-3">
-									<li class="mb-3">Semplificare l'esperienza utente e rendere la navigazione immediata</li>
-									<li class="mb-3">Migliorare le performance di caricamento dei dati</li>
-									<li class="mb-3">Implementare un sistema di export Excel ottimizzato per grandi volumi di dati</li>
-									<li class="mb-3">Creare un'interfaccia moderna e completamente responsive</li>
+									<li class="mb-3">Rimpiazzare il vecchio sistema con una SPA moderna e completamente responsive</li>
+									<li class="mb-3">Fornire dashboard e analisi in tempo reale su centinaia di situazioni di rilevamento</li>
+									<li class="mb-3">Gestire griglie di dati con oltre 700 righe e 80+ colonne con filtri, ordinamento e export Excel ottimizzato</li>
+									<li class="mb-3">Integrare la visualizzazione dei volantini promozionali direttamente nell'applicazione</li>
+									<li class="mb-3">Implementare autenticazione sicura con JWT e rate limiting</li>
 								</ul>
-								
+
 								<h4 class="py-3">Sfide Principali</h4>
-								<p>La principale difficoltà tecnica è stata gestire l'export di file Excel estremamente pesanti, fino a 50.000 righe per 80 colonne, mantenendo tempi di risposta accettabili.</p>
+								<p>La gestione performante di griglie dati molto dense (<a href="https://www.ag-grid.com" target="_blank">AG Grid</a> con virtual scrolling), la costruzione di un sistema di indici configurabile con più formule (Standard, Inversa, Accoppiata) e il motore di calcolo delle variazioni prezzo in tempo reale su insiemi multi-dimensionali (prodotto × punto vendita × periodo) hanno rappresentato i punti tecnici più impegnativi.</p>
 							</div>
 						</div>
 					</section>
-					
+
+					<!-- ── La Soluzione ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12 col-lg-3">
 								<h3 class="case-study-heading mb-3">La Soluzione</h3>
 							</div>
 							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>Ho sviluppato un'applicazione web personalizzata che combina l'usabilità di Bootstrap con la potenza di <a href="https://www.devexpress.com" targert="_blank">DevExpress</a> per la gestione dei dati.</p>
-								
-								<div class="row g-3 mb-5">
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/webprice-1.jpg" alt="WebPrice Prezzi" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice-1.jpg">
+								<p>Ho progettato e sviluppato l'intera applicazione: architettura <a href="https://angular.dev" target="_blank">Angular</a> con routing gerarchico, libreria UI <a href="https://primeng.org" target="_blank">PrimeNG</a> per i componenti, <a href="https://www.ag-grid.com" target="_blank">AG Grid</a> per le tabelle dati, Chart.js per i grafici e pdf.js per il viewer dei volantini. Il backend è un'API REST minimale in ASP.NET Core con autenticazione JWT.</p>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 2. Rilevamenti: Prezzi -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Rilevamenti — Prezzi</h4>
+								<p>Il cuore dell'applicazione. Ogni situazione espone tre tab:</p>
+								<ul class="mb-3">
+									<li class="mb-2"><strong>Overview:</strong> tabella punti vendita con articoli rilevati, indici aritmetici e ponderati, affiancata da un grafico a barre comparativo</li>
+									<li class="mb-2"><strong>Dettaglio:</strong> griglia <a href="https://www.ag-grid.com" target="_blank">AG Grid</a> con tutte le righe prodotto e le colonne per ogni punto vendita — prezzi, promozioni, prezzo originale e indice per ciascuna combinazione</li>
+									<li class="mb-2"><strong>Indici per categoria:</strong> breakdown dell'indice per categoria ECR a 3 livelli, con confronto tra tutti i punti vendita rilevati</li>
+								</ul>
+								<p>Il pannello <em>Imposta filtri</em> permette di configurare la formula dell'indice, il prezzo da usare per il calcolo, le eccezioni promozionali e lo scostamento massimo accettato.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-prezzi-overview.png" alt="Prezzi – Overview">
+										</div>
+										<p class="wpc-caption">Overview: indici per punto vendita + grafico comparativo</p>
 									</div>
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/webprice-2.jpg" alt="WebPrice Grafici" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice-2.jpg">
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-prezzi-detail.png" alt="Prezzi – Dettaglio">
+										</div>
+										<p class="wpc-caption">Dettaglio: griglia <a href="https://www.ag-grid.com" target="_blank">AG Grid</a> con prezzi per ogni prodotto e punto vendita</p>
 									</div>
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/webprice-3.jpg" alt="WebPrice Volantini" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice-3.jpg">
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-prezzi-indici.png" alt="Prezzi – Indici per categoria">
+										</div>
+										<p class="wpc-caption">Indici per categoria ECR: breakdown a 3 livelli per ogni punto vendita</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
 									</div>
 								</div>
-								
-								<h4 class="mb-3">Funzionalità Principali</h4>
-								<ul class="py-3">
-									<li class="mb-3"><strong>Visualizzazione Prezzi:</strong> Sistema chiaro e immediato per la consultazione dei listini con indici di comparazione</li>
-									<li class="mb-3"><strong>Analisi Dati:</strong> Grafici interattivi e pivot table per l'analisi aggregata delle informazioni</li>
-									<li class="mb-3"><strong>Export Avanzato:</strong> Generazione ottimizzata di file Excel fino a 50.000 righe con 80 colonne</li>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 3. Analisi: Punto Vendita -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Analisi — Punto Vendita</h4>
+								<p>Dashboard dedicata a ogni punto vendita rilevato. Mostra l'indice aritmetico e ponderato, il numero di articoli rilevati, tre donut chart (distribuzione categorie, dinamica prezzi, confronto col listino) e il grafico storico degli indici nel tempo con slider temporale interattivo. Il pannello filtri permette di personalizzare la formula e i parametri del calcolo.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-pv-overview.png" alt="Punto Vendita – Overview">
+										</div>
+										<p class="wpc-caption">Overview con KPI, distribuzione categorie e dinamica prezzi</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-pv-storico.png" alt="Punto Vendita – Storico indici">
+										</div>
+										<p class="wpc-caption">Storico indici: andamento temporale con slider interattivo</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-pv-filtri.png" alt="Punto Vendita – Filtri">
+										</div>
+										<p class="wpc-caption">Pannello filtri: formula indice, gestione promozioni e scostamento</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+									</div>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 4. Analisi: Articoli -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Analisi — Articoli</h4>
+								<p>Per ogni prodotto è disponibile il grafico storico dei prezzi rilevati in tutti i punti vendita, con una legenda interattiva per selezionare/deselezionare le serie. La tabella sottostante mostra il dettaglio di ogni rilevamento con data, punto vendita, prezzo, eventuale promozione e situazione di riferimento.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-articoli-chart.png" alt="Articoli – Grafico andamento prezzi">
+										</div>
+										<p class="wpc-caption">Andamento prezzi multi-store con grafico interattivo Chart.js</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-articoli-table.png" alt="Articoli – Tabella storico">
+										</div>
+										<p class="wpc-caption">Tabella storico rilevamenti con tutti i dettagli per punto vendita</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+									</div>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 5. Promozioni -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Rilevamenti — Promozioni</h4>
+								<p>Sezione dedicata ai volantini promozionali rilevati. Ogni promozione ha una miniatura del volantino, il periodo di validità e collega all'overview con la lista dei punti vendita coperti e la distribuzione delle categorie in promozione. Il viewer integrato (pdf.js) permette di sfogliare il volantino pagina per pagina direttamente nell'app.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-promo-list.png" alt="Promozioni – Lista">
+										</div>
+										<p class="wpc-caption">Lista promozioni con miniatura volantino e periodo di validità</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-promo-overview.png" alt="Promozioni – Overview">
+										</div>
+										<p class="wpc-caption">Overview promozione: punti vendita coperti e distribuzione categorie</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-promo-volantino.png" alt="Promozioni – Viewer volantino">
+										</div>
+										<p class="wpc-caption">Viewer PDF integrato (pdf.js) per sfogliare il volantino</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+									</div>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 6. Planning -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Rilevamenti — Planning</h4>
+								<p>Calendario a 3 mesi che visualizza le campagne di rilevamento programmate tramite codice colore. Mostra i KPI principali: prossimo rilevamento, totale rilevamenti annuali, rilevamenti nei prossimi 30 giorni e conclusi.</p>
+
+								<div class="mb-4">
+									<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp26-planning.png" alt="Planning Rilevamenti">
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 7. Strumenti di Analisi -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Strumenti di Analisi</h4>
+								<p>Due sezioni di supporto completano il sistema:</p>
+								<ul class="mb-3">
+									<li class="mb-2"><strong>Categorie ECR:</strong> albero gerarchico a 5 livelli delle categorie prodotto (ECR standard), con ricerca e possibilità di attivare/disattivare categorie per affinare l'analisi</li>
+									<li class="mb-2"><strong>Fornitori:</strong> catalogo prodotti per fornitore con ricerca full-text, utile per identificare rapidamente tutti gli articoli di un brand nei rilevamenti</li>
 								</ul>
-								
-								<h4 class="mb-3">Tecnologie Utilizzate:</h4>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-categorie-ecr.png" alt="Categorie ECR">
+										</div>
+										<p class="wpc-caption">Categorie ECR: albero gerarchico a 5 livelli con checkbox</p>
+									</div>
+									<div class="wpc-slide">
+										<div class="img-blur-container">
+											<img src="../assets/images/projects/webprice2026/wp26-fornitori.png" alt="Fornitori">
+										</div>
+										<p class="wpc-caption">Fornitori: catalogo prodotti per brand con ricerca full-text</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+									</div>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- Tecnologie -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Tecnologie Utilizzate</h4>
 								<ul class="tech-stack list-inline">
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/bootstrap5.svg" alt="Bootstrap 5"></li>
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/javascript.svg" alt="JavaScript"></li>
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/html5.svg" alt="HTML5"></li>
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/devexpress.jpg" alt="DevExpress"></li>
-									<li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/net.png" alt="NET"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/angular.svg" alt="Angular 21" title="Angular 21"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/typescript.svg" alt="TypeScript" title="TypeScript"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/net.png" alt=".NET" title="ASP.NET Core Minimal API"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/c-sharp.svg" alt="C#" title="C#"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/sql-server.svg" alt="SQL Server" title="SQL Server"></li>
 						        </ul>
 							</div>
 						</div>
 					</section>
-					
+
+					<!-- ── Lo Sviluppo ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12 col-lg-3">
 								<h3 class="case-study-heading mb-3">Lo Sviluppo</h3>
 							</div>
 							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>Il processo di sviluppo è stato caratterizzato da una stretta collaborazione con il cliente. Abbiamo adottato un approccio iterativo con rilasci continui, concordati di volta in volta in base alle esigenze emergenti.</p>
-								
+								<p>Il progetto è partito da un'analisi approfondita del flusso di lavoro degli utenti finali, con l'obiettivo di ridurre il numero di click necessari per accedere alle informazioni critiche. L'architettura <a href="https://angular.dev" target="_blank">Angular</a> è stata strutturata con feature module lazy-loaded per tenere bassi i bundle iniziali nonostante la dimensione dell'applicazione.</p>
+
 								<h4 class="py-3">Metodologia</h4>
 								<ul class="py-3">
-									<li class="mb-3"><strong>Feedback Continuo:</strong> Cicli di sviluppo brevi con revisioni costanti</li>
-									<li class="mb-3"><strong>Migrazione Graduale:</strong> Porting progressivo dal vecchio sistema al nuovo</li>
-									<li class="mb-3"><strong>Testing Performance:</strong> Ottimizzazioni mirate per i carichi di lavoro pesanti</li>
+									<li class="mb-3"><strong>Iterazioni continue:</strong> rilasci frequenti concordati col cliente, con feedback immediato e adeguamenti rapidi alle esigenze emergenti</li>
+									<li class="mb-3"><strong>API-first:</strong> backend ASP.NET Core Minimal API sviluppato in parallelo con documentazione Scalar, permettendo sviluppo frontend indipendente con mock</li>
+									<li class="mb-3"><strong>Performance focus:</strong> <a href="https://www.ag-grid.com" target="_blank">AG Grid</a> con virtual scrolling per le griglie dense, compressione Gzip lato server, lazy loading delle rotte e ottimizzazione delle query SQL</li>
+									<li class="mb-3"><strong>Sicurezza:</strong> autenticazione JWT con refresh token, rate limiting sul login endpoint, CORS configurato per i soli domini autorizzati</li>
 								</ul>
-								
-								<p>Questa approccio ha permesso di affinare continuamente le funzionalità e garantire che il prodotto finale rispondesse perfettamente alle aspettative del cliente.</p>
 							</div>
 						</div>
 					</section>
 
                     <section class="leadgen-section section mx-auto">
-	   
-					   <h3 class="section-heading text-start text-md-center text-highlight"> Come posso aiutarti?</h3>
-					   <div class="intro text-md-center">Scrivimi per farmi sapere di cosa hai bisogno, sarò felice di aiutarti. </div>
+
+					   <h3 class="section-heading text-start text-md-center text-highlight">Come posso aiutarti?</h3>
+					   <div class="intro text-md-center">Scrivimi per farmi sapere di cosa hai bisogno, sarò felice di aiutarti.</div>
 						<div class="text-center mt-4">
 									<a class="btn btn-secondary" href="contact.html">Contattami <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
 </svg></a>
 						</div>
-	                    
+
                    </section><!--//leadgen-section-->
-                   
-                   
-					
+
 				</div>
 			</div><!--//main-content-wrapper-->
 
 		</div><!--//row-->
-	
+
 	</div><!--//container-->
-	
+
 	<footer class="footer text-center py-4">
 		<small class="copyright">Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a> All rights reserved. All trademarks or registered trademarks are property of their respective owners.</small>
 	</footer>
-	
-	<!-- Modal -->
-	<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-	  <div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content border-0 bg-transparent">
-		  <div class="modal-body d-flex justify-content-center align-items-center p-0 position-relative">
-			
-			<img id="modalImage" src="" alt="Popup Image" 
-				 style="max-width: none; height: auto; display: block; margin: auto;">
-		  </div>
-		</div>
-	  </div>
-	</div>
-	
 
-	
-	<!-- Image Modal JS -->
-	<script src="../assets/js/image-modal.js"></script>
-
-	<script src="../assets/plugins/popper.min.js"></script> 
+	<script src="../assets/plugins/popper.min.js"></script>
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Page Specific JS -->
-	<script src="../assets/plugins/tiny-slider/min/tiny-slider.js"></script> 
-	<script src="../assets/js/tinyslider-custom.js"></script> 
-	
-	<!-- Dark/Light Mode Toggle  -->
+	<script src="../assets/js/wp-carousel.js"></script>
 	<script src="../assets/plugins/js-cookie.min.js"></script>
 </body>
 </html>

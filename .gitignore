@@ -1,0 +1,7 @@
+# C# / .NET build artifacts
+tools/**/bin/
+tools/**/obj/
+tools/**/*.user
+tools/**/*.suo
+tools/**/.vs/
+*.log
