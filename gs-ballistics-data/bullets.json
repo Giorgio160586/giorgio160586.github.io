@@ -1898,6 +1898,123 @@
       "bulletWeightGrains": 217,
       "ballisticCoefficientG1": 0.695,
       "ballisticCoefficientG7": 0.356
+    },
+    {
+      "id": "sierra-tgk-308-165",
+      "manufacturer": "Sierra",
+      "name": "Tipped GameKing 165gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 165,
+      "ballisticCoefficientG1": 0.53,
+      "ballisticCoefficientG7": 0.234
+    },
+    {
+      "id": "sierra-tgk-6mm-100",
+      "manufacturer": "Sierra",
+      "name": "Tipped GameKing 100gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 100,
+      "ballisticCoefficientG1": 0.515,
+      "ballisticCoefficientG7": 0.253
+    },
+    {
+      "id": "sierra-tgk-224-64",
+      "manufacturer": "Sierra",
+      "name": "Tipped GameKing 64gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 64,
+      "ballisticCoefficientG1": 0.323,
+      "ballisticCoefficientG7": 0.159
+    },
+    {
+      "id": "sierra-tgk-264-130",
+      "manufacturer": "Sierra",
+      "name": "Tipped GameKing 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.51,
+      "ballisticCoefficientG7": 0.256
+    },
+    {
+      "id": "sierra-gameking-308-150",
+      "manufacturer": "Sierra",
+      "name": "GameKing 150gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.38,
+      "ballisticCoefficientG7": 0.188
+    },
+    {
+      "id": "sierra-gameking-308-165",
+      "manufacturer": "Sierra",
+      "name": "GameKing 165gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 165,
+      "ballisticCoefficientG1": 0.363,
+      "ballisticCoefficientG7": 0.207
+    },
+    {
+      "id": "sierra-gameking-308-180",
+      "manufacturer": "Sierra",
+      "name": "GameKing 180gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.501,
+      "ballisticCoefficientG7": 0.253
+    },
+    {
+      "id": "sierra-gameking-6mm-100",
+      "manufacturer": "Sierra",
+      "name": "GameKing 100gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 100,
+      "ballisticCoefficientG1": 0.43,
+      "ballisticCoefficientG7": 0.208
+    },
+    {
+      "id": "sierra-gameking-7mm-150",
+      "manufacturer": "Sierra",
+      "name": "GameKing 150gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.436,
+      "ballisticCoefficientG7": 0.208
+    },
+    {
+      "id": "barnes-lrx-264-127",
+      "manufacturer": "Barnes",
+      "name": "LRX 127gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 127,
+      "ballisticCoefficientG1": 0.468,
+      "ballisticCoefficientG7": 0.229
+    },
+    {
+      "id": "barnes-lrx-277-155",
+      "manufacturer": "Barnes",
+      "name": "LRX 155gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.54,
+      "ballisticCoefficientG7": 0.254
+    },
+    {
+      "id": "barnes-lrx-308-190",
+      "manufacturer": "Barnes",
+      "name": "LRX 190gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.499,
+      "ballisticCoefficientG7": 0.259
+    },
+    {
+      "id": "barnes-lrx-7mm-168",
+      "manufacturer": "Barnes",
+      "name": "LRX 168gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.55,
+      "ballisticCoefficientG7": 0.275
     }
   ]
 }
