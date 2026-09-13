@@ -2024,6 +2024,42 @@
       "bulletWeightGrains": 155,
       "ballisticCoefficientG1": 0.61,
       "ballisticCoefficientG7": 0.313
+    },
+    {
+      "id": "barnes-ttsx-277-140",
+      "manufacturer": "Barnes",
+      "name": "TTSX 140gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.373,
+      "ballisticCoefficientG7": 0.191
+    },
+    {
+      "id": "barnes-ttsx-308-168",
+      "manufacturer": "Barnes",
+      "name": "TTSX 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.448,
+      "ballisticCoefficientG7": 0.225
+    },
+    {
+      "id": "nosler-accubond-308-180",
+      "manufacturer": "Nosler",
+      "name": "AccuBond 180gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.481,
+      "ballisticCoefficientG7": 0.246
+    },
+    {
+      "id": "nosler-accubond-264-130",
+      "manufacturer": "Nosler",
+      "name": "AccuBond 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.44,
+      "ballisticCoefficientG7": 0.225
     }
   ]
 }
