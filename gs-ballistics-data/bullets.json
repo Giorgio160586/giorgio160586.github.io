@@ -1889,6 +1889,15 @@
       "bulletWeightGrains": 90,
       "ballisticCoefficientG1": 0.563,
       "ballisticCoefficientG7": 0.274
+    },
+    {
+      "id": "berger-elite-hunter-308-217",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 217gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 217,
+      "ballisticCoefficientG1": 0.695,
+      "ballisticCoefficientG7": 0.356
     }
   ]
 }
