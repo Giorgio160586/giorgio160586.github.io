@@ -2015,6 +2015,15 @@
       "bulletWeightGrains": 168,
       "ballisticCoefficientG1": 0.55,
       "ballisticCoefficientG7": 0.275
+    },
+    {
+      "id": "federal-edge-tlr-7mm-155",
+      "manufacturer": "Federal",
+      "name": "Edge TLR 155gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.61,
+      "ballisticCoefficientG7": 0.313
     }
   ]
 }
