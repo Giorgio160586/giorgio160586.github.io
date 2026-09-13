@@ -7,7 +7,1888 @@
       "caliberMm": 6.706,
       "bulletWeightGrains": 136,
       "ballisticCoefficientG1": 0.578,
-      "ballisticCoefficientG7": 0.290
+      "ballisticCoefficientG7": 0.29
+    },
+    {
+      "id": "lapua-scenar-l-224-69",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 69gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 69,
+      "ballisticCoefficientG1": 0.341,
+      "ballisticCoefficientG7": 0.171
+    },
+    {
+      "id": "lapua-scenar-l-224-77",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.386,
+      "ballisticCoefficientG7": 0.193
+    },
+    {
+      "id": "lapua-scenar-l-6mm-90",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 90gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.434,
+      "ballisticCoefficientG7": 0.216
+    },
+    {
+      "id": "lapua-scenar-264-123",
+      "manufacturer": "Lapua",
+      "name": "Scenar 123gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 123,
+      "ballisticCoefficientG1": 0.527,
+      "ballisticCoefficientG7": 0.263
+    },
+    {
+      "id": "lapua-scenar-308-167",
+      "manufacturer": "Lapua",
+      "name": "Scenar 167gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 167,
+      "ballisticCoefficientG1": 0.446,
+      "ballisticCoefficientG7": 0.223
+    },
+    {
+      "id": "lapua-scenar-l-308-155",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 155gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.46,
+      "ballisticCoefficientG7": 0.23
+    },
+    {
+      "id": "lapua-scenar-l-308-220",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 220gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 220,
+      "ballisticCoefficientG1": 0.647,
+      "ballisticCoefficientG7": 0.324
+    },
+    {
+      "id": "sierra-matchking-308-175",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.505,
+      "ballisticCoefficientG7": 0.25
+    },
+    {
+      "id": "berger-lr-bt-target-308-175",
+      "manufacturer": "Berger",
+      "name": "Long Range BT Target 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.512,
+      "ballisticCoefficientG7": 0.262
+    },
+    {
+      "id": "berger-hybrid-target-308-168",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.515,
+      "ballisticCoefficientG7": 0.264
+    },
+    {
+      "id": "berger-hybrid-target-308-155",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 155gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.478,
+      "ballisticCoefficientG7": 0.245
+    },
+    {
+      "id": "berger-juggernaut-target-308-185",
+      "manufacturer": "Berger",
+      "name": "Juggernaut Target 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.555,
+      "ballisticCoefficientG7": 0.284
+    },
+    {
+      "id": "berger-hybrid-target-308-200",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 200gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.616,
+      "ballisticCoefficientG7": 0.316
+    },
+    {
+      "id": "berger-hybrid-target-264-140",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.607,
+      "ballisticCoefficientG7": 0.311
+    },
+    {
+      "id": "berger-vld-target-264-130",
+      "manufacturer": "Berger",
+      "name": "VLD Target 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.562,
+      "ballisticCoefficientG7": 0.288
+    },
+    {
+      "id": "berger-hybrid-target-6mm-105",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.536,
+      "ballisticCoefficientG7": 0.275
+    },
+    {
+      "id": "berger-vld-target-224-90",
+      "manufacturer": "Berger",
+      "name": "VLD Target 90gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.534,
+      "ballisticCoefficientG7": 0.274
+    },
+    {
+      "id": "berger-hybrid-target-7mm-180",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 180gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.68,
+      "ballisticCoefficientG7": 0.349
+    },
+    {
+      "id": "berger-hybrid-target-270-150",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 150gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.552,
+      "ballisticCoefficientG7": 0.283
+    },
+    {
+      "id": "berger-elite-hunter-338-300",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.814,
+      "ballisticCoefficientG7": 0.417
+    },
+    {
+      "id": "hornady-eld-match-224-73",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 73gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 73,
+      "ballisticCoefficientG1": 0.398,
+      "ballisticCoefficientG7": 0.2
+    },
+    {
+      "id": "hornady-eld-match-224-75",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 75gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 75,
+      "ballisticCoefficientG1": 0.467,
+      "ballisticCoefficientG7": 0.235
+    },
+    {
+      "id": "hornady-eld-match-224-80",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 80gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 80,
+      "ballisticCoefficientG1": 0.485,
+      "ballisticCoefficientG7": 0.244
+    },
+    {
+      "id": "hornady-eld-match-224-88",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 88gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 88,
+      "ballisticCoefficientG1": 0.545,
+      "ballisticCoefficientG7": 0.274
+    },
+    {
+      "id": "hornady-eld-match-6mm-108",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 108gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 108,
+      "ballisticCoefficientG1": 0.536,
+      "ballisticCoefficientG7": 0.27
+    },
+    {
+      "id": "hornady-eld-match-264-100",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 100gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 100,
+      "ballisticCoefficientG1": 0.385,
+      "ballisticCoefficientG7": 0.194
+    },
+    {
+      "id": "hornady-eld-match-264-120",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 120gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 120,
+      "ballisticCoefficientG1": 0.486,
+      "ballisticCoefficientG7": 0.245
+    },
+    {
+      "id": "hornady-eld-match-264-123",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 123gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 123,
+      "ballisticCoefficientG1": 0.506,
+      "ballisticCoefficientG7": 0.255
+    },
+    {
+      "id": "hornady-eld-match-264-130",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.554,
+      "ballisticCoefficientG7": 0.279
+    },
+    {
+      "id": "hornady-eld-match-264-140",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.646,
+      "ballisticCoefficientG7": 0.326
+    },
+    {
+      "id": "hornady-eld-match-264-147",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 147gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 147,
+      "ballisticCoefficientG1": 0.697,
+      "ballisticCoefficientG7": 0.351
+    },
+    {
+      "id": "hornady-eld-match-7mm-162",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 162gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 162,
+      "ballisticCoefficientG1": 0.67,
+      "ballisticCoefficientG7": 0.338
+    },
+    {
+      "id": "hornady-eld-match-7mm-180-875",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 180gr (1:8.75 twist)",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.777,
+      "ballisticCoefficientG7": 0.391
+    },
+    {
+      "id": "hornady-eld-match-7mm-180-75",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 180gr (1:7.5 twist)",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.816,
+      "ballisticCoefficientG7": 0.411
+    },
+    {
+      "id": "hornady-eld-match-308-155",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 155gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.461,
+      "ballisticCoefficientG7": 0.232
+    },
+    {
+      "id": "hornady-eld-match-308-168",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.523,
+      "ballisticCoefficientG7": 0.263
+    },
+    {
+      "id": "hornady-eld-match-308-178",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 178gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 178,
+      "ballisticCoefficientG1": 0.547,
+      "ballisticCoefficientG7": 0.275
+    },
+    {
+      "id": "hornady-eld-match-308-195",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 195gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 195,
+      "ballisticCoefficientG1": 0.584,
+      "ballisticCoefficientG7": 0.294
+    },
+    {
+      "id": "hornady-eld-match-308-208",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 208gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 208,
+      "ballisticCoefficientG1": 0.69,
+      "ballisticCoefficientG7": 0.348
+    },
+    {
+      "id": "hornady-eld-match-308-225-10",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 225gr (1:10 twist)",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 225,
+      "ballisticCoefficientG1": 0.777,
+      "ballisticCoefficientG7": 0.391
+    },
+    {
+      "id": "hornady-eld-match-308-225-7",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 225gr (1:7 twist)",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 225,
+      "ballisticCoefficientG1": 0.798,
+      "ballisticCoefficientG7": 0.402
+    },
+    {
+      "id": "hornady-eld-match-338-285",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 285gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 285,
+      "ballisticCoefficientG1": 0.829,
+      "ballisticCoefficientG7": 0.417
+    },
+    {
+      "id": "hornady-eld-match-25-134",
+      "manufacturer": "Hornady",
+      "name": "ELD Match 134gr",
+      "caliberMm": 6.528,
+      "bulletWeightGrains": 134,
+      "ballisticCoefficientG1": 0.645,
+      "ballisticCoefficientG7": 0.325
+    },
+    {
+      "id": "hornady-eld-x-6mm-90",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 90gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.41,
+      "ballisticCoefficientG7": 0.206
+    },
+    {
+      "id": "hornady-eld-x-6mm-103",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 103gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 103,
+      "ballisticCoefficientG1": 0.512,
+      "ballisticCoefficientG7": 0.258
+    },
+    {
+      "id": "hornady-eld-x-25-110",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 110gr",
+      "caliberMm": 6.528,
+      "bulletWeightGrains": 110,
+      "ballisticCoefficientG1": 0.465,
+      "ballisticCoefficientG7": 0.234
+    },
+    {
+      "id": "hornady-eld-x-264-143",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 143gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 143,
+      "ballisticCoefficientG1": 0.623,
+      "ballisticCoefficientG7": 0.314
+    },
+    {
+      "id": "hornady-eld-x-270-145",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 145gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 145,
+      "ballisticCoefficientG1": 0.536,
+      "ballisticCoefficientG7": 0.27
+    },
+    {
+      "id": "hornady-eld-x-7mm-150",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 150gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.574,
+      "ballisticCoefficientG7": 0.289
+    },
+    {
+      "id": "hornady-eld-x-7mm-162",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 162gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 162,
+      "ballisticCoefficientG1": 0.631,
+      "ballisticCoefficientG7": 0.318
+    },
+    {
+      "id": "hornady-eld-x-7mm-175",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 175gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.689,
+      "ballisticCoefficientG7": 0.347
+    },
+    {
+      "id": "hornady-eld-x-308-178",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 178gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 178,
+      "ballisticCoefficientG1": 0.552,
+      "ballisticCoefficientG7": 0.278
+    },
+    {
+      "id": "hornady-eld-x-308-200",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 200gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.597,
+      "ballisticCoefficientG7": 0.301
+    },
+    {
+      "id": "hornady-eld-x-308-212-10",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 212gr (1:10 twist)",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 212,
+      "ballisticCoefficientG1": 0.663,
+      "ballisticCoefficientG7": 0.334
+    },
+    {
+      "id": "hornady-eld-x-308-212-7",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 212gr (1:7 twist)",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 212,
+      "ballisticCoefficientG1": 0.702,
+      "ballisticCoefficientG7": 0.354
+    },
+    {
+      "id": "hornady-eld-x-308-220",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 220gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 220,
+      "ballisticCoefficientG1": 0.654,
+      "ballisticCoefficientG7": 0.329
+    },
+    {
+      "id": "hornady-eld-x-338-230",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 230gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 230,
+      "ballisticCoefficientG1": 0.616,
+      "ballisticCoefficientG7": 0.31
+    },
+    {
+      "id": "hornady-eld-x-338-270",
+      "manufacturer": "Hornady",
+      "name": "ELD-X 270gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 270,
+      "ballisticCoefficientG1": 0.757,
+      "ballisticCoefficientG7": 0.381
+    },
+    {
+      "id": "hornady-a-tip-224-76",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 76gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 76,
+      "ballisticCoefficientG1": 0.413,
+      "ballisticCoefficientG7": 0.208
+    },
+    {
+      "id": "hornady-a-tip-224-90",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 90gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.585,
+      "ballisticCoefficientG7": 0.295
+    },
+    {
+      "id": "hornady-a-tip-6mm-110",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 110gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 110,
+      "ballisticCoefficientG1": 0.604,
+      "ballisticCoefficientG7": 0.304
+    },
+    {
+      "id": "hornady-a-tip-6mm-120",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 120gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 120,
+      "ballisticCoefficientG1": 0.675,
+      "ballisticCoefficientG7": 0.34
+    },
+    {
+      "id": "hornady-a-tip-264-135",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 135gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 135,
+      "ballisticCoefficientG1": 0.637,
+      "ballisticCoefficientG7": 0.321
+    },
+    {
+      "id": "hornady-a-tip-264-153",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 153gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 153,
+      "ballisticCoefficientG1": 0.704,
+      "ballisticCoefficientG7": 0.355
+    },
+    {
+      "id": "hornady-a-tip-7mm-166",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 166gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 166,
+      "ballisticCoefficientG1": 0.664,
+      "ballisticCoefficientG7": 0.332
+    },
+    {
+      "id": "hornady-a-tip-7mm-190",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 190gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.838,
+      "ballisticCoefficientG7": 0.422
+    },
+    {
+      "id": "hornady-a-tip-308-176",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 176gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 176,
+      "ballisticCoefficientG1": 0.564,
+      "ballisticCoefficientG7": 0.284
+    },
+    {
+      "id": "hornady-a-tip-308-177",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 177gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 177,
+      "ballisticCoefficientG1": 0.565,
+      "ballisticCoefficientG7": 0.285
+    },
+    {
+      "id": "hornady-a-tip-308-230",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 230gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 230,
+      "ballisticCoefficientG1": 0.823,
+      "ballisticCoefficientG7": 0.414
+    },
+    {
+      "id": "hornady-a-tip-308-250",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 250gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 250,
+      "ballisticCoefficientG1": 0.878,
+      "ballisticCoefficientG7": 0.442
+    },
+    {
+      "id": "hornady-a-tip-338-300",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.863,
+      "ballisticCoefficientG7": 0.435
+    },
+    {
+      "id": "hornady-a-tip-375-390",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 390gr",
+      "caliberMm": 9.525,
+      "bulletWeightGrains": 390,
+      "ballisticCoefficientG1": 0.987,
+      "ballisticCoefficientG7": 0.497
+    },
+    {
+      "id": "hornady-a-tip-416-500",
+      "manufacturer": "Hornady",
+      "name": "A-Tip Match 500gr",
+      "caliberMm": 10.566,
+      "bulletWeightGrains": 500,
+      "ballisticCoefficientG1": 0.976,
+      "ballisticCoefficientG7": 0.493
+    },
+    {
+      "id": "hornady-eld-vt-224-62",
+      "manufacturer": "Hornady",
+      "name": "ELD-VT 62gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 62,
+      "ballisticCoefficientG1": 0.395,
+      "ballisticCoefficientG7": 0.199
+    },
+    {
+      "id": "hornady-eld-vt-6mm-80",
+      "manufacturer": "Hornady",
+      "name": "ELD-VT 80gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 80,
+      "ballisticCoefficientG1": 0.41,
+      "ballisticCoefficientG7": 0.206
+    },
+    {
+      "id": "hornady-eld-vt-264-100",
+      "manufacturer": "Hornady",
+      "name": "ELD-VT 100gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 100,
+      "ballisticCoefficientG1": 0.448,
+      "ballisticCoefficientG7": 0.226
+    },
+    {
+      "id": "hornady-eld-vt-308-174",
+      "manufacturer": "Hornady",
+      "name": "ELD-VT 174gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 174,
+      "ballisticCoefficientG1": 0.573,
+      "ballisticCoefficientG7": 0.289
+    },
+    {
+      "id": "berger-bt-varmint-20-40",
+      "manufacturer": "Berger",
+      "name": "BT Varmint 40gr",
+      "caliberMm": 5.182,
+      "bulletWeightGrains": 40,
+      "ballisticCoefficientG1": 0.227,
+      "ballisticCoefficientG7": 0.116
+    },
+    {
+      "id": "berger-vld-target-224-70",
+      "manufacturer": "Berger",
+      "name": "VLD Target 70gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 70,
+      "ballisticCoefficientG1": 0.374,
+      "ballisticCoefficientG7": 0.191
+    },
+    {
+      "id": "berger-bt-target-224-73",
+      "manufacturer": "Berger",
+      "name": "BT Target 73gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 73,
+      "ballisticCoefficientG1": 0.348,
+      "ballisticCoefficientG7": 0.178
+    },
+    {
+      "id": "berger-vld-target-224-75",
+      "manufacturer": "Berger",
+      "name": "VLD Target 75gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 75,
+      "ballisticCoefficientG1": 0.421,
+      "ballisticCoefficientG7": 0.216
+    },
+    {
+      "id": "berger-otm-tactical-224-77",
+      "manufacturer": "Berger",
+      "name": "OTM Tactical 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.374,
+      "ballisticCoefficientG7": 0.192
+    },
+    {
+      "id": "berger-vld-target-224-80",
+      "manufacturer": "Berger",
+      "name": "VLD Target 80gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 80,
+      "ballisticCoefficientG1": 0.455,
+      "ballisticCoefficientG7": 0.233
+    },
+    {
+      "id": "berger-fullbore-target-224-805",
+      "manufacturer": "Berger",
+      "name": "FULLBORE Target 80.5gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 81,
+      "ballisticCoefficientG1": 0.441,
+      "ballisticCoefficientG7": 0.226
+    },
+    {
+      "id": "berger-lr-hybrid-target-224-855",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 85.5gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 86,
+      "ballisticCoefficientG1": 0.524,
+      "ballisticCoefficientG7": 0.268
+    },
+    {
+      "id": "berger-bt-target-6mm-65",
+      "manufacturer": "Berger",
+      "name": "BT Target 65gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 65,
+      "ballisticCoefficientG1": 0.281,
+      "ballisticCoefficientG7": 0.144
+    },
+    {
+      "id": "berger-vld-hunting-6mm-87",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 87gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 87,
+      "ballisticCoefficientG1": 0.427,
+      "ballisticCoefficientG7": 0.219
+    },
+    {
+      "id": "berger-bt-target-6mm-90",
+      "manufacturer": "Berger",
+      "name": "BT Target 90gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.409,
+      "ballisticCoefficientG7": 0.21
+    },
+    {
+      "id": "berger-classic-hunter-6mm-95",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 95gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 95,
+      "ballisticCoefficientG1": 0.434,
+      "ballisticCoefficientG7": 0.223
+    },
+    {
+      "id": "berger-vld-hunting-6mm-95",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 95gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 95,
+      "ballisticCoefficientG1": 0.467,
+      "ballisticCoefficientG7": 0.239
+    },
+    {
+      "id": "berger-vld-target-6mm-95",
+      "manufacturer": "Berger",
+      "name": "VLD Target 95gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 95,
+      "ballisticCoefficientG1": 0.467,
+      "ballisticCoefficientG7": 0.24
+    },
+    {
+      "id": "berger-bt-target-6mm-105",
+      "manufacturer": "Berger",
+      "name": "BT Target 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.494,
+      "ballisticCoefficientG7": 0.253
+    },
+    {
+      "id": "berger-vld-hunting-6mm-105",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.545,
+      "ballisticCoefficientG7": 0.278
+    },
+    {
+      "id": "berger-vld-target-6mm-105",
+      "manufacturer": "Berger",
+      "name": "VLD Target 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.517,
+      "ballisticCoefficientG7": 0.265
+    },
+    {
+      "id": "berger-bt-target-6mm-108",
+      "manufacturer": "Berger",
+      "name": "BT Target 108gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 108,
+      "ballisticCoefficientG1": 0.522,
+      "ballisticCoefficientG7": 0.268
+    },
+    {
+      "id": "berger-elite-hunter-6mm-108",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 108gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 108,
+      "ballisticCoefficientG1": 0.559,
+      "ballisticCoefficientG7": 0.287
+    },
+    {
+      "id": "berger-lr-hybrid-target-6mm-109",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 109gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 109,
+      "ballisticCoefficientG1": 0.568,
+      "ballisticCoefficientG7": 0.292
+    },
+    {
+      "id": "berger-vld-hunting-6mm-115",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 115gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 115,
+      "ballisticCoefficientG1": 0.568,
+      "ballisticCoefficientG7": 0.291
+    },
+    {
+      "id": "berger-vld-target-6mm-115",
+      "manufacturer": "Berger",
+      "name": "VLD Target 115gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 115,
+      "ballisticCoefficientG1": 0.563,
+      "ballisticCoefficientG7": 0.289
+    },
+    {
+      "id": "berger-vld-hunting-25-115",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 115gr",
+      "caliberMm": 6.528,
+      "bulletWeightGrains": 115,
+      "ballisticCoefficientG1": 0.483,
+      "ballisticCoefficientG7": 0.247
+    },
+    {
+      "id": "berger-elite-hunter-25-133",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 133gr",
+      "caliberMm": 6.528,
+      "bulletWeightGrains": 133,
+      "ballisticCoefficientG1": 0.613,
+      "ballisticCoefficientG7": 0.315
+    },
+    {
+      "id": "berger-lr-hybrid-target-25-135",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 135gr",
+      "caliberMm": 6.528,
+      "bulletWeightGrains": 135,
+      "ballisticCoefficientG1": 0.65,
+      "ballisticCoefficientG7": 0.334
+    },
+    {
+      "id": "berger-bt-target-264-120",
+      "manufacturer": "Berger",
+      "name": "BT Target 120gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 120,
+      "ballisticCoefficientG1": 0.468,
+      "ballisticCoefficientG7": 0.24
+    },
+    {
+      "id": "berger-ar-hybrid-otm-264-130",
+      "manufacturer": "Berger",
+      "name": "AR Hybrid OTM Tactical 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.56,
+      "ballisticCoefficientG7": 0.287
+    },
+    {
+      "id": "berger-vld-hunting-264-130",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.562,
+      "ballisticCoefficientG7": 0.288
+    },
+    {
+      "id": "berger-classic-hunter-264-135",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 135gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 135,
+      "ballisticCoefficientG1": 0.584,
+      "ballisticCoefficientG7": 0.303
+    },
+    {
+      "id": "berger-elite-hunter-264-140",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.606,
+      "ballisticCoefficientG7": 0.31
+    },
+    {
+      "id": "berger-lr-bt-target-264-140",
+      "manufacturer": "Berger",
+      "name": "Long Range BT Target 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.593,
+      "ballisticCoefficientG7": 0.304
+    },
+    {
+      "id": "berger-vld-hunting-264-140",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.6,
+      "ballisticCoefficientG7": 0.307
+    },
+    {
+      "id": "berger-vld-target-264-140",
+      "manufacturer": "Berger",
+      "name": "VLD Target 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.593,
+      "ballisticCoefficientG7": 0.304
+    },
+    {
+      "id": "berger-lr-hybrid-target-264-144",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 144gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 144,
+      "ballisticCoefficientG1": 0.655,
+      "ballisticCoefficientG7": 0.336
+    },
+    {
+      "id": "berger-lr-hybrid-target-264-1535",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 153.5gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 154,
+      "ballisticCoefficientG1": 0.694,
+      "ballisticCoefficientG7": 0.356
+    },
+    {
+      "id": "berger-eol-elite-hunter-264-156",
+      "manufacturer": "Berger",
+      "name": "EOL Elite Hunter 156gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 156,
+      "ballisticCoefficientG1": 0.679,
+      "ballisticCoefficientG7": 0.347
+    },
+    {
+      "id": "berger-classic-hunter-270-130",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 130gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.49,
+      "ballisticCoefficientG7": 0.251
+    },
+    {
+      "id": "berger-vld-hunting-270-130",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 130gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.462,
+      "ballisticCoefficientG7": 0.236
+    },
+    {
+      "id": "berger-classic-hunter-270-140",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 140gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.528,
+      "ballisticCoefficientG7": 0.271
+    },
+    {
+      "id": "berger-vld-hunting-270-140",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 140gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.504,
+      "ballisticCoefficientG7": 0.258
+    },
+    {
+      "id": "berger-vld-hunting-270-150",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 150gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.518,
+      "ballisticCoefficientG7": 0.265
+    },
+    {
+      "id": "berger-eol-elite-hunter-270-170",
+      "manufacturer": "Berger",
+      "name": "EOL Elite Hunter 170gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 170,
+      "ballisticCoefficientG1": 0.662,
+      "ballisticCoefficientG7": 0.339
+    },
+    {
+      "id": "berger-vld-hunting-7mm-140",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 140gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.5,
+      "ballisticCoefficientG7": 0.256
+    },
+    {
+      "id": "berger-classic-hunter-7mm-150",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 150gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.505,
+      "ballisticCoefficientG7": 0.258
+    },
+    {
+      "id": "berger-classic-hunter-7mm-168",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 168gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.566,
+      "ballisticCoefficientG7": 0.29
+    },
+    {
+      "id": "berger-vld-hunting-7mm-168",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 168gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.618,
+      "ballisticCoefficientG7": 0.316
+    },
+    {
+      "id": "berger-vld-target-7mm-168",
+      "manufacturer": "Berger",
+      "name": "VLD Target 168gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.628,
+      "ballisticCoefficientG7": 0.322
+    },
+    {
+      "id": "berger-elite-hunter-7mm-175",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 175gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.656,
+      "ballisticCoefficientG7": 0.336
+    },
+    {
+      "id": "berger-vld-hunting-7mm-180",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 180gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.673,
+      "ballisticCoefficientG7": 0.345
+    },
+    {
+      "id": "berger-vld-target-7mm-180",
+      "manufacturer": "Berger",
+      "name": "VLD Target 180gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.683,
+      "ballisticCoefficientG7": 0.35
+    },
+    {
+      "id": "berger-f-open-hybrid-target-7mm-184",
+      "manufacturer": "Berger",
+      "name": "F-Open Hybrid Target 184gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 184,
+      "ballisticCoefficientG1": 0.695,
+      "ballisticCoefficientG7": 0.356
+    },
+    {
+      "id": "berger-lr-hybrid-target-7mm-190",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 190gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.751,
+      "ballisticCoefficientG7": 0.384
+    },
+    {
+      "id": "berger-eol-elite-hunter-7mm-195",
+      "manufacturer": "Berger",
+      "name": "EOL Elite Hunter 195gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 195,
+      "ballisticCoefficientG1": 0.755,
+      "ballisticCoefficientG7": 0.387
+    },
+    {
+      "id": "berger-vld-hunting-308-155",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 155gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.464,
+      "ballisticCoefficientG7": 0.238
+    },
+    {
+      "id": "berger-fullbore-target-308-1555",
+      "manufacturer": "Berger",
+      "name": "FULLBORE Target 155.5gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 156,
+      "ballisticCoefficientG1": 0.473,
+      "ballisticCoefficientG7": 0.242
+    },
+    {
+      "id": "berger-classic-hunter-308-168",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.489,
+      "ballisticCoefficientG7": 0.251
+    },
+    {
+      "id": "berger-vld-hunting-308-168",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.498,
+      "ballisticCoefficientG7": 0.255
+    },
+    {
+      "id": "berger-vld-target-308-168",
+      "manufacturer": "Berger",
+      "name": "VLD Target 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.507,
+      "ballisticCoefficientG7": 0.26
+    },
+    {
+      "id": "berger-otm-tactical-308-175",
+      "manufacturer": "Berger",
+      "name": "OTM Tactical 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.512,
+      "ballisticCoefficientG7": 0.263
+    },
+    {
+      "id": "berger-vld-hunting-308-175",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.518,
+      "ballisticCoefficientG7": 0.265
+    },
+    {
+      "id": "berger-vld-target-308-175",
+      "manufacturer": "Berger",
+      "name": "VLD Target 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.512,
+      "ballisticCoefficientG7": 0.262
+    },
+    {
+      "id": "berger-elite-hunter-308-180",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 180gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.576,
+      "ballisticCoefficientG7": 0.295
+    },
+    {
+      "id": "berger-classic-hunter-308-185",
+      "manufacturer": "Berger",
+      "name": "Classic Hunter 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.533,
+      "ballisticCoefficientG7": 0.273
+    },
+    {
+      "id": "berger-hybrid-target-308-185",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.576,
+      "ballisticCoefficientG7": 0.295
+    },
+    {
+      "id": "berger-juggernaut-otm-308-185",
+      "manufacturer": "Berger",
+      "name": "Juggernaut OTM Tactical 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.552,
+      "ballisticCoefficientG7": 0.283
+    },
+    {
+      "id": "berger-vld-hunting-308-185",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.558,
+      "ballisticCoefficientG7": 0.286
+    },
+    {
+      "id": "berger-vld-target-308-185",
+      "manufacturer": "Berger",
+      "name": "VLD Target 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.543,
+      "ballisticCoefficientG7": 0.278
+    },
+    {
+      "id": "berger-vld-hunting-308-190",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 190gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.566,
+      "ballisticCoefficientG7": 0.29
+    },
+    {
+      "id": "berger-hybrid-target-308-200-20x",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 200.20X gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.64,
+      "ballisticCoefficientG7": 0.328
+    },
+    {
+      "id": "berger-elite-hunter-308-205",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 205gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 205,
+      "ballisticCoefficientG1": 0.631,
+      "ballisticCoefficientG7": 0.324
+    },
+    {
+      "id": "berger-lr-hybrid-target-308-208",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 208gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 208,
+      "ballisticCoefficientG1": 0.689,
+      "ballisticCoefficientG7": 0.354
+    },
+    {
+      "id": "berger-vld-hunting-308-210",
+      "manufacturer": "Berger",
+      "name": "VLD Hunting 210gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 210,
+      "ballisticCoefficientG1": 0.625,
+      "ballisticCoefficientG7": 0.32
+    },
+    {
+      "id": "berger-vld-target-308-210",
+      "manufacturer": "Berger",
+      "name": "VLD Target 210gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 210,
+      "ballisticCoefficientG1": 0.621,
+      "ballisticCoefficientG7": 0.318
+    },
+    {
+      "id": "berger-hybrid-target-308-215",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 215gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 215,
+      "ballisticCoefficientG1": 0.691,
+      "ballisticCoefficientG7": 0.354
+    },
+    {
+      "id": "berger-lr-hybrid-target-308-220",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 220gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 220,
+      "ballisticCoefficientG1": 0.717,
+      "ballisticCoefficientG7": 0.369
+    },
+    {
+      "id": "berger-hybrid-target-308-230",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 230gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 230,
+      "ballisticCoefficientG1": 0.717,
+      "ballisticCoefficientG7": 0.368
+    },
+    {
+      "id": "berger-hybrid-otm-308-230",
+      "manufacturer": "Berger",
+      "name": "Hybrid OTM Tactical 230gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 230,
+      "ballisticCoefficientG1": 0.71,
+      "ballisticCoefficientG7": 0.364
+    },
+    {
+      "id": "berger-eol-elite-hunter-308-245",
+      "manufacturer": "Berger",
+      "name": "EOL Elite Hunter 245gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 245,
+      "ballisticCoefficientG1": 0.807,
+      "ballisticCoefficientG7": 0.413
+    },
+    {
+      "id": "berger-lr-hybrid-target-308-245",
+      "manufacturer": "Berger",
+      "name": "LR Hybrid Target 245gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 245,
+      "ballisticCoefficientG1": 0.846,
+      "ballisticCoefficientG7": 0.433
+    },
+    {
+      "id": "berger-elite-hunter-338-250",
+      "manufacturer": "Berger",
+      "name": "Elite Hunter 250gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 250,
+      "ballisticCoefficientG1": 0.685,
+      "ballisticCoefficientG7": 0.351
+    },
+    {
+      "id": "berger-hybrid-otm-338-250",
+      "manufacturer": "Berger",
+      "name": "Hybrid OTM Tactical 250gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 250,
+      "ballisticCoefficientG1": 0.682,
+      "ballisticCoefficientG7": 0.349
+    },
+    {
+      "id": "berger-hybrid-otm-338-300",
+      "manufacturer": "Berger",
+      "name": "Hybrid OTM Tactical 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.822,
+      "ballisticCoefficientG7": 0.421
+    },
+    {
+      "id": "berger-elr-match-solid-375-379",
+      "manufacturer": "Berger",
+      "name": "ELR Match Solid 379gr",
+      "caliberMm": 9.525,
+      "bulletWeightGrains": 379,
+      "ballisticCoefficientG1": 0.951,
+      "ballisticCoefficientG7": 0.487
+    },
+    {
+      "id": "berger-hybrid-target-375-410",
+      "manufacturer": "Berger",
+      "name": "Hybrid Target 410gr",
+      "caliberMm": 9.525,
+      "bulletWeightGrains": 410,
+      "ballisticCoefficientG1": 0.928,
+      "ballisticCoefficientG7": 0.475
+    },
+    {
+      "id": "berger-elr-match-solid-375-407",
+      "manufacturer": "Berger",
+      "name": "ELR Match Solid 407gr",
+      "caliberMm": 9.525,
+      "bulletWeightGrains": 407,
+      "ballisticCoefficientG1": 1.022,
+      "ballisticCoefficientG7": 0.523
+    },
+    {
+      "id": "nosler-rdf-224-70",
+      "manufacturer": "Nosler",
+      "name": "RDF 70gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 70,
+      "ballisticCoefficientG1": 0.416,
+      "ballisticCoefficientG7": 0.211
+    },
+    {
+      "id": "nosler-rdf-224-77",
+      "manufacturer": "Nosler",
+      "name": "RDF 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.454,
+      "ballisticCoefficientG7": 0.228
+    },
+    {
+      "id": "nosler-rdf-224-85",
+      "manufacturer": "Nosler",
+      "name": "RDF 85gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 85,
+      "ballisticCoefficientG1": 0.498,
+      "ballisticCoefficientG7": 0.245
+    },
+    {
+      "id": "nosler-rdf-6mm-105",
+      "manufacturer": "Nosler",
+      "name": "RDF 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.571,
+      "ballisticCoefficientG7": 0.28
+    },
+    {
+      "id": "nosler-rdf-6mm-115",
+      "manufacturer": "Nosler",
+      "name": "RDF 115gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 115,
+      "ballisticCoefficientG1": 0.634,
+      "ballisticCoefficientG7": 0.312
+    },
+    {
+      "id": "nosler-rdf-264-130",
+      "manufacturer": "Nosler",
+      "name": "RDF 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.615,
+      "ballisticCoefficientG7": 0.307
+    },
+    {
+      "id": "nosler-rdf-264-140",
+      "manufacturer": "Nosler",
+      "name": "RDF 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.658,
+      "ballisticCoefficientG7": 0.33
+    },
+    {
+      "id": "nosler-rdf-264-150",
+      "manufacturer": "Nosler",
+      "name": "RDF 150gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.67,
+      "ballisticCoefficientG7": 0.342
+    },
+    {
+      "id": "nosler-rdf-7mm-185",
+      "manufacturer": "Nosler",
+      "name": "RDF 185gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.719,
+      "ballisticCoefficientG7": 0.357
+    },
+    {
+      "id": "nosler-rdf-308-168",
+      "manufacturer": "Nosler",
+      "name": "RDF 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.505,
+      "ballisticCoefficientG7": 0.253
+    },
+    {
+      "id": "nosler-rdf-308-175",
+      "manufacturer": "Nosler",
+      "name": "RDF 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.536,
+      "ballisticCoefficientG7": 0.27
+    },
+    {
+      "id": "nosler-rdf-308-210",
+      "manufacturer": "Nosler",
+      "name": "RDF 210gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 210,
+      "ballisticCoefficientG1": 0.707,
+      "ballisticCoefficientG7": 0.348
+    },
+    {
+      "id": "nosler-rdf-338-300",
+      "manufacturer": "Nosler",
+      "name": "RDF 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.826,
+      "ballisticCoefficientG7": 0.415
+    },
+    {
+      "id": "sierra-tmk-224-77",
+      "manufacturer": "Sierra",
+      "name": "Tipped MatchKing 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.42,
+      "ballisticCoefficientG7": 0.21
+    },
+    {
+      "id": "sierra-tmk-308-175",
+      "manufacturer": "Sierra",
+      "name": "Tipped MatchKing 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.545,
+      "ballisticCoefficientG7": 0.267
+    },
+    {
+      "id": "sierra-smk-224-69",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 69gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 69,
+      "ballisticCoefficientG1": 0.301,
+      "ballisticCoefficientG7": 0.169
+    },
+    {
+      "id": "sierra-smk-224-77",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.372,
+      "ballisticCoefficientG7": 0.182
+    },
+    {
+      "id": "sierra-smk-264-140",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 140gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 140,
+      "ballisticCoefficientG1": 0.535,
+      "ballisticCoefficientG7": 0.279
+    },
+    {
+      "id": "sierra-smk-308-190",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 190gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.533,
+      "ballisticCoefficientG7": 0.25
+    },
+    {
+      "id": "sierra-smk-308-168",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.462,
+      "ballisticCoefficientG7": 0.229
+    },
+    {
+      "id": "federal-terminal-ascent-270-136",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 136gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 136,
+      "ballisticCoefficientG1": 0.493,
+      "ballisticCoefficientG7": 0.247
+    },
+    {
+      "id": "federal-terminal-ascent-264-130",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.532,
+      "ballisticCoefficientG7": 0.263
+    },
+    {
+      "id": "federal-terminal-ascent-308-175",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.52,
+      "ballisticCoefficientG7": 0.258
+    },
+    {
+      "id": "federal-terminal-ascent-308-200",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 200gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.608,
+      "ballisticCoefficientG7": 0.304
+    },
+    {
+      "id": "federal-terminal-ascent-7mm-155",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 155gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 155,
+      "ballisticCoefficientG1": 0.586,
+      "ballisticCoefficientG7": 0.3
+    },
+    {
+      "id": "federal-terminal-ascent-308-210",
+      "manufacturer": "Federal",
+      "name": "Terminal Ascent 210gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 210,
+      "ballisticCoefficientG1": 0.663,
+      "ballisticCoefficientG7": 0.341
+    },
+    {
+      "id": "lapua-scenar-l-308-175",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.49,
+      "ballisticCoefficientG7": 0.247
+    },
+    {
+      "id": "lapua-scenar-308-185",
+      "manufacturer": "Lapua",
+      "name": "Scenar 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.482,
+      "ballisticCoefficientG7": 0.242
+    },
+    {
+      "id": "lapua-scenar-338-250",
+      "manufacturer": "Lapua",
+      "name": "Scenar 250gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 250,
+      "ballisticCoefficientG1": 0.648,
+      "ballisticCoefficientG7": 0.322
+    },
+    {
+      "id": "lapua-scenar-l-264-120",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 120gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 120,
+      "ballisticCoefficientG1": 0.497,
+      "ballisticCoefficientG7": 0.246
+    },
+    {
+      "id": "lapua-scenar-264-139",
+      "manufacturer": "Lapua",
+      "name": "Scenar 139gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 139,
+      "ballisticCoefficientG1": 0.578,
+      "ballisticCoefficientG7": 0.29
+    },
+    {
+      "id": "lapua-scenar-l-6mm-105",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 105gr",
+      "caliberMm": 6.172,
+      "bulletWeightGrains": 105,
+      "ballisticCoefficientG1": 0.472,
+      "ballisticCoefficientG7": 0.236
+    },
+    {
+      "id": "norma-golden-target-224-77",
+      "manufacturer": "Norma",
+      "name": "Golden Target 77gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 77,
+      "ballisticCoefficientG1": 0.372,
+      "ballisticCoefficientG7": 0.185
+    },
+    {
+      "id": "norma-golden-target-308-175",
+      "manufacturer": "Norma",
+      "name": "Golden Target 175gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.547,
+      "ballisticCoefficientG7": 0.283
+    },
+    {
+      "id": "sierra-smk-338-300",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.768,
+      "ballisticCoefficientG7": 0.384
+    },
+    {
+      "id": "norma-golden-target-264-143",
+      "manufacturer": "Norma",
+      "name": "Golden Target 143gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 143,
+      "ballisticCoefficientG1": 0.635,
+      "ballisticCoefficientG7": 0.321
+    },
+    {
+      "id": "norma-golden-target-264-130",
+      "manufacturer": "Norma",
+      "name": "Golden Target 130gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 130,
+      "ballisticCoefficientG1": 0.548,
+      "ballisticCoefficientG7": 0.294
+    },
+    {
+      "id": "nosler-ablr-264-142",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 142gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 142,
+      "ballisticCoefficientG1": 0.625,
+      "ballisticCoefficientG7": 0.315
+    },
+    {
+      "id": "nosler-ablr-277-165",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 165gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 165,
+      "ballisticCoefficientG1": 0.62,
+      "ballisticCoefficientG7": 0.312
+    },
+    {
+      "id": "nosler-ablr-270-150",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 150gr",
+      "caliberMm": 7.036,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.591,
+      "ballisticCoefficientG7": 0.298
+    },
+    {
+      "id": "nosler-ablr-7mm-175",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 175gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 175,
+      "ballisticCoefficientG1": 0.653,
+      "ballisticCoefficientG7": 0.326
+    },
+    {
+      "id": "nosler-ablr-308-210",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 210gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 210,
+      "ballisticCoefficientG1": 0.661,
+      "ballisticCoefficientG7": 0.333
+    },
+    {
+      "id": "nosler-ablr-308-168",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 168gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.525,
+      "ballisticCoefficientG7": 0.265
+    },
+    {
+      "id": "nosler-ablr-308-190",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 190gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 190,
+      "ballisticCoefficientG1": 0.597,
+      "ballisticCoefficientG7": 0.301
+    },
+    {
+      "id": "nosler-ablr-264-129",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 129gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 129,
+      "ballisticCoefficientG1": 0.53,
+      "ballisticCoefficientG7": 0.267
+    },
+    {
+      "id": "nosler-ablr-7mm-168",
+      "manufacturer": "Nosler",
+      "name": "AccuBond Long Range 168gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 168,
+      "ballisticCoefficientG1": 0.616,
+      "ballisticCoefficientG7": 0.31
+    },
+    {
+      "id": "sierra-smk-224-90",
+      "manufacturer": "Sierra",
+      "name": "MatchKing 90gr",
+      "caliberMm": 5.696,
+      "bulletWeightGrains": 90,
+      "ballisticCoefficientG1": 0.563,
+      "ballisticCoefficientG7": 0.274
     }
   ]
 }
