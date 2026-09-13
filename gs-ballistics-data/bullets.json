@@ -1,0 +1,13 @@
+{
+  "bullets": [
+    {
+      "id": "lapua-scenar-l-136",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 136gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 136,
+      "ballisticCoefficientG1": 0.578,
+      "ballisticCoefficientG7": 0.290
+    }
+  ]
+}
