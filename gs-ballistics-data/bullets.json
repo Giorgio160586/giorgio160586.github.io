@@ -2060,6 +2060,15 @@
       "bulletWeightGrains": 130,
       "ballisticCoefficientG1": 0.44,
       "ballisticCoefficientG7": 0.225
+    },
+    {
+      "id": "cheytac-match-408-419",
+      "manufacturer": "CheyTac",
+      "name": "419gr Match (Balanced Flight Projectile)",
+      "caliberMm": 10.363,
+      "bulletWeightGrains": 419,
+      "ballisticCoefficientG1": 0.949,
+      "ballisticCoefficientG7": 0.0
     }
   ]
 }
