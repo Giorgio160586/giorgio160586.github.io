@@ -191,19 +191,20 @@
 							<div class="case-study-intro">
 								<p class="mb-4">Un tiratore a lunga distanza non porta in campo una stima: porta una tabella balistica verificata. GS Ballistics nasce con questo unico scopo — dati calibro, peso e coefficiente balistico del proiettile, velocità alla volata e alzo dell'ottica, calcola per ogni distanza del tuo poligono il dato di elevazione (in MOA o mrad) da impostare in torretta, affiancando al valore calcolato quello realmente verificato al tiro, distanza per distanza.</p>
 
+								<h4 class="mt-4">La balistica</h4>
 								<p class="mb-4">Entro qualche centinaio di metri, quasi ogni tabella già pronta basta. Oltre i mille metri, invece, la traiettoria si incurva sempre più rapidamente e anche un piccolo errore su un solo dato — velocità, coefficiente balistico, condizioni atmosferiche — diventa un errore reale d'alzo sul bersaglio: solo un motore che integra davvero la traiettoria, con dati sempre aggiornati, permette di andare a bersaglio già ai primi colpi. Vale il principio <em>good input, good output</em>: per quanto sofisticato, nessun software rende affidabile un dato inserito approssimativo. GS Ballistics è pensato per questo — per prendere sul serio sia il calcolo sia i dati che gli si danno in pasto.</p>
 
-								<p class="mb-4">Il motore balistico è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità lungo tutta la traiettoria, con le tabelle di drag standard G1 e G7 (la storica curva Ingalls/McCoy) indicizzate sul numero di Mach — non un regolo calcolatore o una formula approssimata. Densità dell'aria e velocità del suono vengono derivate in tempo reale da temperatura e pressione realmente misurate, invece di assumere sempre l'atmosfera standard. Il motore è coperto da test di regressione automatici (JUnit) che verificano l'alzo calcolato contro casi reali noti.</p>
+								<p class="mb-4">Il motore è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità lungo tutta la traiettoria, con le tabelle di drag standard G1 e G7 (la storica curva Ingalls/McCoy) indicizzate sul numero di Mach — non un regolo calcolatore o una formula approssimata. Densità dell'aria e velocità del suono vengono derivate in tempo reale da temperatura e pressione realmente misurate, invece di assumere sempre l'atmosfera standard.</p>
 
-								<p class="mb-4">L'app include una libreria pubblica di oltre 200 proiettili (dati di fabbrica dei principali produttori), profili munizione e poligono multipli con la correzione verificata al tiro registrata per ogni combinazione arma/distanza — un data book digitale sempre a portata di mano — backup ed esportazione dati, e supporto completo bilingue italiano/inglese.</p>
+								<p class="mb-4">Include una libreria pubblica di oltre 200 proiettili (dati di fabbrica dei principali produttori), profili munizione e poligono multipli, e per ogni combinazione arma/distanza registra la correzione realmente verificata al tiro accanto a quella calcolata — un data book digitale sempre a portata di mano.</p>
 
-							<p class="mb-4">L'interfaccia si adatta anche a schermi più grandi: su tablet, ruotando in orizzontale, passa automaticamente a un layout affiancato che sfrutta lo spazio extra invece di limitarsi a ingrandire quello pensato per il telefono.</p>
-
-								<h4 class="mt-4">Stack tecnico</h4>
+								<h4 class="mt-4">Lo sviluppo</h4>
 								<ul class="tech-stack list-inline">
 									<li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/kotlin.svg" alt="Kotlin"></li>
 								</ul>
-								<p class="mb-2">Kotlin, Jetpack Compose (Material 3), architettura a vertical slice con moduli separati per il motore balistico puro e l'app Android, principi SOLID, CI/CD via GitHub Actions per build firmate e distribuzione automatica.</p>
+								<p class="mb-4">Kotlin e Jetpack Compose (Material 3), con architettura a vertical slice: il motore balistico vive in un modulo Kotlin puro, separato dall'app Android, e ha una sua suite di test di regressione automatici (JUnit) che verificano l'alzo calcolato contro casi reali noti — non basta che il codice compili, deve continuare a restituire i numeri giusti a ogni modifica. Principi SOLID, CI/CD via GitHub Actions per build firmate e distribuzione automatica a ogni push.</p>
+
+								<p class="mb-2">L'interfaccia si adatta anche a schermi più grandi: su tablet, ruotando in orizzontale, passa automaticamente a un layout affiancato che sfrutta lo spazio extra invece di limitarsi a ingrandire quello pensato per il telefono. Backup ed esportazione dati, e supporto completo bilingue italiano/inglese.</p>
 							</div>
 
 						</div><!--//intro-holder-->
