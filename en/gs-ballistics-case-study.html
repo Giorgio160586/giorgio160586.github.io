@@ -37,6 +37,45 @@
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
+	<style>
+		.gs-gallery { position: relative; padding: 0 44px; }
+		.gs-gallery-scroll {
+			display: flex;
+			gap: 1rem;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			padding-bottom: 0.25rem;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+		}
+		.gs-gallery-scroll::-webkit-scrollbar { display: none; }
+		.gs-gallery-item { flex: 0 0 calc(33.333% - 0.667rem); scroll-snap-align: start; }
+		@media (max-width: 768px) { .gs-gallery-item { flex: 0 0 calc(50% - 0.5rem); } }
+		@media (max-width: 480px) { .gs-gallery-item { flex: 0 0 100%; } }
+		@media (max-width: 576px) { .gs-gallery { padding: 0 36px; } }
+		.gs-gallery-arrow {
+			position: absolute;
+			top: 40%;
+			transform: translateY(-50%);
+			z-index: 2;
+			background: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			border: none;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			font-size: 1.1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.gs-gallery-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+		.gs-gallery-prev { left: 0; }
+		.gs-gallery-next { right: 0; }
+	</style>
+
 </head>
 
 
@@ -118,19 +157,45 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="row justify-content-center g-3 mb-4">
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/home.png" alt="Home screen with distance dial"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ballistic-table.png" alt="Ballistic table"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/chart.png" alt="Calculated vs real elevation chart"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-list.png" alt="Ammo list"></div>
+							<div class="gs-gallery mb-4">
+								<button type="button" class="gs-gallery-arrow gs-gallery-prev" aria-label="Previous screenshots" onclick="document.getElementById('gsBallisticsGallery').scrollBy({left: -document.getElementById('gsBallisticsGallery').clientWidth, behavior: 'smooth'})">&#10094;</button>
+								<div class="gs-gallery-scroll" id="gsBallisticsGallery">
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/home.png" alt="Home screen with distance dial">
+										<p class="text-center text-muted small mt-2 mb-0">Home — real-time elevation with a verified field correction</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ballistic-table.png" alt="Ballistic table">
+										<p class="text-center text-muted small mt-2 mb-0">Ballistic table for every distance in the range</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/chart.png" alt="Calculated vs real elevation chart">
+										<p class="text-center text-muted small mt-2 mb-0">Calculated vs. field-verified elevation chart</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-list.png" alt="Ammo list">
+										<p class="text-center text-muted small mt-2 mb-0">Bullet library with factory data</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-edit.png" alt="Editing the 136gr load">
+										<p class="text-center text-muted small mt-2 mb-0">Editing a bullet load (6.5×47 Lapua Scenar-L 136gr)</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/settings.png" alt="Settings and backup">
+										<p class="text-center text-muted small mt-2 mb-0">Settings, measurement units and data backup</p>
+									</div>
+								</div>
+								<button type="button" class="gs-gallery-arrow gs-gallery-next" aria-label="Next screenshots" onclick="document.getElementById('gsBallisticsGallery').scrollBy({left: document.getElementById('gsBallisticsGallery').clientWidth, behavior: 'smooth'})">&#10095;</button>
 							</div>
 
 							<div class="case-study-intro">
 								<p class="mb-4">GS Ballistics is a native Android app for long-range ballistic calculation: given caliber, bullet weight, ballistic coefficient and muzzle velocity, it computes the elevation (in MOA or mrad) to dial in at any distance, with customizable per-range distance tables and field-verified corrections.</p>
 
-								<p class="mb-4">The ballistic engine is a point-mass solver that numerically integrates air drag and gravity, using the standard G1 and G7 drag tables (the historical Ingalls/McCoy curve) indexed by Mach number — not a simplified approximate formula. Air density and speed of sound are derived in real time from user-entered temperature and pressure via the ideal gas law, instead of always assuming standard atmosphere. The engine is covered by automated tests (JUnit) that check both elevation values against real-world cases and the integrity of the drag tables.</p>
+								<p class="mb-4">The ballistic engine is a point-mass solver that numerically integrates air drag and gravity, using the standard G1 and G7 drag tables (the historical Ingalls/McCoy curve) indexed by Mach number — not a simplified approximate formula. Air density and speed of sound are derived in real time from user-entered temperature and pressure via the ideal gas law, instead of always assuming standard atmosphere. The engine is covered by automated regression tests (JUnit) that check the calculated elevation against known real-world cases.</p>
 
 								<p class="mb-4">The app includes a public library of 200+ bullets (factory data from major manufacturers), multiple weapon and range profiles with corrections verified per weapon/distance combination, data backup and export, and full Italian/English bilingual support.</p>
+
+							<p class="mb-4">The interface also adapts to larger screens: on a tablet, rotating to landscape switches to a side-by-side layout that makes use of the extra space instead of just stretching the phone layout.</p>
 
 								<h4 class="mt-4">Tech Stack</h4>
 								<ul class="tech-stack list-inline">

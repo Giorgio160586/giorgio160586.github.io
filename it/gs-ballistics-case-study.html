@@ -37,6 +37,45 @@
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
+	<style>
+		.gs-gallery { position: relative; padding: 0 44px; }
+		.gs-gallery-scroll {
+			display: flex;
+			gap: 1rem;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			padding-bottom: 0.25rem;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+		}
+		.gs-gallery-scroll::-webkit-scrollbar { display: none; }
+		.gs-gallery-item { flex: 0 0 calc(33.333% - 0.667rem); scroll-snap-align: start; }
+		@media (max-width: 768px) { .gs-gallery-item { flex: 0 0 calc(50% - 0.5rem); } }
+		@media (max-width: 480px) { .gs-gallery-item { flex: 0 0 100%; } }
+		@media (max-width: 576px) { .gs-gallery { padding: 0 36px; } }
+		.gs-gallery-arrow {
+			position: absolute;
+			top: 40%;
+			transform: translateY(-50%);
+			z-index: 2;
+			background: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			border: none;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			font-size: 1.1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.gs-gallery-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+		.gs-gallery-prev { left: 0; }
+		.gs-gallery-next { right: 0; }
+	</style>
+
 </head>
 
 
@@ -118,19 +157,45 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="row justify-content-center g-3 mb-4">
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/home.png" alt="Schermata Home con cerchio distanza"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ballistic-table.png" alt="Tabella balistica"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/chart.png" alt="Grafico alzo calcolato vs reale"></div>
-								<div class="col-6 col-md-3"><img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-list.png" alt="Elenco munizioni"></div>
+							<div class="gs-gallery mb-4">
+								<button type="button" class="gs-gallery-arrow gs-gallery-prev" aria-label="Immagini precedenti" onclick="document.getElementById('gsBallisticsGallery').scrollBy({left: -document.getElementById('gsBallisticsGallery').clientWidth, behavior: 'smooth'})">&#10094;</button>
+								<div class="gs-gallery-scroll" id="gsBallisticsGallery">
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/home.png" alt="Schermata Home con cerchio distanza">
+										<p class="text-center text-muted small mt-2 mb-0">Home — alzo calcolato in tempo reale con correzione verificata</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ballistic-table.png" alt="Tabella balistica">
+										<p class="text-center text-muted small mt-2 mb-0">Tabella balistica per ogni distanza del poligono</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/chart.png" alt="Grafico alzo calcolato vs reale">
+										<p class="text-center text-muted small mt-2 mb-0">Grafico alzo calcolato vs. verificato sul campo</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-list.png" alt="Elenco munizioni">
+										<p class="text-center text-muted small mt-2 mb-0">Libreria munizioni con dati di fabbrica</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/ammo-edit.png" alt="Modifica munizione 136gr">
+										<p class="text-center text-muted small mt-2 mb-0">Modifica di una munizione (6.5×47 Lapua Scenar-L 136gr)</p>
+									</div>
+									<div class="gs-gallery-item">
+										<img class="img-fluid rounded" src="../assets/images/projects/gs-ballistics/settings.png" alt="Impostazioni e backup">
+										<p class="text-center text-muted small mt-2 mb-0">Impostazioni, unità di misura e backup dati</p>
+									</div>
+								</div>
+								<button type="button" class="gs-gallery-arrow gs-gallery-next" aria-label="Immagini successive" onclick="document.getElementById('gsBallisticsGallery').scrollBy({left: document.getElementById('gsBallisticsGallery').clientWidth, behavior: 'smooth'})">&#10095;</button>
 							</div>
 
 							<div class="case-study-intro">
 								<p class="mb-4">GS Ballistics è un'app Android nativa per il calcolo balistico nel tiro a lunga distanza: dato calibro, peso, coefficiente balistico e velocità iniziale del proiettile, calcola l'alzo (in MOA o mrad) da applicare a qualunque distanza, con tabelle di distanza personalizzabili per poligono e correzioni verificate sul campo.</p>
 
-								<p class="mb-4">Il motore balistico è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità, con le tabelle di drag standard G1 e G7 (curva storica Ingalls/McCoy) indicizzate sul numero di Mach — non una semplice formula approssimata. Densità dell'aria e velocità del suono sono derivate in tempo reale da temperatura e pressione inserite dall'utente tramite la legge dei gas ideali, invece di assumere sempre l'atmosfera standard. Il motore è coperto da test automatici (JUnit) che verificano sia i valori di alzo su casi reali sia l'integrità delle tabelle di drag.</p>
+								<p class="mb-4">Il motore balistico è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità, con le tabelle di drag standard G1 e G7 (curva storica Ingalls/McCoy) indicizzate sul numero di Mach — non una semplice formula approssimata. Densità dell'aria e velocità del suono sono derivate in tempo reale da temperatura e pressione inserite dall'utente tramite la legge dei gas ideali, invece di assumere sempre l'atmosfera standard. Il motore è coperto da test di regressione automatici (JUnit) che verificano l'alzo calcolato contro casi reali noti.</p>
 
 								<p class="mb-4">L'app include una libreria pubblica di oltre 200 proiettili (dati di fabbrica dei principali produttori), profili munizione e poligono multipli con correzioni verificate per singola combinazione arma/distanza, backup ed esportazione dati, e supporto completo bilingue italiano/inglese.</p>
+
+							<p class="mb-4">L'interfaccia si adatta anche a schermi più grandi: su tablet, ruotando in orizzontale, passa automaticamente a un layout affiancato che sfrutta lo spazio extra invece di limitarsi a ingrandire quello pensato per il telefono.</p>
 
 								<h4 class="mt-4">Stack tecnico</h4>
 								<ul class="tech-stack list-inline">
