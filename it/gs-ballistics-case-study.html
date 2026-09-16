@@ -189,22 +189,24 @@
 							</div>
 
 							<div class="case-study-intro">
-								<p class="mb-4">Un tiratore a lunga distanza non porta in campo una stima: porta una tabella balistica verificata. GS Ballistics nasce con questo unico scopo — dati calibro, peso e coefficiente balistico del proiettile, velocità alla volata e alzo dell'ottica, calcola per ogni distanza del tuo poligono il dato di elevazione (in MOA o mrad) da impostare in torretta, affiancando al valore calcolato quello realmente verificato al tiro, distanza per distanza.</p>
+								<p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta (in MOA o mrad) per ogni distanza del poligono, e affianca al valore calcolato quello realmente verificato al tiro — una tabella balistica digitale, non una stima.</p>
 
-								<h4 class="mt-4">La balistica</h4>
-								<p class="mb-4">Entro qualche centinaio di metri, quasi ogni tabella già pronta basta. Oltre i mille metri, invece, la traiettoria si incurva sempre più rapidamente e anche un piccolo errore su un solo dato — velocità, coefficiente balistico, condizioni atmosferiche — diventa un errore reale d'alzo sul bersaglio: solo un motore che integra davvero la traiettoria, con dati sempre aggiornati, permette di andare a bersaglio già ai primi colpi. Vale il principio <em>good input, good output</em>: per quanto sofisticato, nessun software rende affidabile un dato inserito approssimativo. GS Ballistics è pensato per questo — per prendere sul serio sia il calcolo sia i dati che gli si danno in pasto.</p>
-
-								<p class="mb-4">Il motore è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità lungo tutta la traiettoria, con le tabelle di drag standard G1 e G7 (la storica curva Ingalls/McCoy) indicizzate sul numero di Mach — non un regolo calcolatore o una formula approssimata. Densità dell'aria e velocità del suono vengono derivate in tempo reale da temperatura e pressione realmente misurate, invece di assumere sempre l'atmosfera standard.</p>
-
-								<p class="mb-4">Include una libreria pubblica di oltre 200 proiettili (dati di fabbrica dei principali produttori), profili munizione e poligono multipli, e per ogni combinazione arma/distanza registra la correzione realmente verificata al tiro accanto a quella calcolata — un data book digitale sempre a portata di mano.</p>
+								<h4 class="mt-4">La balistica, in breve</h4>
+								<p class="mb-4">Il motore è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità, con le tabelle di drag standard G1 e G7 indicizzate sul numero di Mach — non una formula approssimata. Include una libreria di oltre 200 proiettili, profili arma/poligono multipli e un log delle correzioni verificate sul campo.</p>
 
 								<h4 class="mt-4">Lo sviluppo</h4>
-								<ul class="tech-stack list-inline">
-									<li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/kotlin.svg" alt="Kotlin"></li>
-								</ul>
-								<p class="mb-4">Kotlin e Jetpack Compose (Material 3), con architettura a vertical slice: il motore balistico vive in un modulo Kotlin puro, separato dall'app Android, e ha una sua suite di test di regressione automatici (JUnit) che verificano l'alzo calcolato contro casi reali noti — non basta che il codice compili, deve continuare a restituire i numeri giusti a ogni modifica. Principi SOLID, CI/CD via GitHub Actions per build firmate e distribuzione automatica a ogni push.</p>
 
-								<p class="mb-2">L'interfaccia si adatta anche a schermi più grandi: su tablet, ruotando in orizzontale, passa automaticamente a un layout affiancato che sfrutta lo spazio extra invece di limitarsi a ingrandire quello pensato per il telefono. Backup ed esportazione dati, e supporto completo bilingue italiano/inglese.</p>
+								<div style="background-color: #141414; border-left: 4px solid #1a8fe3; border-radius: 6px; padding: 1rem 1.25rem;" class="mb-4">
+									<strong style="color: #FFFFFF;">Sviluppata interamente con Claude Code.</strong> Dall'architettura al motore di calcolo, dall'interfaccia al bug-fixing, fino alla pubblicazione su Google Play: ogni riga di codice, ogni decisione tecnica e ogni sessione di test su dispositivo reale sono state guidate da me in collaborazione diretta con Claude, come sviluppatore che dirige, rivede e valida il lavoro — non un tool che scrive da solo senza supervisione.
+								</div>
+
+								<p class="mb-4"><strong>Architettura.</strong> Kotlin e Jetpack Compose (Material 3), organizzati a vertical slice: ogni funzionalità (home, armi, poligoni, libreria munizioni, impostazioni...) è un modulo autosufficiente con la propria UI, stato e persistenza, invece di essere spalmata su layer condivisi. Il motore balistico vive isolato in un modulo Kotlin puro, senza alcuna dipendenza da Android — compila e gira anche fuori dall'app, il che lo rende testabile in isolamento in pochi secondi. Applicando i principi SOLID, ad esempio il calcolo del drag (G1 vs G7) è stato astratto dietro un'interfaccia comune invece di uno <code>switch</code> hardcoded, così aggiungere un nuovo modello di resistenza non richiede toccare il solutore esistente (Open/Closed Principle).</p>
+
+								<p class="mb-4"><strong>Test e correttezza.</strong> Il modulo balistico ha una sua suite di test di regressione (JUnit) pinnati su casi reali noti, eseguibili in pochi secondi senza dispositivo o emulatore — non basta che il codice compili, deve continuare a restituire i numeri giusti a ogni modifica. Un esempio concreto emerso durante lo sviluppo: la schermata Home e la Tabella balistica calcolavano la stessa correzione arrotondando in due modi leggermente diversi, risultando occasionalmente in un click di differenza tra le due — un bug sottile, individuato confrontando i due percorsi di calcolo riga per riga e risolto allineandoli alla stessa base di arrotondamento.</p>
+
+								<p class="mb-4"><strong>CI/CD.</strong> GitHub Actions builda automaticamente APK diretto e AAB firmato per Play Store a ogni push, crea una GitHub Release versionata e pubblica l'ultimo APK su questo stesso sito per la distribuzione diretta — nessun passaggio manuale tra scrivere codice e avere una build installabile pronta.</p>
+
+								<p class="mb-2"><strong>Interfaccia.</strong> Layout adattivo: su tablet, ruotando in orizzontale, passa automaticamente a una disposizione affiancata invece di limitarsi a ingrandire quello pensato per il telefono (rilevato dall'orientamento reale dello schermo, non solo dalla larghezza, per evitare spazi vuoti in verticale). Splash screen personalizzato, temi chiaro/scuro con palette coerenti, backup/esportazione dati, supporto bilingue italiano/inglese.</p>
 							</div>
 
 						</div><!--//intro-holder-->
