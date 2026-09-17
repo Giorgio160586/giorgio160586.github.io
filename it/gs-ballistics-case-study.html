@@ -189,24 +189,15 @@
 							</div>
 
 							<div class="case-study-intro">
-								<p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta (in MOA o mrad) per ogni distanza del poligono, e affianca al valore calcolato quello realmente verificato al tiro — una tabella balistica digitale, non una stima.</p>
-
-								<h4 class="mt-4">La balistica, in breve</h4>
-								<p class="mb-4">Il motore è un solutore a massa puntiforme che integra numericamente resistenza dell'aria e gravità, con le tabelle di drag standard G1 e G7 indicizzate sul numero di Mach — non una formula approssimata. Include una libreria di oltre 200 proiettili, profili arma/poligono multipli e un log delle correzioni verificate sul campo.</p>
+								<p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta, in MOA o mrad, e permette di salvare le correzioni verificate al tiro per ogni distanza, confrontandole automaticamente con i valori calcolati. <strong>Sviluppata interamente con Claude Code <img src="../assets/images/tech-icons/claude.svg" alt="Claude" style="height: 0.85em; vertical-align: baseline;"></strong>, che ha scritto ogni riga di codice, dal motore di calcolo all'interfaccia, fino al bug-fixing; l'architettura, le soluzioni tecniche e le decisioni di design le ho definite io, così come la validazione di ogni funzionalità su dispositivo reale.</p>
 
 								<h4 class="mt-4">Lo sviluppo</h4>
 
-								<div style="background-color: #141414; border-left: 4px solid #1a8fe3; border-radius: 6px; padding: 1rem 1.25rem;" class="mb-4">
-									<strong style="color: #FFFFFF;">Sviluppata interamente con Claude Code.</strong> Dall'architettura al motore di calcolo, dall'interfaccia al bug-fixing, fino alla pubblicazione su Google Play: ogni riga di codice, ogni decisione tecnica e ogni sessione di test su dispositivo reale sono state guidate da me in collaborazione diretta con Claude, come sviluppatore che dirige, rivede e valida il lavoro — non un tool che scrive da solo senza supervisione.
-								</div>
-
 								<p class="mb-4"><strong>Architettura.</strong> Kotlin e Jetpack Compose (Material 3), organizzati a vertical slice: ogni funzionalità (home, armi, poligoni, libreria munizioni, impostazioni...) è un modulo autosufficiente con la propria UI, stato e persistenza, invece di essere spalmata su layer condivisi. Il motore balistico vive isolato in un modulo Kotlin puro, senza alcuna dipendenza da Android — compila e gira anche fuori dall'app, il che lo rende testabile in isolamento in pochi secondi. Applicando i principi SOLID, ad esempio il calcolo del drag (G1 vs G7) è stato astratto dietro un'interfaccia comune invece di uno <code>switch</code> hardcoded, così aggiungere un nuovo modello di resistenza non richiede toccare il solutore esistente (Open/Closed Principle).</p>
 
-								<p class="mb-4"><strong>Test e correttezza.</strong> Il modulo balistico ha una sua suite di test di regressione (JUnit) pinnati su casi reali noti, eseguibili in pochi secondi senza dispositivo o emulatore — non basta che il codice compili, deve continuare a restituire i numeri giusti a ogni modifica. Un esempio concreto emerso durante lo sviluppo: la schermata Home e la Tabella balistica calcolavano la stessa correzione arrotondando in due modi leggermente diversi, risultando occasionalmente in un click di differenza tra le due — un bug sottile, individuato confrontando i due percorsi di calcolo riga per riga e risolto allineandoli alla stessa base di arrotondamento.</p>
+								<p class="mb-4"><strong>Test e correttezza.</strong> Il modulo balistico ha una sua suite di test di regressione (JUnit) pinnati su casi reali noti, eseguibili in pochi secondi senza dispositivo o emulatore — non basta che il codice compili, deve continuare a restituire i numeri giusti a ogni modifica.</p>
 
-								<p class="mb-4"><strong>CI/CD.</strong> GitHub Actions builda automaticamente APK diretto e AAB firmato per Play Store a ogni push, crea una GitHub Release versionata e pubblica l'ultimo APK su questo stesso sito per la distribuzione diretta — nessun passaggio manuale tra scrivere codice e avere una build installabile pronta.</p>
-
-								<p class="mb-2"><strong>Interfaccia.</strong> Layout adattivo: su tablet, ruotando in orizzontale, passa automaticamente a una disposizione affiancata invece di limitarsi a ingrandire quello pensato per il telefono (rilevato dall'orientamento reale dello schermo, non solo dalla larghezza, per evitare spazi vuoti in verticale). Splash screen personalizzato, temi chiaro/scuro con palette coerenti, backup/esportazione dati, supporto bilingue italiano/inglese.</p>
+								<p class="mb-2"><strong>CI/CD.</strong> GitHub Actions builda automaticamente APK diretto e AAB firmato per Play Store a ogni push, crea una GitHub Release versionata e pubblica l'ultimo APK su questo stesso sito per la distribuzione diretta — nessun passaggio manuale tra scrivere codice e avere una build installabile pronta.</p>
 							</div>
 
 						</div><!--//intro-holder-->
