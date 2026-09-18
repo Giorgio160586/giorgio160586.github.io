@@ -108,6 +108,14 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/logexpress-case-study.html"/>
   </url>
   <url>
+    <loc>https://giorgio160586.github.io/en/gs-ballistics-case-study.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/gs-ballistics-case-study.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/gs-ballistics-case-study.html"/>
+  </url>
+  <url>
     <loc>https://giorgio160586.github.io/en/webprice-case-study.html</loc>
     <lastmod>2025-09-27</lastmod>
     <changefreq>yearly</changefreq>
