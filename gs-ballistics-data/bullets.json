@@ -6,8 +6,8 @@
       "name": "Scenar-L 136gr",
       "caliberMm": 6.706,
       "bulletWeightGrains": 136,
-      "ballisticCoefficientG1": 0.578,
-      "ballisticCoefficientG7": 0.29
+      "ballisticCoefficientG1": 0.545,
+      "ballisticCoefficientG7": 0.274
     },
     {
       "id": "lapua-scenar-l-224-69",
