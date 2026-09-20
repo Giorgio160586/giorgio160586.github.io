@@ -1756,6 +1756,114 @@
       "ballisticCoefficientG7": 0.236
     },
     {
+      "id": "lapua-scenar-264-100",
+      "manufacturer": "Lapua",
+      "name": "Scenar 100gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 100,
+      "ballisticCoefficientG1": 0.424,
+      "ballisticCoefficientG7": 0.212
+    },
+    {
+      "id": "lapua-scenar-264-108",
+      "manufacturer": "Lapua",
+      "name": "Scenar 108gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 108,
+      "ballisticCoefficientG1": 0.465,
+      "ballisticCoefficientG7": 0.231
+    },
+    {
+      "id": "lapua-scenar-l-7mm-150",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 150gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 150,
+      "ballisticCoefficientG1": 0.526,
+      "ballisticCoefficientG7": 0.26
+    },
+    {
+      "id": "lapua-scenar-l-7mm-180",
+      "manufacturer": "Lapua",
+      "name": "Scenar-L 180gr",
+      "caliberMm": 7.214,
+      "bulletWeightGrains": 180,
+      "ballisticCoefficientG1": 0.661,
+      "ballisticCoefficientG7": 0.332
+    },
+    {
+      "id": "lapua-scenar-338-300",
+      "manufacturer": "Lapua",
+      "name": "Scenar 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.736,
+      "ballisticCoefficientG7": 0.368
+    },
+    {
+      "id": "lapua-fmjbt-264-144",
+      "manufacturer": "Lapua",
+      "name": "FMJBT B343 144gr",
+      "caliberMm": 6.706,
+      "bulletWeightGrains": 144,
+      "ballisticCoefficientG1": 0.636,
+      "ballisticCoefficientG7": 0
+    },
+    {
+      "id": "lapua-lock-base-308-170",
+      "manufacturer": "Lapua",
+      "name": "Lock Base 170gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 170,
+      "ballisticCoefficientG1": 0.498,
+      "ballisticCoefficientG7": 0.249
+    },
+    {
+      "id": "lapua-d46-308-185",
+      "manufacturer": "Lapua",
+      "name": "D46 185gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 185,
+      "ballisticCoefficientG1": 0.506,
+      "ballisticCoefficientG7": 0.254
+    },
+    {
+      "id": "lapua-subsonic-308-200",
+      "manufacturer": "Lapua",
+      "name": "Subsonic 200gr",
+      "caliberMm": 7.823,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.518,
+      "ballisticCoefficientG7": 0.235
+    },
+    {
+      "id": "lapua-d166-311-200",
+      "manufacturer": "Lapua",
+      "name": "D166 200gr",
+      "caliberMm": 7.874,
+      "bulletWeightGrains": 200,
+      "ballisticCoefficientG1": 0.448,
+      "ballisticCoefficientG7": 0.224
+    },
+    {
+      "id": "lapua-lock-base-338-250",
+      "manufacturer": "Lapua",
+      "name": "Lock Base 250gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 250,
+      "ballisticCoefficientG1": 0.625,
+      "ballisticCoefficientG7": 0.31
+    },
+    {
+      "id": "lapua-lock-base-338-300",
+      "manufacturer": "Lapua",
+      "name": "Lock Base 300gr",
+      "caliberMm": 8.585,
+      "bulletWeightGrains": 300,
+      "ballisticCoefficientG1": 0.765,
+      "ballisticCoefficientG7": 0.383
+    },
+    {
       "id": "norma-golden-target-224-77",
       "manufacturer": "Norma",
       "name": "Golden Target 77gr",
