@@ -7,6 +7,46 @@
       "angularUnit": "MOA",
       "clickValue": "0.25",
       "elevationTravel": "50"
+    },
+    {
+      "id": "nightforce-atacr-5-25x56-f1",
+      "manufacturer": "Nightforce",
+      "name": "ATACR 5-25x56 F1",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "35"
+    },
+    {
+      "id": "vortex-razor-hd-gen2-4-5-27x56",
+      "manufacturer": "Vortex",
+      "name": "Razor HD Gen II 4.5-27x56",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "33"
+    },
+    {
+      "id": "schmidt-bender-pmii-5-25x56",
+      "manufacturer": "Schmidt & Bender",
+      "name": "PM II 5-25x56",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "27"
+    },
+    {
+      "id": "leupold-mark5hd-5-25x56",
+      "manufacturer": "Leupold",
+      "name": "Mark 5HD 5-25x56",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "34.9"
+    },
+    {
+      "id": "kahles-k624i-6-24x56",
+      "manufacturer": "Kahles",
+      "name": "K624i 6-24x56",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "25.5"
     }
   ]
 }
