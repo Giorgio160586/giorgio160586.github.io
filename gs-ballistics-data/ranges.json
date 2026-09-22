@@ -1,0 +1,9 @@
+{
+  "ranges": [
+    {
+      "id": "default-range",
+      "name": "Default range",
+      "distancesM": [100, 200, 270, 350, 400, 450, 500, 600, 620, 700, 800, 1030]
+    }
+  ]
+}
