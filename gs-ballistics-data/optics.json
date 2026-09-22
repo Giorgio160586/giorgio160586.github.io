@@ -3,7 +3,7 @@
     {
       "id": "sightron-siii-plr-10-50x60-28010",
       "manufacturer": "Sightron",
-      "name": "SIII PLR 10-50x60 ZS IR MOA-2 (28010)",
+      "name": "SIII PLR 10-50x60 ZS IR MOA-2",
       "angularUnit": "MOA",
       "clickValue": "0.25",
       "elevationTravel": "50"
@@ -47,6 +47,14 @@
       "angularUnit": "MRAD",
       "clickValue": "0.1",
       "elevationTravel": "25.5"
+    },
+    {
+      "id": "zco-zc527-5-27x56",
+      "manufacturer": "Zero Compromise Optic",
+      "name": "ZC527 5-27x56",
+      "angularUnit": "MRAD",
+      "clickValue": "0.1",
+      "elevationTravel": "35"
     }
   ]
 }
