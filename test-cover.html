@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test cover</title>
+<style>
+  body { margin:0; font-family: sans-serif; }
+  .diag { background:#000; color:#0f0; font-size:14px; padding:8px; }
+  .cover { display: flex; align-items: center; justify-content: space-between; padding: 40px 20px; border-bottom: 3px solid blue; }
+  .cover-badge { width: 72px; height: 72px; border-radius: 22%; flex: none; background:#1483d6; }
+  .cover-text { text-align: left; }
+  .cover-title { font-size: 2rem; font-weight: 800; margin: 0; }
+</style>
+</head>
+<body>
+<div class="diag" id="diag">loading...</div>
+<div class="cover">
+  <div class="cover-text">
+    <p style="margin:0 0 4px">GS Ballistics</p>
+    <h1 class="cover-title">Guida</h1>
+  </div>
+  <div class="cover-badge"></div>
+</div>
+<script>
+document.getElementById('diag').textContent =
+  'innerWidth=' + window.innerWidth +
+  ' clientWidth=' + document.documentElement.clientWidth +
+  ' devicePixelRatio=' + window.devicePixelRatio +
+  ' visualViewport=' + (window.visualViewport ? window.visualViewport.width : 'n/a');
+</script>
+</body>
+</html>
