@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GS Ballistics Guide – Giorgio Saad</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to use GS Ballistics: real ballistic engine, bullet library, weapon and range profiles, table and chart, data backup.">
+	<meta name="author" content="Giorgio Saad">
+	<link rel="canonical" href="https://giorgio160586.github.io/en/gs-ballistics-guide.html" />
+	<link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/gs-ballistics-guide.html" />
+	<link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/gs-ballistics-guide.html" />
+	<link rel="alternate" hreflang="x-default" href="https://giorgio160586.github.io/en/gs-ballistics-guide.html" />
+	<meta property="og:title" content="GS Ballistics Guide" />
+	<meta property="og:description" content="How to use GS Ballistics: real ballistic engine, bullet library, weapon and range profiles, table and chart, data backup." />
+	<meta property="og:url" content="https://giorgio160586.github.io/en/gs-ballistics-guide.html" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="https://giorgio160586.github.io/store-assets/feature-graphics/feature-graphic-en.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="GS Ballistics Guide" />
+	<meta name="twitter:description" content="How to use GS Ballistics: real ballistic engine, bullet library, weapon and range profiles, table and chart, data backup." />
+	<meta name="twitter:image" content="https://giorgio160586.github.io/store-assets/feature-graphics/feature-graphic-en.png" />
+	<link rel="shortcut icon" href="https://giorgio160586.github.io/favicon.ico">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<style>
+		/* Manual design system — modeled on a printed owner's manual: white page, black text,
+		   a single accent color used sparingly (chapter names, callout numbers, table headers),
+		   thin rules, dotted-leader index, numbered circular callouts on figures, grey caption
+		   bars reading "Fig. N". */
+		:root {
+			--ink: #1a1a1a;
+			--muted: #59595c;
+			--accent: #1483d6;
+			--rule: #1a1a1a;
+			--rule-light: #d5d5d5;
+			--caption-bg: #ececec;
+			--bg: #ffffff;
+		}
+		* { box-sizing: border-box; }
+		html, body { background: var(--bg); }
+		body {
+			margin: 0;
+			color: var(--ink);
+			font-family: 'Inter', system-ui, sans-serif;
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: var(--accent); }
+		.page { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+
+		/* Cover */
+		.cover { display: flex; align-items: center; justify-content: space-between; padding: 40px 0 28px; border-bottom: 3px solid var(--accent); margin-bottom: 8px; }
+		.cover-badge { width: 72px; height: 72px; border-radius: 22%; flex: none; }
+		.cover-text { text-align: left; }
+		.cover-eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+		.cover-title { font-size: 2rem; font-weight: 800; margin: 0; line-height: 1.1; }
+		.cover-doc-line { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--muted); padding: 10px 0 20px; border-bottom: 1px solid var(--rule-light); margin-bottom: 32px; }
+		.book-intro { font-size: 1.02rem; line-height: 1.8; color: var(--ink); margin: 0 0 44px; }
+
+		/* Index */
+		h2.section-heading { font-size: 1.5rem; font-weight: 800; margin: 0 0 20px; }
+		.toc { columns: 2; column-gap: 3rem; margin-bottom: 56px; }
+		.toc-item { break-inside: avoid; display: flex; align-items: baseline; gap: 0.5em; margin-bottom: 14px; text-decoration: none; color: inherit; }
+		.toc-num { color: var(--accent); font-weight: 800; font-size: 0.95rem; flex: none; width: 1.4em; }
+		.toc-title { color: var(--accent); font-weight: 700; }
+		.toc-dots { flex: 1 1 auto; border-bottom: 1px dotted #9a9a9a; margin: 0 0.35em 0.3em; min-width: 12px; }
+		.toc-page { color: var(--muted); font-size: 0.9rem; }
+
+		/* Chapters */
+		.chapter { margin-top: 56px; scroll-margin-top: 20px; }
+		.chapter-kicker { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin-bottom: 18px; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+		.chapter-title { font-size: 1.6rem; font-weight: 800; margin: 0 0 6px; }
+		.chapter-title .chapter-num { color: var(--accent); margin-right: 0.35em; }
+		.chapter-intro { color: var(--muted); margin: 0 0 22px; line-height: 1.6; }
+		.chapter p { line-height: 1.7; }
+		.chapter h4 { font-weight: 700; font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+
+		/* Figures */
+		.fig { margin: 20px 0 10px; max-width: 320px; }
+		.fig-wide { max-width: 100%; }
+		.fig-img-wrap { position: relative; border: 1px solid var(--rule-light); border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden; }
+		.fig-img-wrap img { display: block; width: 100%; height: auto; }
+		.fig-caption { background: var(--caption-bg); color: var(--muted); font-size: 0.78rem; padding: 7px 10px; border-radius: 0 0 10px 10px; }
+		.fig-caption b { color: var(--ink); font-weight: 700; }
+		.callout { position: absolute; width: 15px; height: 15px; border-radius: 50%; background: #e02020; border: none; color: #fff; font-weight: 700; font-size: 8px; display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+		.callout-legend { list-style: none; margin: 12px 0 0; padding: 0; font-size: 0.88rem; }
+		.callout-legend li { display: flex; gap: 0.6em; padding: 3px 0; }
+		.callout-legend .n { color: var(--accent); font-weight: 800; flex: none; width: 1.2em; }
+		.chapter-figrow { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+		.chapter-figrow .fig { flex: none; }
+
+		/* Technical chapter sub-sections */
+		.tech-sub { margin: 1.6rem 0; }
+		.tech-sub-title { font-weight: 700; font-size: 1.02rem; margin-bottom: 0.4rem; }
+		.tech-sub-title .n { color: var(--accent); margin-right: 0.4em; }
+
+		footer.manual-footer { border-top: 1px solid var(--rule-light); margin-top: 64px; padding-top: 18px; font-size: 0.78rem; color: var(--muted); display: flex; justify-content: space-between; }
+
+		@media (max-width: 640px) {
+			.toc { columns: 1; }
+			.cover { flex-direction: column-reverse; align-items: flex-start; gap: 14px; }
+			.cover-text { text-align: left; }
+			.chapter-figrow { flex-direction: column; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="page">
+
+		<div class="cover">
+			<div class="cover-text">
+				<p class="cover-eyebrow">GS Ballistics</p>
+				<h1 class="cover-title">Guide</h1>
+			</div>
+			<img class="cover-badge" src="../store-assets/icons/icon-512.png" alt="GS Ballistics">
+		</div>
+		<div class="cover-doc-line">
+			<span>User guide &middot; English</span>
+			<a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a>
+		</div>
+
+		<p class="book-intro">GS Ballistics is an Android app for ballistic calculation in long-range shooting. It calculates the elevation needed to hit a target at a given distance, from the bullet's data, the weapon, the optic and the atmospheric conditions. The calculation is performed by numerically integrating the equations of motion, not with a fixed coefficient or an approximate formula. This guide describes the app's functions in Chapters 1-8 and the calculation principles of the ballistic engine in Chapter 9.</p>
+
+		<h2 class="section-heading">Contents</h2>
+		<nav class="toc">
+			<a class="toc-item" href="#cap-1"><span class="toc-num">1</span><span class="toc-title">Setting up the data for a calculation</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-2"><span class="toc-num">2</span><span class="toc-title">Home dashboard</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-3"><span class="toc-num">3</span><span class="toc-title">Bullet library and weapon profiles</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-4"><span class="toc-num">4</span><span class="toc-title">Verified shot correction</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-5"><span class="toc-num">5</span><span class="toc-title">Ballistic table</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-6"><span class="toc-num">6</span><span class="toc-title">Chart</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-7"><span class="toc-num">7</span><span class="toc-title">Settings</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-8"><span class="toc-num">8</span><span class="toc-title">Exporting your data</span><span class="toc-dots"></span></a>
+			<a class="toc-item" href="#cap-9"><span class="toc-num">9</span><span class="toc-title">How the ballistic engine works</span><span class="toc-dots"></span></a>
+		</nav>
+
+		<!-- Chapter 1 -->
+		<section class="chapter" id="cap-1">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 1</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">1</span>Setting up the data for a calculation</h3>
+			<p class="chapter-intro">Before a reliable elevation can be read, four values must be set, in the following order: the reticle's angular unit, the ammo in use, the atmospheric conditions and the target distance.</p>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">1.1</span>Set the optic's reticle</h4>
+				<p>The first value to define is the angular unit of the reticle mounted on the weapon: MOA or MRAD. It is set in the optics profile (Optics list &rarr; active profile), together with the click value (for example 0.25 MOA or 0.1 MRAD) and, if known, the turret's total travel. Every elevation the app calculates is expressed in this unit.</p>
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-10-optics-list.png" alt="Optics list">
+					</div>
+					<div class="fig-caption"><b>Fig. 1</b> — Optics list, with unit and click value</div>
+				</div>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">1.2</span>Select the ammo</h4>
+				<p>The elevation calculation depends on the ballistic coefficient (BC) of the bullet in use: without an ammo selected, or with an incorrect BC, the calculated value can't be trusted. Ammo is chosen from the bullet library or entered manually in the weapon profile, specifying caliber, weight, muzzle velocity and both the G1 and G7 ballistic coefficients. Where both are available, GS Ballistics defaults to the G7 model: the G7 table represents a long-ogive boat-tail projectile and is more accurate for the modern match bullets typically used in long-range shooting. The G1 model (flat-base projectile) remains preferable for bullets shaped closer to that reference, or when the manufacturer only publishes a G1 BC — in that case the drag model should be set to G1 in the weapon profile.</p>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">1.3</span>Set air temperature and pressure</h4>
+				<p>Air density and speed of sound, both used in the calculation, depend on temperature and atmospheric pressure: using values that don't match the real ones produces an elevation error that grows with distance. Temperature and pressure are set from the Settings screen and should be updated before every range session, based on the conditions measured in the field.</p>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">1.4</span>Set the target distance</h4>
+				<p>With the reticle, ammo and atmospheric conditions defined, the target distance is set from the dial on the Home screen. The elevation calculated for that distance appears immediately, in the unit defined in step 1.1. The distances offered on the dial are those of the active range, managed from Range list &rarr; Manage distances.</p>
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Managing a range's distances">
+					</div>
+					<div class="fig-caption"><b>Fig. 2</b> — Managing range distances</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Chapter 2 -->
+		<section class="chapter" id="cap-2">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 2</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">2</span>Home dashboard</h3>
+			<p class="chapter-intro">The Home screen shows the elevation to dial for the selected distance, calculated from the currently active ammo and optic. To change the distance, use the dial: the elevation value updates automatically.</p>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-1-home.png" alt="GS Ballistics Home dashboard">
+					<span class="callout" style="top:21%; left:19%;">1</span>
+					<span class="callout" style="top:56%; left:16%;">2</span>
+					<span class="callout" style="top:51%; left:50%;">3</span>
+					<span class="callout" style="top:62%; left:50%;">4</span>
+					<span class="callout" style="top:84%; left:23%;">5</span>
+					<span class="callout" style="top:84%; left:73%;">6</span>
+				</div>
+				<div class="fig-caption"><b>Fig. 3</b> — Home dashboard</div>
+			</div>
+			<ol class="callout-legend">
+				<li><span class="n">1</span> Currently active ammo and optic</li>
+				<li><span class="n">2</span> Distance dial</li>
+				<li><span class="n">3</span> Set distance</li>
+				<li><span class="n">4</span> Temperature, pressure and muzzle velocity used in the calculation</li>
+				<li><span class="n">5</span> Calculated elevation (green if verified on the range, for that distance)</li>
+				<li><span class="n">6</span> Horizontal windage</li>
+			</ol>
+		</section>
+
+		<!-- Chapter 3 -->
+		<section class="chapter" id="cap-3">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 3</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">3</span>Bullet library and weapon profiles</h3>
+			<p class="chapter-intro">The bullet library holds over 200 bullets with factory data from major manufacturers. Every weapon profile stores caliber, weight, muzzle velocity and the G1 and G7 ballistic coefficients. A profile can be created by selecting a bullet from the library — its data is pre-filled and can be edited — or by entering every value manually.</p>
+
+			<div class="chapter-figrow">
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Ammo list">
+					</div>
+					<div class="fig-caption"><b>Fig. 4</b> — Ammo list</div>
+				</div>
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Editing an ammo profile">
+					</div>
+					<div class="fig-caption"><b>Fig. 5</b> — Editing an ammo profile</div>
+				</div>
+			</div>
+
+			<p>If a bullet is missing from the library, or the values shown look wrong, it can be reported directly from the Report tab of the ammo edit dialog: the report includes the data currently shown on that screen and an optional note field, and is sent as an email to the developer.</p>
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-8-report.png" alt="Reporting an ammo or wrong data">
+				</div>
+				<div class="fig-caption"><b>Fig. 6</b> — Reporting wrong data</div>
+			</div>
+		</section>
+
+		<!-- Chapter 4 -->
+		<section class="chapter" id="cap-4">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 4</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">4</span>Verified shot correction</h3>
+			<p class="chapter-intro">After a shot, the elevation actually verified can be logged for the distance and the weapon in use. The logged value is compared automatically against the calculated one and stays attached to that weapon/distance pair.</p>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Verified shot correction">
+				</div>
+				<div class="fig-caption"><b>Fig. 7</b> — Shot correction</div>
+			</div>
+		</section>
+
+		<!-- Chapter 5 -->
+		<section class="chapter" id="cap-5">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 5</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">5</span>Ballistic table</h3>
+			<p class="chapter-intro">Once a range's distances have been entered, the app builds the corresponding ballistic table automatically: each row shows the calculated value, any real value logged on the range and the difference between the two.</p>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-2-table.png" alt="Ballistic table">
+					<span class="callout" style="top:41%; left:11%;">1</span>
+					<span class="callout" style="top:41%; left:33%;">2</span>
+					<span class="callout" style="top:41%; left:56%;">3</span>
+					<span class="callout" style="top:41%; left:80%;">4</span>
+				</div>
+				<div class="fig-caption"><b>Fig. 8</b> — Ballistic table</div>
+			</div>
+			<ol class="callout-legend">
+				<li><span class="n">1</span> Distance</li>
+				<li><span class="n">2</span> Elevation calculated by the engine</li>
+				<li><span class="n">3</span> Real elevation logged on the range</li>
+				<li><span class="n">4</span> Difference between the two</li>
+			</ol>
+		</section>
+
+		<!-- Chapter 6 -->
+		<section class="chapter" id="cap-6">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 6</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">6</span>Chart</h3>
+			<p class="chapter-intro">The same table, plotted as a curve, shows where along the trajectory the real value starts to depart from the calculated one. A second ammo, set as a comparison, can be overlaid on the same chart.</p>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Drop chart">
+					<span class="callout" style="top:47%; left:28%;">1</span>
+					<span class="callout" style="top:52%; left:9%;">2</span>
+					<span class="callout" style="top:96%; left:83%;">3</span>
+				</div>
+				<div class="fig-caption"><b>Fig. 9</b> — Drop chart</div>
+			</div>
+			<ol class="callout-legend">
+				<li><span class="n">1</span> Legend: active ammo and, if set, comparison ammo</li>
+				<li><span class="n">2</span> Vertical axis — drop (cm)</li>
+				<li><span class="n">3</span> Horizontal axis — distance (m)</li>
+			</ol>
+		</section>
+
+		<!-- Chapter 7 -->
+		<section class="chapter" id="cap-7">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 7</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">7</span>Settings</h3>
+			<p class="chapter-intro">The Settings screen collects theme, language, round-to-click and the preferred unit for every quantity (weight, length, speed, energy, pressure, temperature, angles).</p>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Settings">
+				</div>
+				<div class="fig-caption"><b>Fig. 10</b> — Settings</div>
+			</div>
+		</section>
+
+		<!-- Chapter 8 -->
+		<section class="chapter" id="cap-8">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 8</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">8</span>Exporting your data</h3>
+			<p class="chapter-intro">The "Backup and restore" section in Settings (or the "Export report" entry in the main menu) exports a single HTML file containing every weapon profile, range and rifle setting. The file is handed straight to Android's own share sheet: it can be saved to Drive, sent by email or WhatsApp, or simply saved among the device's files.</p>
+			<p>The exported file is both a readable report and a complete backup at once. Opened in any browser it shows the active weapon profile with its ballistic table and drop chart; every piece of data needed to restore the full configuration — including profiles not shown on screen — stays embedded in that same file, with no internet connection required. To restore it, on this device or another one, it's enough to import it from that same "Backup and restore" section.</p>
+
+			<div class="fig fig-wide">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Exported report">
+				</div>
+				<div class="fig-caption"><b>Fig. 11</b> — The exported report, opened in a browser</div>
+			</div>
+		</section>
+
+		<!-- Chapter 9 -->
+		<section class="chapter" id="cap-9">
+			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 9</span></div>
+			<h3 class="chapter-title"><span class="chapter-num">9</span>How the ballistic engine works</h3>
+			<p class="chapter-intro">So far the app has been described from the outside, as whoever uses it sees it; it's worth a few more pages on what actually happens behind the number on screen, because understanding that also means understanding when to trust a calculated elevation and when it's worth verifying it on the range instead.</p>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">9.1</span>Ballistic coefficient and drag models</h4>
+				<p>Start with the number every shooter already knows best: the ballistic coefficient. In short, a bullet's BC is the ratio between its sectional density — mass divided by the square of the diameter — and its form factor relative to a standard reference projectile: the more "efficient" the real bullet is at cutting through the air compared to that reference, the higher the BC and the lower the drag at a given speed. GS Ballistics doesn't just apply that number as a fixed coefficient: it uses the standard G1 (flat-base projectile, the historically dominant convention) and G7 (long-ogive boat-tail projectile, more representative of modern long-range match bullets) drag tables, both indexed by instantaneous Mach number — the same historical Ingalls/McCoy curve the leading ballistic solvers are built on.</p>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">9.2</span>Numerical integration, not a closed-form formula</h4>
+				<p>Having the right table isn't enough if it then gets used with too simple a formula. Unlike analog slide-rule calculators or single-coefficient approximate formulas, the engine numerically integrates the equations of motion — air drag and gravity — step by step along the whole trajectory. At every step it recalculates velocity, Mach number and therefore the instantaneous drag coefficient from the G1/G7 table, instead of assuming from the start that the trajectory follows some already-known curve.</p>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">9.3</span>Real atmosphere, not standard</h4>
+				<p>Then there's a value that enters the calculation before the trajectory itself does: the air the bullet has to travel through. Air density and speed of sound — which sets the Mach number the drag table is indexed on — are derived in real time from temperature and pressure via the ideal gas law, instead of always assuming standard atmosphere (15°C, 1013.25 hPa). It's also, in practice, one of the places generalist ballistic software trips up most often: entering barometric pressure where absolute pressure is expected, or the other way around, produces an elevation error that stops being negligible well before long range.</p>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">9.4</span>The geometry of a zero</h4>
+				<p>One thing is still worth clearing up, and it's probably the most misunderstood: the elevation shown in the app isn't the bullet's raw drop, but the angular correction needed relative to the zeroed line of sight. It depends, then, on the scope's height above the bore and on the chosen zero range too, not on the trajectory alone — which is exactly why two rifles firing the very same load, but with scopes mounted at different heights, need different elevation at the same distance. These values — zero range, line-of-sight height, twist rate and any mount offset — are set from the "Scope and rifle configuration" screen, shared by every weapon profile.</p>
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Scope and rifle configuration">
+					</div>
+					<div class="fig-caption"><b>Fig. 12</b> — Scope and rifle configuration</div>
+				</div>
+			</div>
+
+			<div class="tech-sub">
+				<h4 class="tech-sub-title"><span class="n">9.5</span>The calculation, step by step</h4>
+				<p>For anyone who wants to verify an elevation by hand, the "Elevation calculation" screen (reachable from the main menu) shows every intermediate step — drop at the zero range and at the target, where the line of sight sits, the conversion to mrad or MOA — with the actual numbers the engine is using at that moment, in the same order described in this chapter.</p>
+				<div class="fig">
+					<div class="fig-img-wrap">
+						<img src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Step-by-step elevation calculation">
+					</div>
+					<div class="fig-caption"><b>Fig. 13</b> — Elevation calculation</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="manual-footer">
+			<span>GS Ballistics</span>
+			<span>Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a></span>
+		</footer>
+
+	</div>
+
+</body>
+</html>
