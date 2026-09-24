@@ -207,30 +207,30 @@
 			<p class="chapter-intro">The Home screen shows the elevation to dial for the selected distance, calculated from the currently active ammo and optic. To change the distance, use the dial: the elevation value updates automatically.</p>
 
 			<div class="fig">
-				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GS Ballistics Home dashboard">
+				<svg class="fig-diagram" viewBox="0 0 1080 2200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GS Ballistics Home dashboard">
 					<defs>
-						<clipPath id="figClipHome"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+						<clipPath id="figClipHome"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
 					</defs>
-					<image href="../store-assets/screenshots/phone/phone-1-home.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipHome)"/>
-					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
-					<line class="callout-line" x1="890" y1="430" x2="800" y2="420"/>
-					<line class="callout-line" x1="90" y1="1075" x2="190" y2="1075"/>
-					<line class="callout-line" x1="900" y1="970" x2="800" y2="970"/>
-					<line class="callout-line" x1="930" y1="1200" x2="840" y2="1170"/>
-					<line class="callout-line" x1="280" y1="1800" x2="280" y2="1700"/>
-					<line class="callout-line" x1="790" y1="1800" x2="790" y2="1700"/>
-					<circle class="callout-num-circle" cx="890" cy="430" r="26"/>
-					<circle class="callout-num-circle" cx="90" cy="1075" r="26"/>
-					<circle class="callout-num-circle" cx="900" cy="970" r="26"/>
-					<circle class="callout-num-circle" cx="930" cy="1200" r="26"/>
-					<circle class="callout-num-circle" cx="280" cy="1800" r="26"/>
-					<circle class="callout-num-circle" cx="790" cy="1800" r="26"/>
-					<text class="callout-num-text" x="890" y="432" dy="0.35em" font-size="30">1</text>
-					<text class="callout-num-text" x="90" y="1077" dy="0.35em" font-size="30">2</text>
-					<text class="callout-num-text" x="900" y="972" dy="0.35em" font-size="30">3</text>
-					<text class="callout-num-text" x="930" y="1202" dy="0.35em" font-size="30">4</text>
-					<text class="callout-num-text" x="280" y="1802" dy="0.35em" font-size="30">5</text>
-					<text class="callout-num-text" x="790" y="1802" dy="0.35em" font-size="30">6</text>
+					<image href="../store-assets/screenshots/phone/phone-1-home.png" x="0" y="0" width="1080" height="2200" clip-path="url(#figClipHome)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="900" y1="400" x2="800" y2="400"/>
+					<line class="callout-line" x1="90" y1="938" x2="190" y2="938"/>
+					<line class="callout-line" x1="1005" y1="890" x2="945" y2="890"/>
+					<line class="callout-line" x1="930" y1="1360" x2="840" y2="1300"/>
+					<line class="callout-line" x1="280" y1="1830" x2="280" y2="1770"/>
+					<line class="callout-line" x1="754" y1="1830" x2="754" y2="1770"/>
+					<circle class="callout-num-circle" cx="900" cy="400" r="26"/>
+					<circle class="callout-num-circle" cx="90" cy="938" r="26"/>
+					<circle class="callout-num-circle" cx="1005" cy="890" r="26"/>
+					<circle class="callout-num-circle" cx="930" cy="1360" r="26"/>
+					<circle class="callout-num-circle" cx="280" cy="1830" r="26"/>
+					<circle class="callout-num-circle" cx="754" cy="1830" r="26"/>
+					<text class="callout-num-text" x="900" y="402" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="90" y="940" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="1005" y="892" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="930" y="1362" dy="0.35em" font-size="30">4</text>
+					<text class="callout-num-text" x="280" y="1832" dy="0.35em" font-size="30">5</text>
+					<text class="callout-num-text" x="754" y="1832" dy="0.35em" font-size="30">6</text>
 				</svg>
 				<div class="fig-caption"><b>Fig. 3</b> — Home dashboard</div>
 			</div>
@@ -238,10 +238,18 @@
 				<li><span class="n">1</span> Currently active ammo and optic</li>
 				<li><span class="n">2</span> Distance dial</li>
 				<li><span class="n">3</span> Set distance</li>
-				<li><span class="n">4</span> Temperature, pressure and muzzle velocity used in the calculation</li>
+				<li><span class="n">4</span> Slope angle, temperature, pressure and muzzle velocity used in the calculation — each one opens its own quick-edit popup on tap</li>
 				<li><span class="n">5</span> Calculated elevation (green if verified on the range, for that distance)</li>
 				<li><span class="n">6</span> Horizontal windage</li>
 			</ol>
+
+			<div class="fig">
+				<div class="fig-img-wrap">
+					<img src="../store-assets/screenshots/phone/phone-16-slope-angle-dialog.png" alt="Slope angle dialog with inclinometer">
+				</div>
+				<div class="fig-caption"><b>Fig. 4</b> — Quick-editing the angle, with the phone's own inclinometer</div>
+			</div>
+			<p>Tapping "Slope angle" opens the same kind of popup as temperature and pressure. The "Use the phone's inclinometer" button reads the phone's own tilt sensor live — laid flat on top of the barrel or scope, with the phone's own top edge pointing toward the target — and keeps updating the value until stopped; from there it can also be corrected by hand before saving. Saving updates the active range only when the distance dialed on the gauge matches an already-saved target exactly — otherwise it only applies to this one reading, since the value shown in that case is already an interpolation between two targets, not data that belongs to that exact distance.</p>
 		</section>
 
 		<!-- Chapter 3 -->
@@ -255,13 +263,13 @@
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Ammo list">
 					</div>
-					<div class="fig-caption"><b>Fig. 4</b> — Ammo list</div>
+					<div class="fig-caption"><b>Fig. 5</b> — Ammo list</div>
 				</div>
 				<div class="fig">
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Editing an ammo profile">
 					</div>
-					<div class="fig-caption"><b>Fig. 5</b> — Editing an ammo profile</div>
+					<div class="fig-caption"><b>Fig. 6</b> — Editing an ammo profile</div>
 				</div>
 			</div>
 
@@ -270,7 +278,7 @@
 				<div class="fig-img-wrap">
 					<img src="../store-assets/screenshots/phone/phone-8-report.png" alt="Reporting an ammo or wrong data">
 				</div>
-				<div class="fig-caption"><b>Fig. 6</b> — Reporting wrong data</div>
+				<div class="fig-caption"><b>Fig. 7</b> — Reporting wrong data</div>
 			</div>
 		</section>
 
@@ -284,7 +292,7 @@
 				<div class="fig-img-wrap">
 					<img src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Verified shot correction">
 				</div>
-				<div class="fig-caption"><b>Fig. 7</b> — Shot correction</div>
+				<div class="fig-caption"><b>Fig. 8</b> — Shot correction</div>
 			</div>
 		</section>
 
@@ -314,7 +322,7 @@
 					<text class="callout-num-text" x="605" y="707" dy="0.35em" font-size="30">3</text>
 					<text class="callout-num-text" x="864" y="707" dy="0.35em" font-size="30">4</text>
 				</svg>
-				<div class="fig-caption"><b>Fig. 8</b> — Ballistic table</div>
+				<div class="fig-caption"><b>Fig. 9</b> — Ballistic table</div>
 			</div>
 			<ol class="callout-legend">
 				<li><span class="n">1</span> Distance</li>
@@ -347,7 +355,7 @@
 					<text class="callout-num-text" x="280" y="1007" dy="0.35em" font-size="30">2</text>
 					<text class="callout-num-text" x="950" y="1682" dy="0.35em" font-size="30">3</text>
 				</svg>
-				<div class="fig-caption"><b>Fig. 9</b> — Drop chart</div>
+				<div class="fig-caption"><b>Fig. 10</b> — Drop chart</div>
 			</div>
 			<ol class="callout-legend">
 				<li><span class="n">1</span> Legend: active ammo and, if set, comparison ammo</li>
@@ -375,7 +383,7 @@
 					<text class="callout-num-text" x="910" y="1862" dy="0.35em" font-size="30">3</text>
 					<text class="callout-num-text" x="350" y="1598" dy="0.35em" font-size="30">4</text>
 				</svg>
-				<div class="fig-caption"><b>Fig. 10</b> — Retained velocity chart, with a comparison ammo</div>
+				<div class="fig-caption"><b>Fig. 11</b> — Retained velocity chart, with a comparison ammo</div>
 			</div>
 			<ol class="callout-legend">
 				<li><span class="n">1</span> Comparison ammo's curve</li>
@@ -411,7 +419,7 @@
 				<div class="fig-img-wrap">
 					<img src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Settings">
 				</div>
-				<div class="fig-caption"><b>Fig. 11</b> — Settings</div>
+				<div class="fig-caption"><b>Fig. 12</b> — Settings</div>
 			</div>
 		</section>
 
@@ -426,7 +434,7 @@
 				<a class="fig-img-wrap" href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
 					<img src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Exported report">
 				</a>
-				<div class="fig-caption"><b>Fig. 12</b> — The exported report, opened in a browser — <a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">open a real example</a></div>
+				<div class="fig-caption"><b>Fig. 13</b> — The exported report, opened in a browser — <a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">open a real example</a></div>
 			</div>
 		</section>
 
@@ -460,7 +468,7 @@
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Scope and rifle configuration">
 					</div>
-					<div class="fig-caption"><b>Fig. 13</b> — Scope and rifle configuration</div>
+					<div class="fig-caption"><b>Fig. 14</b> — Scope and rifle configuration</div>
 				</div>
 			</div>
 
@@ -471,7 +479,7 @@
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Step-by-step elevation calculation">
 					</div>
-					<div class="fig-caption"><b>Fig. 14</b> — Elevation calculation</div>
+					<div class="fig-caption"><b>Fig. 15</b> — Elevation calculation</div>
 				</div>
 			</div>
 		</section>
