@@ -81,17 +81,34 @@
 
 		/* Figures */
 		.fig { margin: 20px 0 10px; max-width: 320px; }
-		.fig-wide { max-width: 100%; }
-		.fig-img-wrap { position: relative; border: 1px solid var(--rule-light); border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden; }
+		.fig-img-wrap { display: block; position: relative; border: 1px solid var(--rule-light); border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden; }
 		.fig-img-wrap img { display: block; width: 100%; height: auto; }
 		.fig-caption { background: var(--caption-bg); color: var(--muted); font-size: 0.78rem; padding: 7px 10px; border-radius: 0 0 10px 10px; }
 		.fig-caption b { color: var(--ink); font-weight: 700; }
-		.callout { position: absolute; width: 15px; height: 15px; border-radius: 50%; background: #e02020; border: none; color: #fff; font-weight: 700; font-size: 8px; display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+		/* Numbered callouts as a leader-line diagram (number sits outside the screenshot, a line
+		   points to the exact spot) instead of a dot stamped directly on the image — so the marker
+		   itself never covers the label or control it's pointing at. Same size as every other
+		   figure: the diagram lives entirely inside the screenshot's own bounds, on blank space. */
+		.fig-diagram { display: block; width: 100%; height: auto; }
+		.fig-diagram .callout-frame { fill: none; stroke: var(--rule-light); stroke-width: 3; }
+		.fig-diagram .callout-line { stroke: #e02020; stroke-width: 4; }
+		.fig-diagram .callout-num-circle { fill: #e02020; }
+		.fig-diagram .callout-num-text { fill: #fff; font-weight: 700; font-family: 'Inter', system-ui, sans-serif; text-anchor: middle; }
 		.callout-legend { list-style: none; margin: 12px 0 0; padding: 0; font-size: 0.88rem; }
 		.callout-legend li { display: flex; gap: 0.6em; padding: 3px 0; }
 		.callout-legend .n { color: var(--accent); font-weight: 800; flex: none; width: 1.2em; }
 		.chapter-figrow { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
 		.chapter-figrow .fig { flex: none; }
+
+		/* Numbered "band" list — each item is a named velocity range (e.g. a Mach regime) with its
+		   own short behavior description, set apart by a left rule instead of the plain dotted
+		   .callout-legend rows since each entry here needs more than one line. */
+		.band-list { list-style: none; margin: 16px 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+		.band-list li { border-left: 3px solid var(--accent); padding-left: 14px; }
+		.band-head { display: flex; align-items: baseline; gap: 0.55em; flex-wrap: wrap; margin-bottom: 3px; }
+		.band-head strong { font-size: 1rem; }
+		.band-range { color: var(--muted); font-size: 0.85rem; }
+		.band-list p { margin: 0; color: var(--ink); line-height: 1.6; font-size: 0.92rem; }
 
 		/* Technical chapter sub-sections */
 		.tech-sub { margin: 1.6rem 0; }
@@ -167,12 +184,12 @@
 
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">1.4</span>Set the target distance</h4>
-				<p>With the reticle, ammo and atmospheric conditions defined, the target distance is set from the dial on the Home screen. The elevation calculated for that distance appears immediately, in the unit defined in step 1.1. The distances offered on the dial are those of the active range, managed from Range list &rarr; Manage distances.</p>
+				<p>With the reticle, ammo and atmospheric conditions defined, the target distance is set from the dial on the Home screen. The elevation calculated for that distance appears immediately, in the unit defined in step 1.1. The distances offered on the dial are those of the active range: edit them from Range list &rarr; edit icon &rarr; "Distances" tab.</p>
 				<div class="fig">
 					<div class="fig-img-wrap">
-						<img src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Managing a range's distances">
+						<img src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="A range's Distances tab">
 					</div>
-					<div class="fig-caption"><b>Fig. 2</b> — Managing range distances</div>
+					<div class="fig-caption"><b>Fig. 2</b> — A range's "Distances" tab</div>
 				</div>
 			</div>
 		</section>
@@ -184,15 +201,31 @@
 			<p class="chapter-intro">The Home screen shows the elevation to dial for the selected distance, calculated from the currently active ammo and optic. To change the distance, use the dial: the elevation value updates automatically.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-1-home.png" alt="GS Ballistics Home dashboard">
-					<span class="callout" style="top:21%; left:19%;">1</span>
-					<span class="callout" style="top:56%; left:16%;">2</span>
-					<span class="callout" style="top:51%; left:50%;">3</span>
-					<span class="callout" style="top:62%; left:50%;">4</span>
-					<span class="callout" style="top:84%; left:23%;">5</span>
-					<span class="callout" style="top:84%; left:73%;">6</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GS Ballistics Home dashboard">
+					<defs>
+						<clipPath id="figClipHome"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-1-home.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipHome)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="890" y1="430" x2="800" y2="420"/>
+					<line class="callout-line" x1="90" y1="1075" x2="190" y2="1075"/>
+					<line class="callout-line" x1="900" y1="970" x2="800" y2="970"/>
+					<line class="callout-line" x1="930" y1="1200" x2="840" y2="1170"/>
+					<line class="callout-line" x1="280" y1="1800" x2="280" y2="1700"/>
+					<line class="callout-line" x1="790" y1="1800" x2="790" y2="1700"/>
+					<circle class="callout-num-circle" cx="890" cy="430" r="26"/>
+					<circle class="callout-num-circle" cx="90" cy="1075" r="26"/>
+					<circle class="callout-num-circle" cx="900" cy="970" r="26"/>
+					<circle class="callout-num-circle" cx="930" cy="1200" r="26"/>
+					<circle class="callout-num-circle" cx="280" cy="1800" r="26"/>
+					<circle class="callout-num-circle" cx="790" cy="1800" r="26"/>
+					<text class="callout-num-text" x="890" y="432" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="90" y="1077" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="900" y="972" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="930" y="1202" dy="0.35em" font-size="30">4</text>
+					<text class="callout-num-text" x="280" y="1802" dy="0.35em" font-size="30">5</text>
+					<text class="callout-num-text" x="790" y="1802" dy="0.35em" font-size="30">6</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 3</b> — Home dashboard</div>
 			</div>
 			<ol class="callout-legend">
@@ -256,13 +289,25 @@
 			<p class="chapter-intro">Once a range's distances have been entered, the app builds the corresponding ballistic table automatically: each row shows the calculated value, any real value logged on the range and the difference between the two.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-2-table.png" alt="Ballistic table">
-					<span class="callout" style="top:41%; left:11%;">1</span>
-					<span class="callout" style="top:41%; left:33%;">2</span>
-					<span class="callout" style="top:41%; left:56%;">3</span>
-					<span class="callout" style="top:41%; left:80%;">4</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ballistic table">
+					<defs>
+						<clipPath id="figClipTable"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-2-table.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipTable)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="119" y1="705" x2="119" y2="755"/>
+					<line class="callout-line" x1="356" y1="705" x2="356" y2="755"/>
+					<line class="callout-line" x1="605" y1="705" x2="605" y2="755"/>
+					<line class="callout-line" x1="864" y1="705" x2="864" y2="755"/>
+					<circle class="callout-num-circle" cx="119" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="356" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="605" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="864" cy="705" r="26"/>
+					<text class="callout-num-text" x="119" y="707" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="356" y="707" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="605" y="707" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="864" y="707" dy="0.35em" font-size="30">4</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 8</b> — Ballistic table</div>
 			</div>
 			<ol class="callout-legend">
@@ -277,15 +322,25 @@
 		<section class="chapter" id="cap-6">
 			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 6</span></div>
 			<h3 class="chapter-title"><span class="chapter-num">6</span>Chart</h3>
-			<p class="chapter-intro">The same table, plotted as a curve, shows where along the trajectory the real value starts to depart from the calculated one. A second ammo, set as a comparison, can be overlaid on the same chart.</p>
+			<p class="chapter-intro">The same table, plotted as a curve, shows where along the trajectory the real value starts to depart from the calculated one. A second ammo, set as a comparison, can be overlaid on the same chart. There isn't just one chart: every table in the app (drop, retained velocity, retained energy, ranging error) has its own curve view, reachable with the same table/chart toggle icon.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Drop chart">
-					<span class="callout" style="top:47%; left:28%;">1</span>
-					<span class="callout" style="top:52%; left:9%;">2</span>
-					<span class="callout" style="top:96%; left:83%;">3</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drop chart">
+					<defs>
+						<clipPath id="figClipChart"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-3-chart.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipChart)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="900" y1="900" x2="770" y2="900"/>
+					<line class="callout-line" x1="280" y1="1005" x2="200" y2="1005"/>
+					<line class="callout-line" x1="950" y1="1680" x2="950" y2="1770"/>
+					<circle class="callout-num-circle" cx="900" cy="900" r="26"/>
+					<circle class="callout-num-circle" cx="280" cy="1005" r="26"/>
+					<circle class="callout-num-circle" cx="950" cy="1680" r="26"/>
+					<text class="callout-num-text" x="900" y="902" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="280" y="1007" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="950" y="1682" dy="0.35em" font-size="30">3</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 9</b> — Drop chart</div>
 			</div>
 			<ol class="callout-legend">
@@ -293,6 +348,51 @@
 				<li><span class="n">2</span> Vertical axis — drop (cm)</li>
 				<li><span class="n">3</span> Horizontal axis — distance (m)</li>
 			</ol>
+
+			<div class="fig">
+				<svg class="fig-diagram" viewBox="0 0 1080 2200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Retained velocity chart">
+					<defs>
+						<clipPath id="figClipChartVel"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-15-velocity-chart.png" x="0" y="0" width="1080" height="2200" clip-path="url(#figClipChartVel)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="630" y1="886" x2="570" y2="886"/>
+					<line class="callout-line" x1="410" y1="965" x2="345" y2="965"/>
+					<line class="callout-line" x1="910" y1="1860" x2="910" y2="1810"/>
+					<line class="callout-line" x1="350" y1="1596" x2="250" y2="1596"/>
+					<circle class="callout-num-circle" cx="630" cy="886" r="26"/>
+					<circle class="callout-num-circle" cx="410" cy="965" r="26"/>
+					<circle class="callout-num-circle" cx="910" cy="1860" r="26"/>
+					<circle class="callout-num-circle" cx="350" cy="1596" r="26"/>
+					<text class="callout-num-text" x="630" y="888" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="410" y="967" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="910" y="1862" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="350" y="1598" dy="0.35em" font-size="30">4</text>
+				</svg>
+				<div class="fig-caption"><b>Fig. 10</b> — Retained velocity chart, with a comparison ammo</div>
+			</div>
+			<ol class="callout-legend">
+				<li><span class="n">1</span> Comparison ammo's curve</li>
+				<li><span class="n">2</span> Vertical axis — retained velocity (m/s)</li>
+				<li><span class="n">3</span> Horizontal axis — distance (m)</li>
+				<li><span class="n">4</span> Transonic reference thresholds (Mach 1.2 and Mach 0.8), computed from the speed of sound at the set temperature</li>
+			</ol>
+			<p>At the standard reference temperature and pressure (15°C, 1013 hPa) the speed of sound is about 340 m/s (Mach 1) — it shifts slightly at a different temperature, which is why the chart recomputes the two dashed thresholds from the temperature set in Settings rather than from a fixed value. Based on that speed, every bullet's flight crosses three distinct bands:</p>
+			<ol class="band-list">
+				<li>
+					<div class="band-head"><strong>Supersonic</strong><span class="band-range">above ~410 m/s (past Mach 1.2)</span></div>
+					<p>The bullet outruns the shockwave trailing behind it. This is the regime the G1/G7 drag tables are calibrated best for and behave most predictably in — the condition most precision shots are planned to still be in when they reach the target.</p>
+				</li>
+				<li>
+					<div class="band-head"><strong>Transonic</strong><span class="band-range">roughly 410 to 270 m/s (Mach 1.2–0.8)</span></div>
+					<p>The bullet slows to the point where the shockwave that used to run ahead of it catches up and passes through it. Drag coefficient shifts abruptly and less predictably, and gyroscopic stability — more than sufficient in the supersonic regime — can drop enough to produce noticeably wider dispersion or unpredictable deviation: this is the band where group size tends to open up in a less controllable way, regardless of how good the rest of the system is.</p>
+				</li>
+				<li>
+					<div class="band-head"><strong>Subsonic</strong><span class="band-range">below ~270 m/s (under Mach 0.8)</span></div>
+					<p>Past the transonic band, the bullet settles back into a relatively predictable regime again, with generally lower aerodynamic drag. This is the condition loads purpose-built to stay subsonic from the muzzle are designed around (typical of suppressed shooting); for a bullet that instead starts supersonic and only arrives here after slowing down along the flight, passing through the transonic band above has usually already eaten into its accuracy.</p>
+				</li>
+			</ol>
+			<p>As for where to "sit" with your operating distance: the zone to avoid, when possible, isn't subsonic itself — it's band 2. The goal is to pick a maximum working distance where the bullet still arrives comfortably inside band 1 (solidly supersonic, with margin above the threshold), or, for loads purpose-built for band 3, to stay below its upper threshold the whole way. Crossing band 2 in flight isn't a problem if it happens well before the target; it becomes one when it happens right around the distance actually being shot.</p>
 		</section>
 
 		<!-- Chapter 7 -->
@@ -305,7 +405,7 @@
 				<div class="fig-img-wrap">
 					<img src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Settings">
 				</div>
-				<div class="fig-caption"><b>Fig. 10</b> — Settings</div>
+				<div class="fig-caption"><b>Fig. 11</b> — Settings</div>
 			</div>
 		</section>
 
@@ -313,14 +413,14 @@
 		<section class="chapter" id="cap-8">
 			<div class="chapter-kicker"><span>GS Ballistics &middot; Guide</span><span>Chapter 8</span></div>
 			<h3 class="chapter-title"><span class="chapter-num">8</span>Exporting your data</h3>
-			<p class="chapter-intro">The "Backup and restore" section in Settings (or the "Export report" entry in the main menu) exports a single HTML file containing every weapon profile, range and rifle setting. The file is handed straight to Android's own share sheet: it can be saved to Drive, sent by email or WhatsApp, or simply saved among the device's files.</p>
-			<p>The exported file is both a readable report and a complete backup at once. Opened in any browser it shows the active weapon profile with its ballistic table and drop chart; every piece of data needed to restore the full configuration — including profiles not shown on screen — stays embedded in that same file, with no internet connection required. To restore it, on this device or another one, it's enough to import it from that same "Backup and restore" section.</p>
+			<p class="chapter-intro">The "Backup and restore" section in Settings (or the "Export report" entry in the main menu) exports a single HTML file containing every weapon profile, range and rifle setting. The file opens right away, in whichever HTML viewer is set on the device: from there, like any other page, sharing it to Drive, email, WhatsApp or saving it among the files is still one tap away.</p>
+			<p>The exported file is both a readable report and a complete backup at once. Opened in any browser it shows the active weapon profile with its ballistic table, drop chart and retained-velocity chart (with the same dashed transonic thresholds shown in chapter 6); every piece of data needed to restore the full configuration — including profiles not shown on screen — stays embedded in that same file, with no internet connection required. To restore it, on this device or another one, it's enough to import it from that same "Backup and restore" section.</p>
 
-			<div class="fig fig-wide">
-				<div class="fig-img-wrap">
+			<div class="fig">
+				<a class="fig-img-wrap" href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
 					<img src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Exported report">
-				</div>
-				<div class="fig-caption"><b>Fig. 11</b> — The exported report, opened in a browser</div>
+				</a>
+				<div class="fig-caption"><b>Fig. 12</b> — The exported report, opened in a browser — <a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">open a real example</a></div>
 			</div>
 		</section>
 
@@ -333,6 +433,7 @@
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">9.1</span>Ballistic coefficient and drag models</h4>
 				<p>Start with the number every shooter already knows best: the ballistic coefficient. In short, a bullet's BC is the ratio between its sectional density — mass divided by the square of the diameter — and its form factor relative to a standard reference projectile: the more "efficient" the real bullet is at cutting through the air compared to that reference, the higher the BC and the lower the drag at a given speed. GS Ballistics doesn't just apply that number as a fixed coefficient: it uses the standard G1 (flat-base projectile, the historically dominant convention) and G7 (long-ogive boat-tail projectile, more representative of modern long-range match bullets) drag tables, both indexed by instantaneous Mach number — the same historical Ingalls/McCoy curve the leading ballistic solvers are built on.</p>
+				<p>The BC a manufacturer publishes is a lot average, and can drift from that of your own specific lot or from the velocity your own barrel actually produces. Verifying it in the field just takes measuring the bullet's velocity at two points a known distance apart along the trajectory — the muzzle and 100 or 200 metres further out, say — with a chronograph, or with a single device able to record the whole trajectory in one shot. The velocity lost between the two points depends on the bullet's real BC: trying different BC values in the calculation until the predicted velocity at the second point matches the measured one gives you the actual BC of that exact rifle/load/lot combination — often more reliable than the factory-published one. Once found, it's just a matter of updating it in the weapon profile.</p>
 			</div>
 
 			<div class="tech-sub">
@@ -348,11 +449,12 @@
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">9.4</span>The geometry of a zero</h4>
 				<p>One thing is still worth clearing up, and it's probably the most misunderstood: the elevation shown in the app isn't the bullet's raw drop, but the angular correction needed relative to the zeroed line of sight. It depends, then, on the scope's height above the bore and on the chosen zero range too, not on the trajectory alone — which is exactly why two rifles firing the very same load, but with scopes mounted at different heights, need different elevation at the same distance. These values — zero range, line-of-sight height, twist rate and any mount offset — are set from the "Scope and rifle configuration" screen, shared by every weapon profile.</p>
+				<p>If the scope height isn't already known, it can be measured with a caliper, no disassembly required: measure the outer diameter of the scope's bell where it sits in the ring, and the barrel's diameter at the same point, halve each of the two, then add the free gap between the underside of the bell and the top of the barrel, also read off the caliper. The sum of the three values is the height being measured.</p>
 				<div class="fig">
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Scope and rifle configuration">
 					</div>
-					<div class="fig-caption"><b>Fig. 12</b> — Scope and rifle configuration</div>
+					<div class="fig-caption"><b>Fig. 13</b> — Scope and rifle configuration</div>
 				</div>
 			</div>
 
@@ -363,7 +465,7 @@
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Step-by-step elevation calculation">
 					</div>
-					<div class="fig-caption"><b>Fig. 13</b> — Elevation calculation</div>
+					<div class="fig-caption"><b>Fig. 14</b> — Elevation calculation</div>
 				</div>
 			</div>
 		</section>

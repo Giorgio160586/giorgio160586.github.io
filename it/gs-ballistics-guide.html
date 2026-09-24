@@ -81,17 +81,34 @@
 
 		/* Figures */
 		.fig { margin: 20px 0 10px; max-width: 320px; }
-		.fig-wide { max-width: 100%; }
-		.fig-img-wrap { position: relative; border: 1px solid var(--rule-light); border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden; }
+		.fig-img-wrap { display: block; position: relative; border: 1px solid var(--rule-light); border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden; }
 		.fig-img-wrap img { display: block; width: 100%; height: auto; }
 		.fig-caption { background: var(--caption-bg); color: var(--muted); font-size: 0.78rem; padding: 7px 10px; border-radius: 0 0 10px 10px; }
 		.fig-caption b { color: var(--ink); font-weight: 700; }
-		.callout { position: absolute; width: 15px; height: 15px; border-radius: 50%; background: #e02020; border: none; color: #fff; font-weight: 700; font-size: 8px; display: flex; align-items: center; justify-content: center; transform: translate(-50%, -50%); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+		/* Numbered callouts as a leader-line diagram (number sits outside the screenshot, a line
+		   points to the exact spot) instead of a dot stamped directly on the image — so the marker
+		   itself never covers the label or control it's pointing at. Same size as every other
+		   figure: the diagram lives entirely inside the screenshot's own bounds, on blank space. */
+		.fig-diagram { display: block; width: 100%; height: auto; }
+		.fig-diagram .callout-frame { fill: none; stroke: var(--rule-light); stroke-width: 3; }
+		.fig-diagram .callout-line { stroke: #e02020; stroke-width: 4; }
+		.fig-diagram .callout-num-circle { fill: #e02020; }
+		.fig-diagram .callout-num-text { fill: #fff; font-weight: 700; font-family: 'Inter', system-ui, sans-serif; text-anchor: middle; }
 		.callout-legend { list-style: none; margin: 12px 0 0; padding: 0; font-size: 0.88rem; }
 		.callout-legend li { display: flex; gap: 0.6em; padding: 3px 0; }
 		.callout-legend .n { color: var(--accent); font-weight: 800; flex: none; width: 1.2em; }
 		.chapter-figrow { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
 		.chapter-figrow .fig { flex: none; }
+
+		/* Numbered "band" list — each item is a named velocity range (e.g. a Mach regime) with its
+		   own short behavior description, set apart by a left rule instead of the plain dotted
+		   .callout-legend rows since each entry here needs more than one line. */
+		.band-list { list-style: none; margin: 16px 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+		.band-list li { border-left: 3px solid var(--accent); padding-left: 14px; }
+		.band-head { display: flex; align-items: baseline; gap: 0.55em; flex-wrap: wrap; margin-bottom: 3px; }
+		.band-head strong { font-size: 1rem; }
+		.band-range { color: var(--muted); font-size: 0.85rem; }
+		.band-list p { margin: 0; color: var(--ink); line-height: 1.6; font-size: 0.92rem; }
 
 		/* Technical chapter sub-sections */
 		.tech-sub { margin: 1.6rem 0; }
@@ -167,12 +184,12 @@
 
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">1.4</span>Impostare la distanza del bersaglio</h4>
-				<p>Definiti reticolo, munizione e condizioni atmosferiche, la distanza del bersaglio si imposta dalla ghiera nella schermata Home. L'alzo calcolato per quella distanza compare immediatamente, nell'unità definita al passaggio 1.1. Le distanze proposte dalla ghiera sono quelle del poligono attivo, gestibili da Elenco poligoni &rarr; Gestisci distanze.</p>
+				<p>Definiti reticolo, munizione e condizioni atmosferiche, la distanza del bersaglio si imposta dalla ghiera nella schermata Home. L'alzo calcolato per quella distanza compare immediatamente, nell'unità definita al passaggio 1.1. Le distanze proposte dalla ghiera sono quelle del poligono attivo: si modificano da Elenco poligoni &rarr; icona di modifica &rarr; scheda "Distanze".</p>
 				<div class="fig">
 					<div class="fig-img-wrap">
-						<img src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Gestione delle distanze del poligono">
+						<img src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Scheda Distanze del poligono">
 					</div>
-					<div class="fig-caption"><b>Fig. 2</b> — Gestione distanze del poligono</div>
+					<div class="fig-caption"><b>Fig. 2</b> — Scheda "Distanze" del poligono</div>
 				</div>
 			</div>
 		</section>
@@ -184,15 +201,31 @@
 			<p class="chapter-intro">La schermata Home mostra l'alzo da impostare in torretta per la distanza selezionata, calcolato in base alla munizione e all'ottica attualmente attive. Per modificare la distanza, agire sulla ghiera: il valore dell'alzo si aggiorna automaticamente.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-1-home.png" alt="Cruscotto Home di GS Ballistics">
-					<span class="callout" style="top:21%; left:19%;">1</span>
-					<span class="callout" style="top:56%; left:16%;">2</span>
-					<span class="callout" style="top:51%; left:50%;">3</span>
-					<span class="callout" style="top:62%; left:50%;">4</span>
-					<span class="callout" style="top:84%; left:23%;">5</span>
-					<span class="callout" style="top:84%; left:73%;">6</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cruscotto Home di GS Ballistics">
+					<defs>
+						<clipPath id="figClipHome"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-1-home.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipHome)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="890" y1="430" x2="800" y2="420"/>
+					<line class="callout-line" x1="90" y1="1075" x2="190" y2="1075"/>
+					<line class="callout-line" x1="900" y1="970" x2="800" y2="970"/>
+					<line class="callout-line" x1="930" y1="1200" x2="840" y2="1170"/>
+					<line class="callout-line" x1="280" y1="1800" x2="280" y2="1700"/>
+					<line class="callout-line" x1="790" y1="1800" x2="790" y2="1700"/>
+					<circle class="callout-num-circle" cx="890" cy="430" r="26"/>
+					<circle class="callout-num-circle" cx="90" cy="1075" r="26"/>
+					<circle class="callout-num-circle" cx="900" cy="970" r="26"/>
+					<circle class="callout-num-circle" cx="930" cy="1200" r="26"/>
+					<circle class="callout-num-circle" cx="280" cy="1800" r="26"/>
+					<circle class="callout-num-circle" cx="790" cy="1800" r="26"/>
+					<text class="callout-num-text" x="890" y="432" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="90" y="1077" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="900" y="972" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="930" y="1202" dy="0.35em" font-size="30">4</text>
+					<text class="callout-num-text" x="280" y="1802" dy="0.35em" font-size="30">5</text>
+					<text class="callout-num-text" x="790" y="1802" dy="0.35em" font-size="30">6</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 3</b> — Cruscotto Home</div>
 			</div>
 			<ol class="callout-legend">
@@ -256,13 +289,25 @@
 			<p class="chapter-intro">Una volta impostate le distanze del proprio poligono, l'app costruisce automaticamente la tabella balistica corrispondente: per ogni riga compaiono il valore calcolato, l'eventuale valore reale registrato al tiro e la differenza tra i due, cosicché sia immediato accorgersi se, a una certa distanza, il modello si sta allontanando da quello che succede davvero in campo.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-2-table.png" alt="Tabella balistica">
-					<span class="callout" style="top:41%; left:11%;">1</span>
-					<span class="callout" style="top:41%; left:33%;">2</span>
-					<span class="callout" style="top:41%; left:56%;">3</span>
-					<span class="callout" style="top:41%; left:80%;">4</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tabella balistica">
+					<defs>
+						<clipPath id="figClipTable"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-2-table.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipTable)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="119" y1="705" x2="119" y2="755"/>
+					<line class="callout-line" x1="356" y1="705" x2="356" y2="755"/>
+					<line class="callout-line" x1="605" y1="705" x2="605" y2="755"/>
+					<line class="callout-line" x1="864" y1="705" x2="864" y2="755"/>
+					<circle class="callout-num-circle" cx="119" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="356" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="605" cy="705" r="26"/>
+					<circle class="callout-num-circle" cx="864" cy="705" r="26"/>
+					<text class="callout-num-text" x="119" y="707" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="356" y="707" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="605" y="707" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="864" y="707" dy="0.35em" font-size="30">4</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 8</b> — Tabella balistica</div>
 			</div>
 			<ol class="callout-legend">
@@ -277,15 +322,25 @@
 		<section class="chapter" id="cap-6">
 			<div class="chapter-kicker"><span>GS Ballistics &middot; Guida</span><span>Capitolo 6</span></div>
 			<h3 class="chapter-title"><span class="chapter-num">6</span>Grafico</h3>
-			<p class="chapter-intro">La stessa tabella, letta in forma di curva, racconta a colpo d'occhio qualcosa che una colonna di numeri fatica a mostrare: dove, lungo la traiettoria, il valore reale comincia a discostarsi da quello calcolato. Volendo, sullo stesso grafico si può sovrapporre la curva di una seconda munizione impostata come confronto, per vedere fianco a fianco come si comportano due proiettili diversi sulla stessa distanza.</p>
+			<p class="chapter-intro">La stessa tabella, letta in forma di curva, racconta a colpo d'occhio qualcosa che una colonna di numeri fatica a mostrare: dove, lungo la traiettoria, il valore reale comincia a discostarsi da quello calcolato. Volendo, sullo stesso grafico si può sovrapporre la curva di una seconda munizione impostata come confronto, per vedere fianco a fianco come si comportano due proiettili diversi sulla stessa distanza. Il grafico non è uno solo: ogni tabella dell'app (caduta, velocità residua, energia residua, errore di stima distanza) ha la propria versione a curva, raggiungibile con la stessa icona di scambio tabella/grafico.</p>
 
 			<div class="fig">
-				<div class="fig-img-wrap">
-					<img src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Grafico caduta">
-					<span class="callout" style="top:47%; left:28%;">1</span>
-					<span class="callout" style="top:52%; left:9%;">2</span>
-					<span class="callout" style="top:96%; left:83%;">3</span>
-				</div>
+				<svg class="fig-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico caduta">
+					<defs>
+						<clipPath id="figClipChart"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-3-chart.png" x="0" y="0" width="1080" height="1920" clip-path="url(#figClipChart)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V1920 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="900" y1="900" x2="770" y2="900"/>
+					<line class="callout-line" x1="280" y1="1005" x2="200" y2="1005"/>
+					<line class="callout-line" x1="950" y1="1680" x2="950" y2="1770"/>
+					<circle class="callout-num-circle" cx="900" cy="900" r="26"/>
+					<circle class="callout-num-circle" cx="280" cy="1005" r="26"/>
+					<circle class="callout-num-circle" cx="950" cy="1680" r="26"/>
+					<text class="callout-num-text" x="900" y="902" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="280" y="1007" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="950" y="1682" dy="0.35em" font-size="30">3</text>
+				</svg>
 				<div class="fig-caption"><b>Fig. 9</b> — Grafico della caduta</div>
 			</div>
 			<ol class="callout-legend">
@@ -293,6 +348,51 @@
 				<li><span class="n">2</span> Asse verticale — caduta (cm)</li>
 				<li><span class="n">3</span> Asse orizzontale — distanza (m)</li>
 			</ol>
+
+			<div class="fig">
+				<svg class="fig-diagram" viewBox="0 0 1080 2200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grafico velocità residua">
+					<defs>
+						<clipPath id="figClipChartVel"><path d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/></clipPath>
+					</defs>
+					<image href="../store-assets/screenshots/phone/phone-15-velocity-chart.png" x="0" y="0" width="1080" height="2200" clip-path="url(#figClipChartVel)"/>
+					<path class="callout-frame" d="M34,0 H1046 A34,34 0 0 1 1080,34 V2200 H0 V34 A34,34 0 0 1 34,0 Z"/>
+					<line class="callout-line" x1="630" y1="886" x2="570" y2="886"/>
+					<line class="callout-line" x1="410" y1="965" x2="345" y2="965"/>
+					<line class="callout-line" x1="910" y1="1860" x2="910" y2="1810"/>
+					<line class="callout-line" x1="350" y1="1596" x2="250" y2="1596"/>
+					<circle class="callout-num-circle" cx="630" cy="886" r="26"/>
+					<circle class="callout-num-circle" cx="410" cy="965" r="26"/>
+					<circle class="callout-num-circle" cx="910" cy="1860" r="26"/>
+					<circle class="callout-num-circle" cx="350" cy="1596" r="26"/>
+					<text class="callout-num-text" x="630" y="888" dy="0.35em" font-size="30">1</text>
+					<text class="callout-num-text" x="410" y="967" dy="0.35em" font-size="30">2</text>
+					<text class="callout-num-text" x="910" y="1862" dy="0.35em" font-size="30">3</text>
+					<text class="callout-num-text" x="350" y="1598" dy="0.35em" font-size="30">4</text>
+				</svg>
+				<div class="fig-caption"><b>Fig. 10</b> — Grafico della velocità residua, con munizione di confronto</div>
+			</div>
+			<ol class="callout-legend">
+				<li><span class="n">1</span> Curva della munizione di confronto</li>
+				<li><span class="n">2</span> Asse verticale — velocità residua (m/s)</li>
+				<li><span class="n">3</span> Asse orizzontale — distanza (m)</li>
+				<li><span class="n">4</span> Soglie transoniche di riferimento (Mach 1,2 e Mach 0,8), calcolate sulla velocità del suono alla temperatura impostata</li>
+			</ol>
+			<p>Alla temperatura e pressione standard usate come riferimento (15°C, 1013 hPa) la velocità del suono è di circa 340 m/s (Mach 1) — a una temperatura diversa cambia leggermente, ed è per questo che il grafico ricalcola le due soglie tratteggiate sulla temperatura impostata in Impostazioni, non su un valore fisso. In base a quella velocità, la traiettoria di ogni proiettile attraversa tre fasce distinte:</p>
+			<ol class="band-list">
+				<li>
+					<div class="band-head"><strong>Supersonico</strong><span class="band-range">sopra ~410 m/s (oltre Mach 1,2)</span></div>
+					<p>Il proiettile vola più veloce dell'onda d'urto che si trascina dietro. È il regime in cui i modelli di resistenza G1/G7 sono tarati meglio e si comportano in modo più prevedibile: è la condizione in cui la maggior parte dei tiri di precisione viene pensata per arrivare a bersaglio.</p>
+				</li>
+				<li>
+					<div class="band-head"><strong>Transonico</strong><span class="band-range">tra ~410 e ~270 m/s (Mach 1,2–0,8)</span></div>
+					<p>Il proiettile rallenta fino al punto in cui l'onda d'urto che lo precedeva lo raggiunge e lo attraversa. Il coefficiente di resistenza cambia in modo brusco e meno prevedibile, e la stabilità giroscopica — più che sufficiente in regime supersonico — può calare abbastanza da produrre un aumento di dispersione o deviazioni imprevedibili: è la fascia in cui il gruppo di tiro tende ad allargarsi in modo meno controllabile, indipendentemente da quanto sia buono il resto del sistema.</p>
+				</li>
+				<li>
+					<div class="band-head"><strong>Subsonico</strong><span class="band-range">sotto ~270 m/s (sotto Mach 0,8)</span></div>
+					<p>Superata la fascia transonica, il proiettile torna a comportarsi in modo relativamente prevedibile, con resistenza aerodinamica generalmente inferiore. È la condizione con cui vengono progettate le munizioni pensate per restare subsoniche fin dalla volata (tipico del tiro soppresso); per una munizione che invece parte supersonica e ci arriva solo dopo aver rallentato lungo la traiettoria, il passaggio attraverso la fascia transonica sopra ha già in genere eroso parte della precisione.</p>
+				</li>
+			</ol>
+			<p>Per capire dove "stare" con la propria distanza operativa: la zona da evitare, quando possibile, non è il subsonico in sé ma proprio la fascia transonica — l'ideale è scegliere la distanza massima d'impiego in modo che il proiettile arrivi a bersaglio ancora ben dentro la fascia 1 (comodamente supersonico, con un margine di sicurezza sopra la soglia), oppure, per chi usa munizioni pensate apposta per la fascia 3, restare sempre sotto la sua soglia superiore. Attraversare la fascia 2 in volo non è un problema se avviene ben prima di arrivare a bersaglio; lo diventa se avviene proprio nell'intorno della distanza a cui si spara.</p>
 		</section>
 
 		<!-- Capitolo 7 -->
@@ -305,7 +405,7 @@
 				<div class="fig-img-wrap">
 					<img src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Impostazioni">
 				</div>
-				<div class="fig-caption"><b>Fig. 10</b> — Impostazioni</div>
+				<div class="fig-caption"><b>Fig. 11</b> — Impostazioni</div>
 			</div>
 		</section>
 
@@ -313,14 +413,14 @@
 		<section class="chapter" id="cap-8">
 			<div class="chapter-kicker"><span>GS Ballistics &middot; Guida</span><span>Capitolo 8</span></div>
 			<h3 class="chapter-title"><span class="chapter-num">8</span>Esportazione dei dati</h3>
-			<p class="chapter-intro">Dalla sezione "Backup e ripristino" delle Impostazioni (o dalla voce "Esporta report" nel menu principale) si esporta un unico file HTML che contiene tutti i profili munizione, i poligoni e le impostazioni del fucile. Il file è passato direttamente al foglio di condivisione di Android: si può salvare su Drive, inviare via email o WhatsApp, o semplicemente salvare tra i file del dispositivo.</p>
-			<p>Il file esportato è al tempo stesso un report leggibile e un backup completo. Aperto in un browser qualsiasi mostra il profilo munizione attivo con la sua tabella balistica e il grafico della caduta; tutti i dati necessari a ripristinare la configurazione completa — inclusi i profili non mostrati a schermo — restano incorporati nello stesso file, senza bisogno di connessione a internet. Per ripristinarlo su questo o un altro dispositivo, basta importarlo dalla stessa sezione "Backup e ripristino".</p>
+			<p class="chapter-intro">Dalla sezione "Backup e ripristino" delle Impostazioni (o dalla voce "Esporta report" nel menu principale) si esporta un unico file HTML che contiene tutti i profili munizione, i poligoni e le impostazioni del fucile. Il file si apre subito, nel visualizzatore HTML scelto sul dispositivo: da lì, come per qualsiasi altra pagina, resta comunque a un tocco di distanza condividerlo su Drive, email, WhatsApp o salvarlo tra i file.</p>
+			<p>Il file esportato è al tempo stesso un report leggibile e un backup completo. Aperto in un browser qualsiasi mostra il profilo munizione attivo con la sua tabella balistica, il grafico della caduta e il grafico della velocità residua (con le stesse soglie transoniche tratteggiate viste al capitolo 6); tutti i dati necessari a ripristinare la configurazione completa — inclusi i profili non mostrati a schermo — restano incorporati nello stesso file, senza bisogno di connessione a internet. Per ripristinarlo su questo o un altro dispositivo, basta importarlo dalla stessa sezione "Backup e ripristino".</p>
 
-			<div class="fig fig-wide">
-				<div class="fig-img-wrap">
+			<div class="fig">
+				<a class="fig-img-wrap" href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
 					<img src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Report esportato">
-				</div>
-				<div class="fig-caption"><b>Fig. 11</b> — Il report esportato, aperto in un browser</div>
+				</a>
+				<div class="fig-caption"><b>Fig. 12</b> — Il report esportato, aperto in un browser — <a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">apri un esempio reale</a></div>
 			</div>
 		</section>
 
@@ -333,6 +433,7 @@
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">9.1</span>Coefficiente balistico e modelli di drag</h4>
 				<p>Si parta dal dato che ogni tiratore conosce meglio: il coefficiente balistico. In sintesi, il BC di un proiettile è il rapporto tra la sua densità sezionale — la massa divisa per il quadrato del diametro — e il suo fattore di forma rispetto a un proiettile di riferimento standard: più il proiettile reale è "efficiente" nel tagliare l'aria rispetto al riferimento, più alto è il BC e minore la resistenza subita a parità di velocità. GS Ballistics non si accontenta di applicare questo numero come un coefficiente fisso: usa le tabelle di resistenza standard G1 (proiettile a base piatta, la convenzione storica più diffusa) e G7 (proiettile boat-tail a ogiva lunga, più rappresentativo dei moderni proiettili match per il tiro a lunga distanza), entrambe indicizzate sul numero di Mach istantaneo — la stessa curva storica Ingalls/McCoy su cui si basano i principali risolutori balistici.</p>
+				<p>Il BC dichiarato dal produttore è una media di lotto, e può discostarsi da quello del proprio lotto specifico o dalla velocità realmente raggiunta dalla propria canna. Per verificarlo sul campo basta misurare la velocità del proiettile in due punti a distanza nota lungo la traiettoria — ad esempio alla volata e dopo 100 o 200 metri — con un cronografo, o con un unico rilevatore in grado di registrare l'intera traiettoria in un solo colpo. Il calo di velocità tra i due punti dipende dal BC reale del proiettile: provando diversi valori di BC nel calcolo finché la velocità prevista al secondo punto non coincide con quella misurata, si risale al BC effettivo di quella precisa combinazione arma/munizione/lotto — spesso più affidabile di quello dichiarato in fabbrica. Trovato il valore, basta aggiornarlo nel profilo arma.</p>
 			</div>
 
 			<div class="tech-sub">
@@ -348,11 +449,12 @@
 			<div class="tech-sub">
 				<h4 class="tech-sub-title"><span class="n">9.4</span>La geometria dello zero</h4>
 				<p>Resta un'ultima cosa da chiarire, ed è forse la più fraintesa: l'alzo mostrato in app non è la caduta grezza del proiettile, ma la correzione angolare necessaria rispetto alla linea di mira azzerata. Dipende quindi anche dall'altezza dell'ottica sopra la canna e dalla distanza di azzeramento scelta, non dalla sola traiettoria — ed è proprio per questo che due armi con la stessa identica munizione, ma con ottiche montate ad altezze diverse, richiedono alzi diversi alla stessa distanza. Questi valori — distanza di azzeramento, altezza della linea di mira, passo di rigatura ed eventuale offset dell'attacco — si impostano dalla schermata "Configurazione fucile", condivisa da tutti i profili arma.</p>
+				<p>Se l'altezza dell'ottica non è nota, si può ricavare con un calibro, senza smontare nulla: si misura il diametro esterno della campana dell'ottica nel punto in cui poggia sull'anello e quello della canna nello stesso punto, si dimezza ciascuno dei due valori, e si aggiunge lo spazio libero tra la parte inferiore della campana e la parte superiore della canna, letto anch'esso con il calibro. La somma dei tre valori è l'altezza cercata.</p>
 				<div class="fig">
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Configurazione fucile">
 					</div>
-					<div class="fig-caption"><b>Fig. 12</b> — Configurazione fucile</div>
+					<div class="fig-caption"><b>Fig. 13</b> — Configurazione fucile</div>
 				</div>
 			</div>
 
@@ -363,7 +465,7 @@
 					<div class="fig-img-wrap">
 						<img src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Calcolo dell'alzo passo per passo">
 					</div>
-					<div class="fig-caption"><b>Fig. 13</b> — Calcolo dell'alzo</div>
+					<div class="fig-caption"><b>Fig. 14</b> — Calcolo dell'alzo</div>
 				</div>
 			</div>
 		</section>
