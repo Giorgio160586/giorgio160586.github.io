@@ -101,7 +101,7 @@
 			display: flex;
 			align-items: center;
 			gap: 8px;
-			padding: 9px 12px;
+			padding: 7px 12px;
 			background: #35363A;
 		}
 		.browser-frame-nav {
@@ -148,18 +148,28 @@
 		}
 		.browser-frame-url {
 			flex: 1 1 auto;
-			min-height: 22px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
 			margin-left: 4px;
-			padding: 4px 12px;
-			border-radius: 20px;
+			padding: 0 12px 0 7px;
+			height: 28px;
+			border-radius: 999px;
 			background: #202124;
-			color: #C4C7C5;
-			font-size: 11px;
+			color: #E8EAED;
+			font-size: 12px;
 			white-space: nowrap;
 			overflow: hidden;
-			text-overflow: ellipsis;
 		}
-		.browser-frame img { display: block; width: 100%; }
+		.browser-frame-url img {
+			flex: none;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+		}
+		.browser-frame-url span { overflow: hidden; text-overflow: ellipsis; }
+		.browser-frame-url-scheme { color: #9AA0A6; }
+		.browser-frame > img { display: block; width: 100%; }
 		.phone-frame-navbar {
 			position: absolute;
 			bottom: 2px;
@@ -636,7 +646,7 @@
 										<div class="browser-frame">
 											<div class="browser-frame-bar">
 												<span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span>
-												<span class="browser-frame-url"></span>
+												<span class="browser-frame-url"><img src="../favicon.ico" alt=""><span><span class="browser-frame-url-scheme">https://</span>giorgio160586.github.io</span></span>
 												<span class="browser-frame-win"><i class="bi bi-dash"></i><span class="browser-frame-win-box"></span><i class="bi bi-x-lg"></i></span>
 											</div>
 											<img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Report esportato, aperto in un browser">
