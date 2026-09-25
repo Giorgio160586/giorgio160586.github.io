@@ -75,7 +75,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -384,6 +384,13 @@ pre code {
   font-size: inherit;
   color: inherit;
   word-break: normal;
+}
+
+/* Code blocks: light syntax theme on a grey panel, so the snippet is clearly delimited. */
+pre code.hljs {
+  background: #f3f4f6;
+  border: 1px solid #e3e5e8;
+  border-radius: 8px;
 }
 
 code {
@@ -12048,7 +12055,7 @@ body {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #DDDDDD;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 a {
@@ -12056,7 +12063,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #F5B030;
+  color: #1272b6;
   text-decoration: underline;
 }
 
@@ -12099,8 +12106,8 @@ small, .small {
 }
 .btn-primary:hover, .btn-primary:active {
   color: white;
-  background: #D4870F;
-  border-color: #D4870F;
+  background: #1272b6;
+  border-color: #1272b6;
 }
 .btn-primary svg {
   stroke-width: 2px;
@@ -12287,8 +12294,8 @@ a.more-link .link-arrow .bi {
   text-decoration: none;
 }
 .side-panel .icon-holder {
-  font-size: 1.125rem;
-  min-height: 25px;
+  font-size: 1.4rem;
+  min-height: 30px;
 }
 .side-panel .nav-text {
   text-transform: uppercase;
@@ -12364,8 +12371,8 @@ a.more-link .link-arrow .bi {
   font-size: 1.75rem;
   text-align: center;
   color: white;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
 }
 
 .section-subheading {
@@ -12391,8 +12398,8 @@ a.more-link .link-arrow .bi {
 }
 .page-intro-section .intro-name {
   font-size: 1.75rem;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
 }
 .page-intro-section .intro-content {
   margin-top: 1rem;
@@ -12723,7 +12730,7 @@ a.more-link .link-arrow .bi {
 }
 
 .resume-name {
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
   font-size: 2.25rem;
   color: white;
   font-weight: 900;
@@ -12731,7 +12738,7 @@ a.more-link .link-arrow .bi {
 
 .resume-role-title {
   font-size: 1.125rem;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.06rem;
   color: #AAAAAA;
   font-weight: 500;
 }
@@ -12746,7 +12753,7 @@ a.more-link .link-arrow .bi {
 
 .resume-section-heading {
   font-size: 1.125rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.04rem;
   color: white;
   font-weight: 900;
   display: flex;
@@ -12755,6 +12762,9 @@ a.more-link .link-arrow .bi {
 
 .resume-section-heading-icon {
   border-radius: 50%;
+  flex: none;
+  min-width: 38px;
+  aspect-ratio: 1 / 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -13112,7 +13122,7 @@ a.more-link .link-arrow .bi {
 
 .blog-comment-area .title {
   font-size: 22px;
-  font-family: "Open Sans", arial, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -13159,7 +13169,7 @@ a.more-link .link-arrow .bi {
 }
 .blog-comment-area .comment-form .error {
   color: #D9603C;
-  font-family: arial, sans-serif;
+  font-family: "Inter", sans-serif;
   display: block;
   font-size: 14px;
   text-align: left;
@@ -13353,16 +13363,24 @@ a.more-link .link-arrow .bi {
   background: white;
   box-shadow: 0 0 0.4rem 0.2rem rgba(0, 0, 0, 0.05);
 }
-.light-mode .side-panel .navbar-nav .nav-link {
-  color: #3D444A;
+.light-mode .side-panel .navbar-nav .nav-link,
+.light-mode .side-panel .navbar-nav .nav-link .icon-holder,
+.light-mode .side-panel .navbar-nav .nav-link svg {
+  color: #5A636D;
 }
-.light-mode .side-panel .navbar-nav .nav-link:hover {
-  color: #3D444A;
+.light-mode .side-panel .navbar-nav .nav-link:hover,
+.light-mode .side-panel .navbar-nav .nav-link:hover .icon-holder,
+.light-mode .side-panel .navbar-nav .nav-link:hover svg {
+  color: #5A636D;
 }
-.light-mode .side-panel .navbar-nav .nav-link.active {
+.light-mode .side-panel .navbar-nav .nav-link.active,
+.light-mode .side-panel .navbar-nav .nav-link.active .icon-holder,
+.light-mode .side-panel .navbar-nav .nav-link.active svg {
   color: #1a8fe3;
 }
-.light-mode .side-panel .navbar-nav .nav-link.active:hover {
+.light-mode .side-panel .navbar-nav .nav-link.active:hover,
+.light-mode .side-panel .navbar-nav .nav-link.active:hover .icon-holder,
+.light-mode .side-panel .navbar-nav .nav-link.active:hover svg {
   color: #1a8fe3;
 }
 .light-mode .side-panel .nav-item-close .btn-close {

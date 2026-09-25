@@ -42,50 +42,144 @@
 		   status bar/home indicator only; the screenshot image itself is never touched. */
 		.phone-frame {
 			position: relative;
-			max-width: 320px;
+			max-width: 278px;
 			margin: 0 auto;
-			padding: 38px 3px 12px;
-			background: #0A1626;
-			border-radius: 26px;
-			box-shadow: 0 0 0 1px #071019, 0 14px 30px rgba(0, 0, 0, 0.25);
+			padding: 24px 3px 14px;
+			background: #122036;
+			border-radius: 12px;
+			box-shadow: 0 0 0 4px #05080d, 0 14px 30px rgba(0, 0, 0, 0.3);
 		}
-		.phone-frame img { display: block; width: 100%; border-radius: 16px; }
+		.phone-frame.is-dialog { background: #070D16; }
+		.phone-frame img { display: block; width: 100%; border-radius: 7px; }
 		.phone-frame-notch {
 			position: absolute;
 			top: 8px;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 40%;
-			height: 20px;
-			background: #071019;
-			border-radius: 10px;
-			z-index: 2;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: #05080d;
+			box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+			z-index: 3;
 		}
 		.phone-frame-statusbar {
 			position: absolute;
-			top: 14px;
-			left: 22px;
-			right: 22px;
+			top: 7px;
+			left: 10px;
+			right: 10px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			color: #fff;
-			font-size: 10px;
+			font-size: 9px;
 			font-weight: 700;
 			z-index: 1;
 			pointer-events: none;
 		}
-		.phone-frame-icons i { margin-left: 4px; font-size: 10px; }
-		.phone-frame-home {
+		.phone-frame-icons i { margin-left: 4px; font-size: 9px; }
+		.phone-frame-icons { display: inline-flex; align-items: center; }
+		.phone-frame-batt {
+			margin-left: 4px;
+			padding: 0 3px;
+			border-radius: 6px;
+			background: #fff;
+			color: #0A1626;
+			font-size: 7px;
+			font-weight: 700;
+			line-height: 1.5;
+		}
+		/* Decorative browser chrome (Chrome-like, dark) for desktop screenshots. */
+		.browser-frame {
+			position: relative;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+			background: #292A2D;
+		}
+		.browser-frame-bar {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 9px 12px;
+			background: #35363A;
+		}
+		.browser-frame-nav {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-left: 2px;
+			color: #C4C7C5;
+			font-size: 14px;
+			flex: none;
+		}
+		.browser-frame-win {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			margin-left: 4px;
+			color: #C4C7C5;
+			font-size: 12px;
+			flex: none;
+		}
+		.browser-frame-win-box {
+			position: relative;
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+		}
+		.browser-frame-win-box::before,
+		.browser-frame-win-box::after {
+			content: "";
 			position: absolute;
-			bottom: 8px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 30%;
-			height: 4px;
-			border-radius: 2px;
-			background: rgba(255, 255, 255, 0.5);
+			width: 7px;
+			height: 7px;
+			border: 1px solid currentColor;
+			border-radius: 1px;
+		}
+		.browser-frame-win-box::before {
+			top: 0;
+			right: 0;
+		}
+		.browser-frame-win-box::after {
+			bottom: 0;
+			left: 0;
+			background: #35363A;
+		}
+		.browser-frame-url {
+			flex: 1 1 auto;
+			min-height: 22px;
+			margin-left: 4px;
+			padding: 4px 12px;
+			border-radius: 20px;
+			background: #202124;
+			color: #C4C7C5;
+			font-size: 11px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.browser-frame img { display: block; width: 100%; }
+		.phone-frame-navbar {
+			position: absolute;
+			bottom: 2px;
+			left: 14%;
+			right: 14%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: rgba(255, 255, 255, 0.55);
+			font-size: 11px;
+			letter-spacing: 1px;
 			z-index: 3;
+			pointer-events: none;
+		}
+		.phone-frame-recents { display: inline-flex; align-items: center; gap: 3px; }
+		.phone-frame-recents span {
+			display: block;
+			width: 1px;
+			height: 10px;
+			background: currentColor;
 		}
 	</style>
 
@@ -117,7 +211,7 @@
 									<a class="nav-link d-flex flex-column" href="resume.html"><span class="icon-holder"><i class="fa-solid fa-file-lines"></i></span><span class="nav-text">Resume</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link d-flex flex-column" href="contact.html"><span class="icon-holder"><i class="fa-solid fa-comment-dots"></i></span><span class="nav-text">Contact</a>
+									<a class="nav-link d-flex flex-column" href="contact.html"><span class="icon-holder"><i class="fa-solid fa-comment-dots"></i></span><span class="nav-text">Contact</span></a>
 								</li>
 								<li class="nav-item nav-item-close">
 				                    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"><i class="bi bi-x"></i></button>
@@ -170,34 +264,358 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="img-fluid mb-3"><img class="img-fluid" src="../store-assets/feature-graphics/feature-graphic-en.png" alt="GS Ballistics"></div>
+							<div class="img-fluid mb-3"><img class="img-fluid rounded-4" src="../store-assets/feature-graphics/feature-graphic-en.png" alt="GS Ballistics"></div>
 							<div class="case-study-intro">
 
-							    <p class="mb-4">GS Ballistics is an Android app for long-range shooting. Instead of relying on a guess in the field, it gives you a verified ballistic table: it numerically integrates air resistance and gravity along the whole trajectory, using the standard G1/G7 drag tables and a real atmosphere derived from temperature and pressure, not an approximate formula. It comes with a library of over 200 bullets, weapon and range profiles with field-verified elevations compared automatically against the calculated ones, a matching table and chart, and full data backup — no ads, no tracking, entirely offline. <strong>Built entirely with Claude Code <img src="../assets/images/tech-icons/claude.svg" alt="Claude" style="height: 0.85em; vertical-align: baseline;"></strong>; I defined every design decision and validated every feature on real devices.</p>
+							    <p class="mb-4">GS Ballistics is an Android app for long-range shooting: it works out the elevation to dial on the turret for any distance, with a real ballistic engine — G1/G7 drag tables and real atmosphere, not an approximate formula. It comes with a library of over 200 bullets, weapon and range profiles that keep the elevations verified on the range, plus the matching table and charts.</p>
 
 							</div>
+							<div class="row mt-4">
+								<div class="col-12 col-md-6">
+									<ul class="list-unstyled mb-0">
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-1" class="fw-bold text-nowrap">Home dashboard</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-2" class="fw-bold text-nowrap">Slope angle</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-3" class="fw-bold text-nowrap">Optics and reticle</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-4" class="fw-bold text-nowrap">Scope and rifle configuration</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Bullet library and weapon profiles</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-6" class="fw-bold text-nowrap">Verified shot correction</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+									</ul>
+								</div><!--//col-->
+								<div class="col-12 col-md-6">
+									<ul class="list-unstyled mb-0">
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-7" class="fw-bold text-nowrap">Ballistic table and distances</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-8" class="fw-bold text-nowrap">Drop chart</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-9" class="fw-bold text-nowrap">Remaining velocity chart</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-10" class="fw-bold text-nowrap">Settings</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-11" class="fw-bold text-nowrap">Exporting your data</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+									</ul>
+								</div><!--//col-->
+							</div><!--//row-->
 						</div><!--//intro-holder-->
 
 					</section><!--//page-intro-section-->
 
-					<section class="case-study-section section mx-auto">
-						<div class="row">
+					<section class="case-study-section section mx-auto" id="cap-1">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Home dashboard</h3>
+							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
+								<p>The Home screen shows the elevation to dial on the turret for the selected distance, worked out from the active bullet and optics.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-1-home.png" alt="Home dashboard">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>The distance is changed with the gauge: the elevation updates automatically. On screen you find:</p>
+										<ul>
+											<li>the bullet and the optics currently active;</li>
+											<li>the gauge and the distance set on it;</li>
+											<li>slope angle, temperature, pressure and muzzle velocity used in the calculation — each one opens with a tap to be changed;</li>
+											<li>the calculated elevation, in green when it has been verified on the range for that distance;</li>
+											<li>the horizontal windage.</li>
+										</ul>
+										<p><strong>The V0 velocity</strong> is the bullet's speed as it leaves the barrel, that is the one measured at the muzzle (at the muzzle brake) with a chronograph: it is the starting point of the whole trajectory, so a wrong value here shifts the elevation at every distance.</p>
+										<p><strong>Temperature and pressure</strong> set the air density and the speed of sound: using values other than the real ones produces an error that grows with distance. It is worth updating them from here before every shooting session.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-2">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Slope angle</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>An uphill or downhill shot needs less elevation than a flat one at the same distance, and the difference grows with the angle and with the distance: that is why the slope angle goes into the calculation alongside distance, bullet and atmosphere.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-16-slope-angle-dialog.png" alt="Slope angle dialog with the inclinometer">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Tapping "Slope angle" opens the same kind of popup as temperature and pressure. The "Use the phone's inclinometer" button reads the phone's sensor in real time — laid flat on top of the barrel or the scope, with its top end pointing at the target — and keeps updating the value until you stop it; from there it can also be corrected by hand before saving.</p>
+										<p>Saving updates the active range only if the distance set on the gauge matches an already saved target exactly; otherwise the value holds for this reading alone.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-3">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Optics and reticle</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>The first value to settle is the angular unit of the reticle mounted on the rifle: MOA or MRAD. Every elevation the app calculates is expressed in that unit, so this is where you start. Several optics can be kept in the list and switched between: the one with the check mark is the active optic, the one used for the calculation.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-14-optics-edit.png" alt="Editing an optic: reticle unit, click value and travel">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Three values are set on the optics card, each with the note the app shows underneath it:</p>
+										<ul>
+											<li><strong>Angular unit</strong> — unit the elevation to apply is shown in: MOA or mrad, matching your scope.</li>
+											<li><strong>Elevation/Windage Click Value</strong> — what one turret click of elevation/windage is worth, in the unit chosen in settings. Examples: 1/4 MOA turret → 0.25, 1/8 MOA turret → 0.125, 0.1 mrad turret → 0.1.</li>
+											<li><strong>Elevation travel</strong> — if left blank, the main gauge's travel-based distance limit (in general Settings) won't apply to this optic.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-4">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Scope and rifle configuration</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Another set of values, entered once per rifle rather than at every shot, goes into the calculation as well. They live on a dedicated screen, shared by every weapon profile.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Scope and rifle configuration">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>There are four fields, each with the note the app shows underneath it:</p>
+										<ul>
+											<li><strong>Sight-In Range</strong> — the distance the rifle is zeroed at with this scope: the elevation correction is zero at this distance.</li>
+											<li><strong>Line of Sight to Bore</strong> — the height of the scope's optical axis above the bore axis, measured ring-center to bore-center.</li>
+											<li><strong>Twist Rate (1:in)</strong> — the barrel's rifling twist rate (e.g. 1:8 = one full turn every 8 inches) — affects the bullet's in-flight stability.</li>
+											<li><strong>Rail + rings offset</strong> — extra elevation given by the canted rail/base and the rings, always in MOA. Added to the optic's own travel when computing the main gauge's lock.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-5">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Bullet library and weapon profiles</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>The elevation calculation depends on the bullet's ballistic coefficient (BC): with no bullet selected, or with the wrong BC, the calculated value cannot be trusted. Where both G1 and G7 are available the app defaults to G7, more accurate for the long-ogive match bullets typical of long-range shooting.</p>
+								<p>The bullet library holds over 200 bullets with factory data from the main manufacturers. Every weapon profile stores caliber, weight, muzzle velocity and the G1 and G7 ballistic coefficients. A profile can be created by picking a bullet from the library — the data is pre-filled and can be edited — or by entering every value by hand.</p>
+								<p>If a bullet is missing from the library, or the values shown look wrong, it can be reported straight from the Report tab of the edit popup: the report carries the data currently shown on the card plus a field for an optional note, and is sent to the developer by email.</p>
+								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
+									<div class="col-4">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Bullet list">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Editing a bullet">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-8-report.png" alt="Reporting wrong data">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-6">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Verified shot correction</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>After a shot, the elevation actually verified can be logged for the distance and the rifle in use. The logged value is compared automatically against the calculated one and stays attached to that rifle/distance pair.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Shot correction">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p><strong>Both values are always there.</strong> MOA and mrad are shown side by side and update each other: whatever you type into either field, the other immediately shows the same correction converted into the other unit.</p>
+										<p>It pays off above all when your spotter calls the correction in whichever unit they prefer: you enter it exactly as it was given to you and read straight away what it is worth in your own turret's unit, with no conversion in your head.</p>
+										<p>Below, the draggable ruler handles fine adjustment. At the bottom the app states how many clicks to dial and in which direction, how far the point of impact moves at that distance, and the click value of the turret it is using.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-7">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Ballistic table and distances</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Once the distances of your own range have been entered, the app builds the matching ballistic table automatically, so the whole range reads at a glance instead of one distance at a time. Each row carries the distance, the elevation calculated by the engine, the real elevation logged on the range and the difference between the two — so a drift between model and reality shows up immediately, distance by distance.</p>
+								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
+									<div class="col-4">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-2-table.png" alt="Ballistic table">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="The range's Distances tab">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-17-distance-edit.png" alt="Editing a distance: value and slope angle">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+								</div>
+								<p>Distances are managed range by range, from the "Distances" tab: each row is a target, with the distance on the left, its slope angle next to it, and the pencil and the cross to edit or delete it; "Add distance" inserts a new one.</p>
+								<p>Tapping the pencil opens the card for that one target, with just two fields: the <strong>distance</strong> in meters and its <strong>slope angle</strong>. As the app's own note under the field puts it, the angle is the uphill or downhill angle of the shot toward this target: how much higher or lower it is than the firing point, with 0 for a flat target.</p>
+								<p>So every target carries its own angle, not the range as a whole. When the Home gauge lands on a distance that has not been saved, the angle is interpolated between the two nearest targets.</p>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-8">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Drop chart</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>How far the shot lands above or below the aimed point at each distance, before correcting the aim — exactly zero at the zero range.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Drop chart">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Every table in the app has its matching chart, reached with the same table/chart swap icon at the top right: the curve shows at a glance where the trajectory really starts to fall away, something a column of numbers makes far less immediate.</p>
+										<p><strong>Comparing two bullets.</strong> From the bullet library, through a row's menu, a second bullet can be set as a <em>comparison</em>: from then on its curve is drawn on the same axes as the active bullet, in a different color, and the legend at the top says which curve is which.</p>
+										<p>It is the quickest way to see how two loads or two different bullets behave over the same distances — how much one drops against the other, where the curves separate and by how much — without switching the active profile or comparing two tables by hand.</p>
+										<p>On the axes: drop in centimeters vertically, distance in meters horizontally. The units follow the ones chosen in the settings.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-9">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Remaining velocity chart</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Bullet velocity at each distance — useful to know when it drops below the supersonic threshold or reliable expansion speed.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-15-velocity-chart.png" alt="Remaining velocity chart, with a comparison bullet and the transonic thresholds">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>The chart also marks two reference transonic thresholds, Mach 1.2 and Mach 0.8, recomputed on the speed of sound at the temperature set (at 15&deg;C and 1013 hPa Mach 1 is about 340 m/s), together with the distance at which each curve crosses them. Against those thresholds the trajectory runs through three bands:</p>
+										<ul>
+											<li><strong>Supersonic</strong> (above ~410 m/s) — the most predictable regime, the one you aim to still be in at the target.</li>
+											<li><strong>Transonic</strong> (~410–270 m/s) — drag and stability change abruptly: this is where groups tend to open up.</li>
+											<li><strong>Subsonic</strong> (below ~270 m/s) — predictable again, the band of ammunition designed to stay there from the muzzle onwards.</li>
+										</ul>
+										<p>The band to avoid is the transonic one: better to pick a maximum working distance at which the bullet still arrives comfortably supersonic.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-10">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Settings</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>The Settings screen gathers the choices that hold for the whole app: appearance, language, elevation behavior and the unit of measure of every quantity.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Settings">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<ul>
+											<li><strong>Theme</strong> — choose dark or light theme for the whole app.</li>
+											<li><strong>Language</strong> — language for the app's text and menus.</li>
+											<li><strong>Round to click</strong> — round the computed elevation to the nearest click of your configured turret. Only available with a MOA scope.</li>
+											<li><strong>Limit to the optic's travel</strong> — when on and the active optic's elevation travel is set, the maximum distance selectable on the main gauge stops where the optic runs out of travel.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+								<p>Under "Unit details" you choose which unit the app shows each quantity in:</p>
 								<div class="row">
 									<div class="col-12 col-md-6">
-										<ul class="list-unstyled">
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-1" class="fw-bold text-nowrap">Setting up the data for a calculation</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-2" class="fw-bold text-nowrap">Home dashboard</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-3" class="fw-bold text-nowrap">Bullet library and weapon profiles</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-4" class="fw-bold text-nowrap">Verified shot correction</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<ul>
+											<li><strong>Angular unit</strong> — MOA or mrad, matching your scope.</li>
+											<li><strong>Drag model</strong> — the drag table the ballistic coefficient refers to: G1 for classic bullets, G7 for low-drag boat-tail bullets (e.g. Scenar-L).</li>
+											<li><strong>Distance</strong> — meters or yards.</li>
+											<li><strong>Speed</strong> — meters per second or feet per second.</li>
+											<li><strong>Drop</strong> — centimeters or inches.</li>
 										</ul>
 									</div><!--//col-->
 									<div class="col-12 col-md-6">
-										<ul class="list-unstyled">
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-5" class="fw-bold text-nowrap">Ballistic table</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-6" class="fw-bold text-nowrap">Chart</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-7" class="fw-bold text-nowrap">Settings</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-8" class="fw-bold text-nowrap">Exporting your data</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<ul>
+											<li><strong>Energy</strong> — joules or foot-pounds.</li>
+											<li><strong>Bullet weight</strong> — grains or grams.</li>
+											<li><strong>Table increment</strong> — step between the suggested distances in the dial and the table.</li>
+											<li><strong>Maximum distance</strong> — maximum distance selectable in the dial and the table.</li>
 										</ul>
 									</div><!--//col-->
 								</div><!--//row-->
@@ -205,307 +623,36 @@
 						</div><!--//row-->
 					</section><!--//case-study-section-->
 
-					<section class="case-study-section section mx-auto" id="cap-1">
+					<section class="case-study-section section mx-auto" id="cap-11">
 						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Setting up the data for a calculation</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9  case-study-section-content">
-								<p>Before a reliable elevation can be read, four values must be set, in the following order: the reticle's angular unit, the ammo in use, the atmospheric conditions and the target distance.</p>
-
-								<h4 class="py-3">Set the optic's reticle</h4>
-								<p>The first value to define is the angular unit of the reticle mounted on the weapon: MOA or MRAD. It is set in the optics profile (Optics list &rarr; active profile), together with the click value (for example 0.25 MOA or 0.1 MRAD) and, if known, the turret's total travel. Every elevation the app calculates is expressed in this unit.</p>
-
-								<h4 class="py-3">Select the ammo</h4>
-								<p>The elevation calculation depends on the ballistic coefficient (BC) of the bullet in use: without an ammo selected, or with an incorrect BC, the calculated value can't be trusted. Ammo is chosen from the bullet library or entered manually in the weapon profile, specifying caliber, weight, muzzle velocity and both the G1 and G7 ballistic coefficients. Where both are available, GS Ballistics defaults to the G7 model: the G7 table represents a long-ogive boat-tail projectile and is more accurate for the modern match bullets typically used in long-range shooting. The G1 model (flat-base projectile) remains preferable for bullets shaped closer to that reference, or when the manufacturer only publishes a G1 BC — in that case the drag model should be set to G1 in the weapon profile.</p>
-
-								<h4 class="py-3">Set air temperature and pressure</h4>
-								<p>Air density and speed of sound, both used in the calculation, depend on temperature and atmospheric pressure: using values that don't match the real ones produces an elevation error that grows with distance. Temperature and pressure are set from the Settings screen and should be updated before every range session, based on the conditions measured in the field.</p>
-
-								<h4 class="py-3">Set the target distance</h4>
-								<p>With the reticle, ammo and atmospheric conditions defined, the target distance is set from the dial on the Home screen. The elevation calculated for that distance appears immediately, in the unit defined above. The distances offered on the dial are those of the active range: edit them from Range list &rarr; edit icon &rarr; "Distances" tab.</p>
-
-								<h4 class="py-3">Set the shooting angle</h4>
-								<p>Each target has its own uphill or downhill shooting angle, not the range as a whole: two targets on the same field can easily sit at different inclines, which is why the angle is set together with the distance, target by target, from the same "Distances" tab. An uphill or downhill shot needs less elevation than a level one at the same distance, and the difference grows with both the angle and the distance.</p>
-								<p>When the Home dial is set to a distance that doesn't exactly match a saved target, the angle used in the calculation is interpolated between the two nearest saved targets; past the farthest saved target, it stays fixed at that one's angle instead of being extrapolated further.</p>
-
-								<div class="row g-3 mb-3">
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-10-optics-list.png" alt="Optics list, with unit and click value">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-14-optics-edit.png" alt="Editing an optic's reticle unit and click value">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="A range's Distances tab">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Optics list, editing an optic's reticle unit and click value, and a range's "Distances" tab.</p>
-
-								<h4 class="py-3">Scope and rifle configuration</h4>
-								<p>One more set of values, entered once per weapon rather than per shot, also feeds the calculation: the zero range, the scope's height above the bore, the barrel's twist rate and any rail/ring offset. These live in their own "Scope and rifle configuration" screen, shared by every weapon profile — without them the elevation shown is still computed relative to the wrong zero geometry.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Scope and rifle configuration">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Scope and rifle configuration.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-2">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Home dashboard</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>The Home screen shows the elevation to dial for the selected distance, calculated from the currently active ammo and optic. To change the distance, use the dial: the elevation value updates automatically. On screen you'll find:</p>
-								<ul>
-									<li>the currently active ammo and optic;</li>
-									<li>the distance dial, and the distance it's currently set to;</li>
-									<li>slope angle, temperature, pressure and muzzle velocity used in the calculation — each one opens its own quick-edit popup on tap;</li>
-									<li>the calculated elevation, shown in green if it has been verified on the range for that distance;</li>
-									<li>the horizontal windage.</li>
-								</ul>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-1-home.png" alt="Home dashboard">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-16-slope-angle-dialog.png" alt="Slope angle dialog with inclinometer">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Home dashboard, and quick-editing the angle with the phone's own inclinometer.</p>
-								<p>Tapping "Slope angle" opens the same kind of popup as temperature and pressure. The "Use the phone's inclinometer" button reads the phone's own tilt sensor live — laid flat on top of the barrel or scope, with the phone's own top edge pointing toward the target — and keeps updating the value until stopped; from there it can also be corrected by hand before saving. Saving updates the active range only when the distance dialed on the gauge matches an already-saved target exactly — otherwise it only applies to this one reading, since the value shown in that case is already an interpolation between two targets, not data that belongs to that exact distance.</p>
-
-								<h4 class="py-3">Verifying the number by hand</h4>
-								<p>For anyone who wants to check the Home elevation against their own math, the "Elevation calculation" screen shows every intermediate step the engine used to get there — drop at the zero range and at the target, where the line of sight sits, the conversion to mrad or MOA — with the actual numbers behind that specific reading.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Step-by-step elevation calculation">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Step-by-step elevation calculation.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-3">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Bullet library and weapon profiles</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>The bullet library holds over 200 bullets with factory data from major manufacturers. Every weapon profile stores caliber, weight, muzzle velocity and the G1 and G7 ballistic coefficients. A profile can be created by selecting a bullet from the library — its data is pre-filled and can be edited — or by entering every value manually.</p>
-								<p>If a bullet is missing from the library, or the values shown look wrong, it can be reported directly from the Report tab of the ammo edit dialog: the report includes the data currently shown on that screen and an optional note field, and is sent as an email to the developer.</p>
-								<div class="row g-3 mb-3">
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Ammo list">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Editing an ammo profile">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-8-report.png" alt="Reporting wrong data">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Ammo list, editing an ammo profile, and reporting wrong data.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-4">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Verified shot correction</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>After a shot, the elevation actually verified can be logged for the distance and the weapon in use. The logged value is compared automatically against the calculated one and stays attached to that weapon/distance pair.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Shot correction">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Shot correction.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-5">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Ballistic table</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>Once a range's distances have been entered, the app builds the corresponding ballistic table automatically: each row shows the distance, the elevation calculated by the engine, any real elevation logged on the range, and the difference between the two.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-2-table.png" alt="Ballistic table">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Ballistic table.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-6">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Chart</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>The same table, plotted as a curve, shows where along the trajectory the real value starts to depart from the calculated one. A second ammo, set as a comparison, can be overlaid on the same chart. There isn't just one chart: every table in the app (drop, retained velocity, retained energy, ranging error) has its own curve view, reachable with the same table/chart toggle icon.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Drop chart">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-15-velocity-chart.png" alt="Retained velocity chart, with a comparison ammo and transonic reference lines">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Drop chart, and the retained velocity chart with a comparison ammo and transonic reference lines.</p>
-
-								<p>The retained-velocity chart marks two transonic reference thresholds, Mach 1.2 and Mach 0.8, computed from the speed of sound at the set temperature. At the standard reference temperature and pressure (15&deg;C, 1013 hPa) the speed of sound is about 340 m/s (Mach 1) — it shifts slightly at a different temperature, which is why the chart recomputes the two thresholds from the temperature set in Settings rather than from a fixed value. Based on that speed, every bullet's flight crosses three distinct bands:</p>
-								<ul>
-									<li><strong>Supersonic</strong> (above ~410 m/s, past Mach 1.2) — the regime the G1/G7 drag tables are calibrated best for and behave most predictably in; the condition most precision shots are planned to still be in when they reach the target.</li>
-									<li><strong>Transonic</strong> (roughly 410 to 270 m/s, Mach 1.2–0.8) — drag coefficient shifts abruptly and less predictably, and gyroscopic stability can drop enough to produce noticeably wider dispersion: this is the band where group size tends to open up in a less controllable way.</li>
-									<li><strong>Subsonic</strong> (below ~270 m/s, under Mach 0.8) — the bullet settles back into a relatively predictable regime again, with generally lower aerodynamic drag; the condition loads purpose-built to stay subsonic from the muzzle are designed around.</li>
-								</ul>
-								<p>The zone to avoid, when possible, isn't subsonic itself — it's the transonic band. The goal is to pick a maximum working distance where the bullet still arrives comfortably inside the supersonic band, with margin above the threshold, or, for loads purpose-built for the subsonic band, to stay below its upper threshold the whole way. Crossing the transonic band in flight isn't a problem if it happens well before the target; it becomes one when it happens right around the distance actually being shot.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-7">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Settings</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>The Settings screen collects theme, language, round-to-click and the preferred unit for every quantity (weight, length, speed, energy, pressure, temperature, angles).</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Settings">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Settings.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-8">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
+							<div class="col-12">
 								<h3 class="case-study-heading mb-3">Exporting your data</h3>
 							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>The "Import &amp; Export" entry in the main menu exports a single HTML file containing every weapon profile, range and rifle setting. The file opens right away, in whichever HTML viewer is set on the device: from there, like any other page, sharing it to Drive, email, WhatsApp or saving it among the files is still one tap away.</p>
-								<p>The exported file is both a readable report and a complete backup at once. Opened in any browser it shows the active weapon profile with its ballistic table, drop chart and retained-velocity chart, with the same dashed transonic thresholds shown above; every piece of data needed to restore the full configuration — including profiles not shown on screen — stays embedded in that same file, with no internet connection required. To restore it, on this device or another one, it's enough to import it from the same "Import &amp; Export" menu entry.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener"><div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Exported report, opened in a browser">
-										<div class="phone-frame-home"></div>
-									</div></a>
-									</div><!--col-->
+							<div class="col-12 case-study-section-content">
+								<p>The "Import &amp; Export" entry in the main menu writes out a single HTML file holding every bullet profile, range and rifle setting. The file opens straight away, in whichever HTML viewer the device is set to use: from there, as with any other page, it is one tap away from being shared to Drive, email or WhatsApp, or saved among your files.</p>
+								<p>The exported file is a readable report and a full backup at the same time. Opened in any browser it shows the active bullet profile with its ballistic table, the drop chart and the remaining velocity chart, with the same dashed transonic thresholds seen above; everything needed to restore the complete configuration — including the profiles not shown on screen — stays embedded in that one file, with no internet connection required. To restore it on this or another device, just import it from the same menu entry.</p>
+								<div class="mb-4">
+									<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
+										<div class="browser-frame">
+											<div class="browser-frame-bar">
+												<span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span>
+												<span class="browser-frame-url"></span>
+												<span class="browser-frame-win"><i class="bi bi-dash"></i><span class="browser-frame-win-box"></span><i class="bi bi-x-lg"></i></span>
+											</div>
+											<img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Exported report, opened in a browser">
+										</div>
+									</a>
 								</div>
-								<p class="text-muted small mb-4">The exported report, opened in a browser.</p>
-								<p><a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">Open a real exported report</a> to see it for yourself.</p>
 							</div><!--//col-->
 						</div><!--//row-->
 					</section><!--//case-study-section-->
 
 				    <section class="leadgen-section section mx-auto">
 
-					   <h3 class="section-heading text-start text-md-center text-highlight"> How can I help you?</h3>
-					   <div class="intro text-md-center">Message me to let me know what you need, I'll be happy to help. </div>
+					   <h3 class="section-heading text-start text-md-center text-highlight"> Come posso aiutarti?</h3>
+					   <div class="intro text-md-center">Scrivimi per farmi sapere di cosa hai bisogno, sarò felice di aiutarti. </div>
 						<div class="text-center mt-4">
-									    <a class="btn btn-secondary" href="contact.html">Contact me <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+									    <a class="btn btn-secondary" href="contact.html">Contattami <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
 </svg></a>
 						</div>

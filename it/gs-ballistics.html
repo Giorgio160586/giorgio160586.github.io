@@ -42,50 +42,144 @@
 		   status bar/home indicator only; the screenshot image itself is never touched. */
 		.phone-frame {
 			position: relative;
-			max-width: 320px;
+			max-width: 278px;
 			margin: 0 auto;
-			padding: 38px 3px 12px;
-			background: #0A1626;
-			border-radius: 26px;
-			box-shadow: 0 0 0 1px #071019, 0 14px 30px rgba(0, 0, 0, 0.25);
+			padding: 24px 3px 14px;
+			background: #122036;
+			border-radius: 12px;
+			box-shadow: 0 0 0 4px #05080d, 0 14px 30px rgba(0, 0, 0, 0.3);
 		}
-		.phone-frame img { display: block; width: 100%; border-radius: 16px; }
+		.phone-frame.is-dialog { background: #070D16; }
+		.phone-frame img { display: block; width: 100%; border-radius: 7px; }
 		.phone-frame-notch {
 			position: absolute;
 			top: 8px;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 40%;
-			height: 20px;
-			background: #071019;
-			border-radius: 10px;
-			z-index: 2;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: #05080d;
+			box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+			z-index: 3;
 		}
 		.phone-frame-statusbar {
 			position: absolute;
-			top: 14px;
-			left: 22px;
-			right: 22px;
+			top: 7px;
+			left: 10px;
+			right: 10px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			color: #fff;
-			font-size: 10px;
+			font-size: 9px;
 			font-weight: 700;
 			z-index: 1;
 			pointer-events: none;
 		}
-		.phone-frame-icons i { margin-left: 4px; font-size: 10px; }
-		.phone-frame-home {
+		.phone-frame-icons i { margin-left: 4px; font-size: 9px; }
+		.phone-frame-icons { display: inline-flex; align-items: center; }
+		.phone-frame-batt {
+			margin-left: 4px;
+			padding: 0 3px;
+			border-radius: 6px;
+			background: #fff;
+			color: #0A1626;
+			font-size: 7px;
+			font-weight: 700;
+			line-height: 1.5;
+		}
+		/* Decorative browser chrome (Chrome-like, dark) for desktop screenshots. */
+		.browser-frame {
+			position: relative;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+			background: #292A2D;
+		}
+		.browser-frame-bar {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 9px 12px;
+			background: #35363A;
+		}
+		.browser-frame-nav {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-left: 2px;
+			color: #C4C7C5;
+			font-size: 14px;
+			flex: none;
+		}
+		.browser-frame-win {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			margin-left: 4px;
+			color: #C4C7C5;
+			font-size: 12px;
+			flex: none;
+		}
+		.browser-frame-win-box {
+			position: relative;
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+		}
+		.browser-frame-win-box::before,
+		.browser-frame-win-box::after {
+			content: "";
 			position: absolute;
-			bottom: 8px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 30%;
-			height: 4px;
-			border-radius: 2px;
-			background: rgba(255, 255, 255, 0.5);
+			width: 7px;
+			height: 7px;
+			border: 1px solid currentColor;
+			border-radius: 1px;
+		}
+		.browser-frame-win-box::before {
+			top: 0;
+			right: 0;
+		}
+		.browser-frame-win-box::after {
+			bottom: 0;
+			left: 0;
+			background: #35363A;
+		}
+		.browser-frame-url {
+			flex: 1 1 auto;
+			min-height: 22px;
+			margin-left: 4px;
+			padding: 4px 12px;
+			border-radius: 20px;
+			background: #202124;
+			color: #C4C7C5;
+			font-size: 11px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.browser-frame img { display: block; width: 100%; }
+		.phone-frame-navbar {
+			position: absolute;
+			bottom: 2px;
+			left: 14%;
+			right: 14%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: rgba(255, 255, 255, 0.55);
+			font-size: 11px;
+			letter-spacing: 1px;
 			z-index: 3;
+			pointer-events: none;
+		}
+		.phone-frame-recents { display: inline-flex; align-items: center; gap: 3px; }
+		.phone-frame-recents span {
+			display: block;
+			width: 1px;
+			height: 10px;
+			background: currentColor;
 		}
 	</style>
 
@@ -117,7 +211,7 @@
 									<a class="nav-link d-flex flex-column" href="resume.html"><span class="icon-holder"><i class="fa-solid fa-file-lines"></i></span><span class="nav-text">Resume</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link d-flex flex-column" href="contact.html"><span class="icon-holder"><i class="fa-solid fa-comment-dots"></i></span><span class="nav-text">Contact</a>
+									<a class="nav-link d-flex flex-column" href="contact.html"><span class="icon-holder"><i class="fa-solid fa-comment-dots"></i></span><span class="nav-text">Contact</span></a>
 								</li>
 								<li class="nav-item nav-item-close">
 				                    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"><i class="bi bi-x"></i></button>
@@ -170,34 +264,358 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="img-fluid mb-3"><img class="img-fluid" src="../store-assets/feature-graphics/feature-graphic-it.png" alt="GS Ballistics"></div>
+							<div class="img-fluid mb-3"><img class="img-fluid rounded-4" src="../store-assets/feature-graphics/feature-graphic-it.png" alt="GS Ballistics"></div>
 							<div class="case-study-intro">
 
-							    <p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza. Invece di affidarsi a un'ipotesi sul campo, ti dà una tabella balistica verificata: integra numericamente resistenza dell'aria e gravità lungo l'intera traiettoria, con le tabelle standard G1/G7 e un'atmosfera reale calcolata da temperatura e pressione, non con una formula approssimata. Include una libreria di oltre 200 proiettili, profili arma e poligono con elevazioni verificate al tiro e confrontate automaticamente con quelle calcolate, tabella e grafico corrispondenti, e backup completo dei dati — nessuna pubblicità, nessun tracciamento, completamente offline. <strong>Sviluppata interamente con Claude Code <img src="../assets/images/tech-icons/claude.svg" alt="Claude" style="height: 0.85em; vertical-align: baseline;"></strong>; le decisioni di design le ho definite io, così come la validazione di ogni funzionalità su dispositivo reale.</p>
+							    <p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta per ogni distanza, con un vero motore balistico — tabelle G1/G7 e atmosfera reale, non una formula approssimata. Include una libreria di oltre 200 proiettili, profili arma e poligono che conservano le elevazioni verificate al tiro, più tabella e grafici corrispondenti.</p>
 
 							</div>
+							<div class="row mt-4">
+								<div class="col-12 col-md-6">
+									<ul class="list-unstyled mb-0">
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-1" class="fw-bold text-nowrap">Cruscotto Home</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-2" class="fw-bold text-nowrap">Angolo di inclinazione</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-3" class="fw-bold text-nowrap">Ottiche e reticolo</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-4" class="fw-bold text-nowrap">Configurazione fucile</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Libreria munizioni e profili arma</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-6" class="fw-bold text-nowrap">Correzione tiro verificata</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+									</ul>
+								</div><!--//col-->
+								<div class="col-12 col-md-6">
+									<ul class="list-unstyled mb-0">
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-7" class="fw-bold text-nowrap">Tabella balistica e distanze</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-8" class="fw-bold text-nowrap">Grafico della caduta</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-9" class="fw-bold text-nowrap">Grafico della velocità residua</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-10" class="fw-bold text-nowrap">Impostazioni</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-11" class="fw-bold text-nowrap">Esportazione dei dati</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+									</ul>
+								</div><!--//col-->
+							</div><!--//row-->
 						</div><!--//intro-holder-->
 
 					</section><!--//page-intro-section-->
 
-					<section class="case-study-section section mx-auto">
-						<div class="row">
+					<section class="case-study-section section mx-auto" id="cap-1">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Cruscotto Home</h3>
+							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
+								<p>La schermata Home mostra l'alzo da impostare in torretta per la distanza selezionata, calcolato in base alla munizione e all'ottica attive.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-1-home.png" alt="Cruscotto Home">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Per modificare la distanza si agisce sulla ghiera: l'alzo si aggiorna automaticamente. Sulla schermata si trovano:</p>
+										<ul>
+											<li>la munizione e l'ottica attualmente attive;</li>
+											<li>la ghiera e la distanza impostata;</li>
+											<li>angolo di inclinazione, temperatura, pressione e velocità alla volata usate nel calcolo — ognuno apribile con un tocco per modificarlo;</li>
+											<li>l'alzo calcolato, in verde se verificato al tiro per quella distanza;</li>
+											<li>la deriva orizzontale.</li>
+										</ul>
+										<p><strong>La velocità V0</strong> è la velocità del proiettile all'uscita dalla canna, cioè quella misurata alla volata (al freno di bocca) con un cronografo: è il punto di partenza di tutta la traiettoria, quindi un valore sbagliato qui sposta l'alzo a ogni distanza.</p>
+										<p><strong>Temperatura e pressione</strong> determinano densità dell'aria e velocità del suono: usare valori diversi da quelli reali produce un errore che cresce con la distanza. Conviene aggiornarli da qui prima di ogni sessione di tiro.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-2">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Angolo di inclinazione</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Un tiro in salita o in discesa richiede meno alzo di uno in piano alla stessa distanza, e la differenza cresce con l'angolo e con la distanza: per questo l'inclinazione entra nel calcolo insieme a distanza, munizione e atmosfera.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-16-slope-angle-dialog.png" alt="Dialogo angolo di inclinazione con inclinometro">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Toccando "Inclinazione" si apre lo stesso tipo di popup di temperatura e pressione. Il pulsante "Usa l'inclinometro del telefono" legge in tempo reale il sensore del telefono — appoggiato piatto sopra canna o ottica, con la parte superiore puntata verso il bersaglio — e aggiorna il valore finché non lo si ferma; da lì si può anche correggerlo a mano prima di salvare.</p>
+										<p>Il salvataggio aggiorna il poligono attivo solo se la distanza impostata sulla ghiera coincide esattamente con un bersaglio già salvato, altrimenti resta valido solo per questa lettura.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-3">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Ottiche e reticolo</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Il primo dato da definire è l'unità angolare del reticolo montato sull'arma: MOA o MRAD. Tutti gli alzi calcolati dall'app vengono espressi in questa unità, quindi è da qui che si parte. Si possono tenere più ottiche in elenco e passare dall'una all'altra: quella con la spunta è l'ottica attiva, cioè quella usata per il calcolo.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-14-optics-edit.png" alt="Modifica di un'ottica: unità del reticolo, valore del click e corsa">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Nella scheda dell'ottica si impostano tre valori, ognuno con la nota che l'app riporta sotto di esso:</p>
+										<ul>
+											<li><strong>Unità angolare</strong> — unità in cui viene mostrato l'alzo da applicare: MOA o mrad, in base alla tua ottica.</li>
+											<li><strong>Elevation/Windage Click Value</strong> — quanto vale un singolo click della torretta di alzo/deriva, nell'unità scelta nelle impostazioni. Esempi: torretta 1/4 MOA → 0.25, torretta 1/8 MOA → 0.125, torretta 0.1 mrad → 0.1.</li>
+											<li><strong>Corsa in elevazione</strong> — se lasciata vuota, il blocco della ghiera principale basato sulla corsa (nelle impostazioni generali) non si applica a questa ottica.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-4">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Configurazione fucile</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Un'altra serie di valori, inseriti una volta per arma anziché a ogni tiro, entra anch'essa nel calcolo. Vivono in una schermata dedicata, condivisa da tutti i profili arma.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Configurazione fucile">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>I campi sono quattro, ognuno con la nota che l'app riporta sotto di esso:</p>
+										<ul>
+											<li><strong>Sight-In Range</strong> — la distanza alla quale il fucile è azzerato con questo ottico: a questa distanza la correzione d'alzo è zero.</li>
+											<li><strong>Line of Sight to Bore</strong> — l'altezza dell'asse ottico sopra l'asse della canna, misurata centro anello-centro canna.</li>
+											<li><strong>Twist Rate (1:pollici)</strong> — passo di rigatura della canna (es. 1:8 = un giro completo ogni 8 pollici) — influenza la stabilità del proiettile in volo.</li>
+											<li><strong>Inclinazione slitta + anelli</strong> — elevazione aggiuntiva data dall'inclinazione della slitta/base e dagli anelli, sempre in MOA. Si somma alla corsa dell'ottica per il blocco del quadrante principale.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-5">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Libreria munizioni e profili arma</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Il calcolo dell'alzo dipende dal coefficiente balistico (BC) del proiettile: senza una munizione selezionata, o con un BC errato, il valore calcolato non è attendibile. Dove sono disponibili sia il G1 che il G7, l'app propone come predefinito il G7, più accurato per i proiettili match a ogiva lunga tipici del tiro a lunga distanza.</p>
+								<p>La libreria munizioni contiene oltre 200 proiettili con i dati di fabbrica dei principali produttori. Ogni profilo arma memorizza calibro, peso, velocità alla volata e i coefficienti balistici G1 e G7. Un profilo può essere creato selezionando un proiettile dalla libreria — i dati vengono precompilati e possono essere modificati — oppure inserendo manualmente tutti i valori.</p>
+								<p>Se un proiettile manca dalla libreria, o i valori mostrati sembrano sbagliati, è possibile segnalarlo direttamente dalla scheda Report della finestra di modifica: la segnalazione include i dati attualmente mostrati nella scheda e un campo per una nota facoltativa, ed è inviata come email allo sviluppatore.</p>
+								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
+									<div class="col-4">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Elenco munizioni">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Modifica di una munizione">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-8-report.png" alt="Segnalazione dati errati">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-6">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Correzione tiro verificata</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Dopo un tiro, il valore di alzo effettivamente verificato può essere registrato per la distanza e l'arma in uso. Il valore registrato viene confrontato automaticamente con quello calcolato e resta associato a quella combinazione arma/distanza.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Correzione tiro">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p><strong>I due valori ci sono sempre entrambi.</strong> MOA e mrad sono mostrati insieme e si aggiornano a vicenda: qualunque valore inserisci in uno dei due campi, l'altro mostra subito la stessa correzione convertita nell'altra unità.</p>
+										<p>È comodo soprattutto quando chi ti fa da spotter ti passa la correzione nell'unità che preferisce lui: tu la inserisci esattamente come te l'ha data e leggi immediatamente quanto vale nell'unità della tua torretta, senza conversioni a mente.</p>
+										<p>Sotto, il righello trascinabile serve per la regolazione fine. In basso l'app indica quanti click impostare e in che direzione, di quanto si sposta il punto d'impatto a quella distanza e il valore del click della torretta che sta usando.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-7">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Tabella balistica e distanze</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Una volta impostate le distanze del proprio poligono, l'app costruisce automaticamente la tabella balistica corrispondente, così tutto il poligono si legge in un colpo d'occhio invece che una distanza alla volta. Ogni riga riporta la distanza, l'alzo calcolato dal motore, l'alzo reale registrato al tiro e la differenza tra i due — così uno scostamento tra modello e realtà si nota subito, distanza per distanza.</p>
+								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
+									<div class="col-4">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-2-table.png" alt="Tabella balistica">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Scheda Distanze del poligono">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-4">
+										<div class="phone-frame is-dialog">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-17-distance-edit.png" alt="Modifica di una distanza: valore e angolo di tiro">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+								</div>
+								<p>Le distanze si gestiscono poligono per poligono, dalla scheda "Distanze": ogni riga è un bersaglio, con la distanza a sinistra, il suo angolo di tiro accanto, e la matita e la crocetta per modificarlo o eliminarlo; "Aggiungi distanza" ne inserisce uno nuovo.</p>
+								<p>Toccando la matita si apre la scheda del singolo bersaglio, con due soli campi: la <strong>distanza</strong> in metri e il suo <strong>angolo di tiro</strong>. Come spiega la nota dell'app sotto il campo, l'angolo è quello in salita o in discesa del tiro verso quel bersaglio: quanto più in alto o più in basso si trova rispetto al punto di tiro, con 0 per un bersaglio in piano.</p>
+								<p>Ogni bersaglio ha quindi il proprio angolo, non il poligono nel suo insieme. Quando la ghiera della Home finisce su una distanza non salvata, l'angolo viene interpolato tra i due bersagli più vicini.</p>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-8">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Grafico della caduta</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Di quanto il colpo arriva sopra o sotto il punto mirato a ogni distanza, prima di correggere la mira — zero esatto alla distanza di azzeramento.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Grafico della caduta">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Ogni tabella dell'app ha il suo grafico corrispondente, raggiungibile con la stessa icona di scambio tabella/grafico in alto a destra: la curva mostra a colpo d'occhio dove la traiettoria comincia a scendere davvero, cosa che una colonna di numeri rende meno immediata.</p>
+										<p><strong>Confronto fra due proiettili.</strong> Dalla libreria munizioni, con il menu di una riga, si può impostare un secondo proiettile come <em>confronto</em>: da quel momento la sua curva viene disegnata sugli stessi assi del proiettile attivo, con un colore diverso, e la legenda in alto indica quale curva è quale.</p>
+										<p>È il modo più rapido per vedere come si comportano due ricariche o due palle diverse sulle stesse distanze — quanto cade una rispetto all'altra, dove le curve si separano e di quanto — senza dover cambiare profilo attivo o confrontare due tabelle a mano.</p>
+										<p>Sugli assi: verticale la caduta in centimetri, orizzontale la distanza in metri. Le unità seguono quelle scelte nelle impostazioni.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-9">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Grafico della velocità residua</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>Velocità del proiettile a ogni distanza — utile per sapere quando scende sotto la soglia supersonica o quella di espansione affidabile.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-15-velocity-chart.png" alt="Grafico della velocità residua, con munizione di confronto e soglie transoniche">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<p>Il grafico segna anche due soglie transoniche di riferimento, Mach 1,2 e Mach 0,8, ricalcolate sulla velocità del suono alla temperatura impostata (a 15&deg;C e 1013 hPa Mach 1 vale circa 340 m/s), con la distanza a cui ogni curva le attraversa. In base a quelle soglie la traiettoria attraversa tre fasce:</p>
+										<ul>
+											<li><strong>Supersonico</strong> (sopra ~410 m/s) — il regime più prevedibile, quello in cui si punta ad arrivare a bersaglio.</li>
+											<li><strong>Transonico</strong> (~410–270 m/s) — resistenza e stabilità cambiano bruscamente: è qui che il gruppo di tiro tende ad allargarsi.</li>
+											<li><strong>Subsonico</strong> (sotto ~270 m/s) — di nuovo prevedibile, la fascia delle munizioni pensate per restarci fin dalla volata.</li>
+										</ul>
+										<p>La fascia da evitare è quella transonica: meglio scegliere una distanza massima d'impiego alla quale il proiettile arrivi ancora comodamente supersonico.</p>
+									</div><!--col-->
+								</div>
+							</div><!--//col-->
+						</div><!--//row-->
+					</section><!--//case-study-section-->
+
+					<section class="case-study-section section mx-auto" id="cap-10">
+						<div class="row gx-5">
+							<div class="col-12">
+								<h3 class="case-study-heading mb-3">Impostazioni</h3>
+							</div><!--//col-auto-->
+							<div class="col-12 case-study-section-content">
+								<p>La schermata Impostazioni raccoglie le scelte valide per tutta l'app: aspetto, lingua, comportamento dell'alzo e unità di misura di ogni grandezza.</p>
+								<div class="row g-3 mb-4 align-items-center">
+									<div class="col-12 col-md-5">
+										<div class="phone-frame">
+										<div class="phone-frame-notch"></div>
+										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-volume-mute-fill"></i><i class="bi bi-wifi"></i><i class="bi bi-reception-4"></i><span class="phone-frame-batt">100</span></span></div>
+										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Impostazioni">
+										<div class="phone-frame-navbar"><span class="phone-frame-recents"><span></span><span></span><span></span></span><i class="bi bi-circle"></i><i class="bi bi-chevron-left"></i></div>
+									</div>
+									</div><!--col-->
+									<div class="col-12 col-md-7">
+										<ul>
+											<li><strong>Tema</strong> — scegli tra tema scuro o chiaro per tutta l'app.</li>
+											<li><strong>Lingua</strong> — lingua dei testi e dei menu dell'app.</li>
+											<li><strong>Arrotonda al click</strong> — arrotonda l'alzo calcolato al click più vicino della torretta configurata. Disponibile solo con un'ottica in MOA.</li>
+											<li><strong>Blocca alla corsa dell'ottica</strong> — se attivo e la corsa in elevazione dell'ottica attiva è impostata, la distanza massima selezionabile nel quadrante principale si ferma dove l'ottica esaurisce la corsa.</li>
+										</ul>
+									</div><!--col-->
+								</div>
+								<p>Sotto "Dettaglio unità" si sceglie in quale unità l'app mostra ogni grandezza:</p>
 								<div class="row">
 									<div class="col-12 col-md-6">
-										<ul class="list-unstyled">
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-1" class="fw-bold text-nowrap">Impostare i dati per il calcolo</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-2" class="fw-bold text-nowrap">Cruscotto Home</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-3" class="fw-bold text-nowrap">Libreria munizioni e profili arma</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-4" class="fw-bold text-nowrap">Correzione tiro verificata</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<ul>
+											<li><strong>Unità angolare</strong> — MOA o mrad, in base alla tua ottica.</li>
+											<li><strong>Modello balistico</strong> — tabella di resistenza a cui fa riferimento il BC: G1 per proiettili classici, G7 per boat-tail a basso drag (es. Scenar-L).</li>
+											<li><strong>Distanza</strong> — metri o iarde.</li>
+											<li><strong>Velocità</strong> — metri al secondo o piedi al secondo.</li>
+											<li><strong>Caduta</strong> — centimetri o pollici.</li>
 										</ul>
 									</div><!--//col-->
 									<div class="col-12 col-md-6">
-										<ul class="list-unstyled">
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-5" class="fw-bold text-nowrap">Tabella balistica</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-6" class="fw-bold text-nowrap">Grafico</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-7" class="fw-bold text-nowrap">Impostazioni</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-											<li class="d-flex align-items-baseline mb-3"><a href="#cap-8" class="fw-bold text-nowrap">Esportazione dei dati</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<ul>
+											<li><strong>Energia</strong> — joule o piedi-libbra.</li>
+											<li><strong>Peso proiettile</strong> — grani o grammi.</li>
+											<li><strong>Incremento tabella</strong> — passo tra le distanze suggerite nel cerchio e nella tabella.</li>
+											<li><strong>Distanza massima</strong> — distanza massima selezionabile nel cerchio e nella tabella.</li>
 										</ul>
 									</div><!--//col-->
 								</div><!--//row-->
@@ -205,297 +623,26 @@
 						</div><!--//row-->
 					</section><!--//case-study-section-->
 
-					<section class="case-study-section section mx-auto" id="cap-1">
+					<section class="case-study-section section mx-auto" id="cap-11">
 						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Impostare i dati per il calcolo</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9  case-study-section-content">
-								<p>Prima di leggere un alzo affidabile, è necessario impostare quattro dati, nell'ordine seguente: unità di misura del reticolo, munizione in uso, condizioni atmosferiche e distanza del bersaglio.</p>
-
-								<h4 class="py-3">Impostare il reticolo dell'ottica</h4>
-								<p>Il primo dato da definire è l'unità angolare del reticolo montato sull'arma: MOA o MRAD. Si imposta nel profilo ottica (Elenco ottiche &rarr; profilo attivo), insieme al valore del click (ad esempio 0,25 MOA o 0,1 MRAD) e, se nota, alla corsa totale della torretta. Tutti gli alzi calcolati dall'app vengono espressi in questa unità.</p>
-
-								<h4 class="py-3">Selezionare la munizione</h4>
-								<p>Il calcolo dell'alzo dipende dal coefficiente balistico (BC) del proiettile in uso: senza una munizione selezionata, o con un BC errato, il valore calcolato non è attendibile. La munizione si sceglie dalla libreria proiettili o si inserisce manualmente nel profilo arma, specificando calibro, peso, velocità alla volata e i coefficienti balistici G1 e G7. Dove sono disponibili entrambi, GS Ballistics propone come predefinito il modello G7: la tabella G7 rappresenta un proiettile boat-tail a ogiva lunga ed è più accurata per i proiettili match moderni tipicamente usati nel tiro a lunga distanza. Il modello G1 (proiettile a base piatta) resta preferibile per proiettili di forma più simile a quel riferimento, o quando il produttore pubblica solo il BC G1: in questo caso va impostato il modello di drag su G1 nel profilo arma.</p>
-
-								<h4 class="py-3">Impostare temperatura e pressione dell'aria</h4>
-								<p>Densità dell'aria e velocità del suono, entrambe usate nel calcolo, dipendono da temperatura e pressione atmosferica: usare valori diversi da quelli reali produce un errore di alzo che cresce con la distanza. Temperatura e pressione si impostano dalla schermata Impostazioni e vanno aggiornate prima di ogni sessione di tiro, in base alle condizioni rilevate sul campo.</p>
-
-								<h4 class="py-3">Impostare la distanza del bersaglio</h4>
-								<p>Definiti reticolo, munizione e condizioni atmosferiche, la distanza del bersaglio si imposta dalla ghiera nella schermata Home. L'alzo calcolato per quella distanza compare immediatamente, nell'unità definita sopra. Le distanze proposte dalla ghiera sono quelle del poligono attivo: si modificano da Elenco poligoni &rarr; icona di modifica &rarr; scheda "Distanze".</p>
-
-								<h4 class="py-3">Impostare l'angolo di tiro</h4>
-								<p>Ogni bersaglio ha il proprio angolo di tiro (in salita o in discesa), non il poligono nel suo insieme: due bersagli sullo stesso campo possono benissimo trovarsi a inclinazioni diverse, ed è per questo che l'angolo si imposta insieme alla distanza, bersaglio per bersaglio, sempre dalla scheda "Distanze". Un tiro in salita o in discesa richiede meno alzo di uno in piano alla stessa distanza, e la differenza cresce sia con l'angolo sia con la distanza.</p>
-								<p>Quando la ghiera della Home viene impostata su una distanza che non corrisponde esattamente a un bersaglio salvato, l'angolo usato nel calcolo viene interpolato tra i due bersagli più vicini; oltre l'ultimo bersaglio salvato, resta fisso su quello più vicino invece di essere estrapolato.</p>
-
-								<div class="row g-3 mb-3">
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-10-optics-list.png" alt="Elenco ottiche, con unità e click">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-14-optics-edit.png" alt="Modifica di un'ottica: unità del reticolo e valore del click">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-4">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-11-range-distances.png" alt="Scheda Distanze del poligono">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Elenco ottiche, modifica di un'ottica (unità e click), e la scheda "Distanze" di un poligono.</p>
-
-								<h4 class="py-3">Configurazione fucile</h4>
-								<p>Un'altra serie di valori, inseriti una volta per arma anziché a ogni tiro, entra anch'essa nel calcolo: la distanza di azzeramento, l'altezza dell'ottica sopra la canna, il passo di rigatura e l'eventuale offset di rotaia/anelli. Questi valori vivono nella schermata "Configurazione fucile", condivisa da tutti i profili arma — senza di essi l'alzo mostrato viene comunque calcolato rispetto a una geometria di zero sbagliata.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-12-rifle-settings.png" alt="Configurazione fucile">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Configurazione fucile.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-2">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Cruscotto Home</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>La schermata Home mostra l'alzo da impostare in torretta per la distanza selezionata, calcolato in base alla munizione e all'ottica attualmente attive. Per modificare la distanza, agire sulla ghiera: il valore dell'alzo si aggiorna automaticamente. Sulla schermata si trovano:</p>
-								<ul>
-									<li>munizione e ottica attualmente attive;</li>
-									<li>la ghiera per impostare la distanza, e la distanza attualmente impostata;</li>
-									<li>angolo di inclinazione, temperatura, pressione e velocità alla volata usate nel calcolo — ognuno apribile con un tocco per modificarlo;</li>
-									<li>l'alzo calcolato, in verde se verificato al tiro per quella distanza;</li>
-									<li>la deriva orizzontale.</li>
-								</ul>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-1-home.png" alt="Cruscotto Home">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-16-slope-angle-dialog.png" alt="Dialogo angolo di inclinazione con inclinometro">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Cruscotto Home, e la modifica rapida dell'angolo con l'inclinometro del telefono.</p>
-								<p>Toccando "Inclinazione" si apre lo stesso tipo di popup di temperatura e pressione. Il pulsante "Usa l'inclinometro del telefono" legge in tempo reale il sensore di inclinazione del telefono — appoggiato piatto sopra canna o ottica, con la parte superiore del telefono puntata verso il bersaglio — e aggiorna il valore finché non lo si ferma; da lì si può anche correggerlo a mano prima di salvare. Il salvataggio aggiorna il poligono attivo solo se la distanza impostata sulla ghiera coincide esattamente con un bersaglio già salvato — altrimenti resta valido solo per questa visualizzazione, dato che il valore mostrato in quel caso è già un'interpolazione tra due bersagli, non un dato proprio di quella distanza.</p>
-
-								<h4 class="py-3">Verificare il numero a mano</h4>
-								<p>Per chi vuole controllare l'alzo della Home con i propri calcoli, la schermata "Calcolo dell'alzo" mostra ogni passaggio intermedio usato dal motore per arrivarci — caduta alla distanza di zero e al bersaglio, posizione della linea di mira, conversione in mrad o MOA — con i numeri reali dietro a quella specifica lettura.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-13-calc-detail.png" alt="Calcolo dell'alzo passo per passo">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Calcolo dell'alzo passo per passo.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-3">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Libreria munizioni e profili arma</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>La libreria munizioni contiene oltre 200 proiettili con i dati di fabbrica dei principali produttori. Ogni profilo arma memorizza calibro, peso, velocità alla volata e i coefficienti balistici G1 e G7. Un profilo può essere creato selezionando un proiettile dalla libreria — i dati vengono precompilati e possono essere modificati — oppure inserendo manualmente tutti i valori.</p>
-								<p>Se un proiettile manca dalla libreria, o i valori mostrati sembrano sbagliati, è possibile segnalarlo direttamente dalla scheda Report della finestra di modifica munizione: la segnalazione include i dati attualmente mostrati nella scheda e un campo per una nota facoltativa, ed è inviata come email allo sviluppatore.</p>
-								<div class="row g-3 mb-3">
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-4-ammo-list.png" alt="Elenco munizioni">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-5-ammo-edit.png" alt="Modifica di una munizione">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-8-report.png" alt="Segnalazione dati errati">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Elenco munizioni, modifica di una munizione, e segnalazione dati errati.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-4">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Correzione tiro verificata</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>Dopo un tiro, il valore di alzo effettivamente verificato può essere registrato per la distanza e l'arma in uso. Il valore registrato viene confrontato automaticamente con quello calcolato e resta associato a quella combinazione arma/distanza.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-7-correction.png" alt="Correzione tiro">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Correzione tiro.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-5">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Tabella balistica</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>Una volta impostate le distanze del proprio poligono, l'app costruisce automaticamente la tabella balistica corrispondente: per ogni riga compaiono la distanza, l'alzo calcolato dal motore, l'eventuale alzo reale registrato al tiro e la differenza tra i due.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-2-table.png" alt="Tabella balistica">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Tabella balistica.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-6">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Grafico</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>La stessa tabella, letta in forma di curva, mostra a colpo d'occhio dove, lungo la traiettoria, il valore reale comincia a discostarsi da quello calcolato. Volendo, sullo stesso grafico si può sovrapporre la curva di una seconda munizione impostata come confronto. Il grafico non è uno solo: ogni tabella dell'app (caduta, velocità residua, energia residua, errore di stima distanza) ha la propria versione a curva, raggiungibile con la stessa icona di scambio tabella/grafico.</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-3-chart.png" alt="Grafico della caduta">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-15-velocity-chart.png" alt="Grafico della velocità residua, con munizione di confronto e soglie transoniche">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small mb-4">Grafico della caduta, e grafico della velocità residua con munizione di confronto e soglie transoniche.</p>
-
-								<p>Il grafico della velocità residua segna due soglie transoniche di riferimento, Mach 1,2 e Mach 0,8, calcolate sulla velocità del suono alla temperatura impostata. Alla temperatura e pressione standard di riferimento (15°C, 1013 hPa) la velocità del suono è di circa 340 m/s (Mach 1) — a una temperatura diversa cambia leggermente, ed è per questo che il grafico ricalcola le due soglie sulla temperatura impostata in Impostazioni, non su un valore fisso. In base a quella velocità, la traiettoria di ogni proiettile attraversa tre fasce distinte:</p>
-								<ul>
-									<li><strong>Supersonico</strong> (sopra ~410 m/s, oltre Mach 1,2) — il regime in cui i modelli di resistenza G1/G7 sono tarati meglio e si comportano in modo più prevedibile; la condizione in cui la maggior parte dei tiri di precisione viene pensata per arrivare a bersaglio.</li>
-									<li><strong>Transonico</strong> (tra ~410 e ~270 m/s, Mach 1,2–0,8) — il coefficiente di resistenza cambia in modo brusco e meno prevedibile, e la stabilità giroscopica può calare abbastanza da produrre un aumento di dispersione: è la fascia in cui il gruppo di tiro tende ad allargarsi in modo meno controllabile.</li>
-									<li><strong>Subsonico</strong> (sotto ~270 m/s, sotto Mach 0,8) — il proiettile torna a comportarsi in modo relativamente prevedibile, con resistenza aerodinamica generalmente inferiore; è la condizione con cui vengono progettate le munizioni pensate per restare subsoniche fin dalla volata.</li>
-								</ul>
-								<p>La zona da evitare, quando possibile, non è il subsonico in sé ma proprio la fascia transonica. L'ideale è scegliere la distanza massima d'impiego in modo che il proiettile arrivi a bersaglio ancora comodamente dentro la fascia supersonica, con un margine sopra la soglia, oppure, per chi usa munizioni pensate apposta per la fascia subsonica, restare sempre sotto la sua soglia superiore. Attraversare la fascia transonica in volo non è un problema se avviene ben prima di arrivare a bersaglio; lo diventa se avviene proprio nell'intorno della distanza a cui si spara.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-7">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
-								<h3 class="case-study-heading mb-3">Impostazioni</h3>
-							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>La schermata Impostazioni raccoglie tema, lingua, arrotondamento al click e l'unità di misura preferita per ogni grandezza (peso, lunghezza, velocità, energia, pressione, temperatura, angoli).</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-6-settings.png" alt="Impostazioni">
-										<div class="phone-frame-home"></div>
-									</div>
-									</div><!--col-->
-								</div>
-								<p class="text-muted small">Impostazioni.</p>
-							</div><!--//col-->
-						</div><!--//row-->
-					</section><!--//case-study-section-->
-
-
-					<section class="case-study-section section mx-auto" id="cap-8">
-						<div class="row gx-5">
-							<div class="col-12 col-lg-3">
+							<div class="col-12">
 								<h3 class="case-study-heading mb-3">Esportazione dei dati</h3>
 							</div><!--//col-auto-->
-							<div class="col-12 col-lg-9 case-study-section-content">
-								<p>La voce "Import &amp; Export" del menu principale esporta un unico file HTML che contiene tutti i profili munizione, i poligoni e le impostazioni del fucile. Il file si apre subito, nel visualizzatore HTML scelto sul dispositivo: da lì, come per qualsiasi altra pagina, resta comunque a un tocco di distanza condividerlo su Drive, email, WhatsApp o salvarlo tra i file.</p>
-								<p>Il file esportato è al tempo stesso un report leggibile e un backup completo. Aperto in un browser qualsiasi mostra il profilo munizione attivo con la sua tabella balistica, il grafico della caduta e il grafico della velocità residua, con le stesse soglie transoniche tratteggiate viste sopra; tutti i dati necessari a ripristinare la configurazione completa — inclusi i profili non mostrati a schermo — restano incorporati nello stesso file, senza bisogno di connessione a internet. Per ripristinarlo su questo o un altro dispositivo, basta importarlo dalla stessa voce di menu "Import &amp; Export".</p>
-								<div class="row g-3 mb-3">
-									<div class="col-6">
-										<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener"><div class="phone-frame">
-										<div class="phone-frame-notch"></div>
-										<div class="phone-frame-statusbar"><span>9:41</span><span class="phone-frame-icons"><i class="bi bi-reception-4"></i><i class="bi bi-wifi"></i><i class="bi bi-battery-full"></i></span></div>
-										<img class="img-fluid" src="../store-assets/screenshots/phone/phone-9-export-output.png" alt="Report esportato, aperto in un browser">
-										<div class="phone-frame-home"></div>
-									</div></a>
-									</div><!--col-->
+							<div class="col-12 case-study-section-content">
+								<p>La voce "Import &amp; Export" del menu principale esporta un unico file HTML che contiene tutti i profili munizione, i poligoni e le impostazioni del fucile. Il file si apre subito, nel visualizzatore HTML scelto sul dispositivo: da lì, come per qualsiasi altra pagina, resta a un tocco di distanza condividerlo su Drive, email, WhatsApp o salvarlo tra i file.</p>
+								<p>Il file esportato è al tempo stesso un report leggibile e un backup completo. Aperto in un browser qualsiasi mostra il profilo munizione attivo con la sua tabella balistica, il grafico della caduta e quello della velocità residua, con le stesse soglie transoniche tratteggiate viste sopra; tutti i dati necessari a ripristinare la configurazione completa — inclusi i profili non mostrati a schermo — restano incorporati nello stesso file, senza bisogno di connessione a internet. Per ripristinarlo su questo o un altro dispositivo, basta importarlo dalla stessa voce di menu.</p>
+								<div class="mb-4">
+									<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
+										<div class="browser-frame">
+											<div class="browser-frame-bar">
+												<span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span>
+												<span class="browser-frame-url"></span>
+												<span class="browser-frame-win"><i class="bi bi-dash"></i><span class="browser-frame-win-box"></span><i class="bi bi-x-lg"></i></span>
+											</div>
+											<img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Report esportato, aperto in un browser">
+										</div>
+									</a>
 								</div>
-								<p class="text-muted small mb-4">Il report esportato, aperto in un browser.</p>
-								<p><a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">Apri un esempio reale di report esportato</a> per vederlo di persona.</p>
 							</div><!--//col-->
 						</div><!--//row-->
 					</section><!--//case-study-section-->
