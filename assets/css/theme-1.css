@@ -13319,7 +13319,7 @@ a.more-link .link-arrow .bi {
 /* ============= Light More  ============= */
 .light-mode {
   background: #F5F7FA;
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode hr {
   border-color: #C0C0C0;
@@ -13330,16 +13330,16 @@ a.more-link .link-arrow .bi {
 .light-mode .form-control {
   background: none;
   border-color: #C0C0C0;
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .menu-toggler {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode h1, .light-mode .h1, .light-mode h2, .light-mode .h2, .light-mode h3, .light-mode .h3, .light-mode h4, .light-mode .h4, .light-mode h5, .light-mode .h5, .light-mode h6, .light-mode .h6 {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .footer .copyright a {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .social-list a {
   background: white;
@@ -13354,10 +13354,10 @@ a.more-link .link-arrow .bi {
   box-shadow: 0 0 0.4rem 0.2rem rgba(0, 0, 0, 0.05);
 }
 .light-mode .side-panel .navbar-nav .nav-link {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .side-panel .navbar-nav .nav-link:hover {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .side-panel .navbar-nav .nav-link.active {
   color: #1a8fe3;
@@ -13366,11 +13366,11 @@ a.more-link .link-arrow .bi {
   color: #1a8fe3;
 }
 .light-mode .side-panel .nav-item-close .btn-close {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .section {
   background: white;
-  color: #2D2D2D;
+  color: #3D444A;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
 .light-mode .page-intro-section.home-intro {
@@ -13380,11 +13380,27 @@ a.more-link .link-arrow .bi {
 .light-mode .section.has-profile-image .profile-pic {
   border-color: white;
 }
+.light-mode .profile-pic-bg {
+  background: white;
+}
+.light-mode .mode-toggle a,
+.light-mode .mode-toggle a:hover {
+  color: #3D444A;
+}
+.light-mode .btn-secondary {
+  background: #4f6591;
+  border-color: #4f6591;
+}
+.light-mode .btn-secondary:hover,
+.light-mode .btn-secondary:active {
+  background: #43567b;
+  border-color: #3f5174;
+}
 .light-mode .featured-project-list .card-title a {
-  color: #000001;
+  color: #3D444A;
 }
 .light-mode .featured-project-list .card-text {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .client-logo-list .logo-holder {
   background: #8A8A8A;
@@ -13406,7 +13422,7 @@ a.more-link .link-arrow .bi {
   color: #666666;
 }
 .light-mode .slider-container .slider-custom-controls div:hover {
-  color: #121822;
+  color: #3D444A;
   background: #eef2f7;
 }
 .light-mode .slider-container .tns-nav button.tns-nav-active {
@@ -13416,7 +13432,7 @@ a.more-link .link-arrow .bi {
   background-color: #d3dce9;
 }
 .light-mode .projects-section .project-item .title a {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .projects-section .project-item .title a:hover {
   color: #1a8fe3;
@@ -13427,10 +13443,10 @@ a.more-link .link-arrow .bi {
   background-color: #F5F7FA;
 }
 .light-mode .skill-blocks .item-title {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .leadgen-section .section-heading {
-  color: #121822 !important;
+  color: #3D444A !important;
 }
 .light-mode .featured-post-item {
   background: white;
@@ -13451,10 +13467,10 @@ a.more-link .link-arrow .bi {
   border-color: #F5F7FA;
 }
 .light-mode .blog-breadcrumb {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .blog-breadcrumb a {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .blog-entry .post-meta li {
   border-color: #e4e9f2;
@@ -13464,7 +13480,7 @@ a.more-link .link-arrow .bi {
   background: #F5F7FA;
 }
 .light-mode .blog-quote-holder .blockquote {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .blog-quote-holder .blockquote .quote-icon {
   color: #666666;
@@ -13482,7 +13498,7 @@ a.more-link .link-arrow .bi {
   background: #F5F7FA;
 }
 .light-mode .blog-comment-area .comment-container .comment-item .comment-body .name {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .blog-comment-area .comment-container .comment-item .comment-body .time {
   color: #6d8ab6;
@@ -13500,14 +13516,21 @@ a.more-link .link-arrow .bi {
   background: white;
 }
 .light-mode .comment-reply-holder .reply-title {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .key-results .item .key-data {
-  color: #121822;
+  color: #3D444A;
+}
+.light-mode .key-results .item .key-data-desc,
+.light-mode .key-results .item .data-desc {
+  color: #6c757d;
 }
 .light-mode .result-item .result-data {
-  color: #121822;
-  border-color: #121822;
+  color: #3D444A;
+  border-color: #3D444A;
+}
+.light-mode .case-study-heading {
+  color: #3D444A;
 }
 .light-mode .resume-wrapper {
   background: white;
@@ -13520,7 +13543,7 @@ a.more-link .link-arrow .bi {
   border-color: #C0C0C0;
 }
 .light-mode .resume-role-title {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .resume-company-name {
   background: #e4e9f2;
@@ -13534,7 +13557,7 @@ a.more-link .link-arrow .bi {
   background: #e4e9f2;
 }
 .light-mode .resume-skill-name {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .resume-skill-badge {
   background: #1D2226;
@@ -13547,13 +13570,13 @@ a.more-link .link-arrow .bi {
   background: #888888;
 }
 .light-mode .resume-projects-section .item-heading a {
-  color: #2D2D2D;
+  color: #3D444A;
 }
 .light-mode .resume-degree {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .resume-lang-name {
-  color: #121822;
+  color: #3D444A;
 }
 .light-mode .resume-timeline-item:before {
   border-color: #b1c1d8;
