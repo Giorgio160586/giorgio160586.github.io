@@ -38,6 +38,8 @@
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
 	<style>
+		/* Feature graphic: a touch less rounded than Bootstrap's rounded-4 (16px). */
+		.feature-graphic { border-radius: 12px; }
 		/* Decorative phone mockup wrapped around each screenshot — border, notch and a fake
 		   status bar/home indicator only; the screenshot image itself is never touched. */
 		.phone-frame {
@@ -89,87 +91,6 @@
 			font-weight: 700;
 			line-height: 1.5;
 		}
-		/* Decorative browser chrome (Chrome-like, dark) for desktop screenshots. */
-		.browser-frame {
-			position: relative;
-			border-radius: 8px;
-			overflow: hidden;
-			box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-			background: #292A2D;
-		}
-		.browser-frame-bar {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			padding: 7px 12px;
-			background: #35363A;
-		}
-		.browser-frame-nav {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-left: 2px;
-			color: #C4C7C5;
-			font-size: 14px;
-			flex: none;
-		}
-		.browser-frame-win {
-			display: flex;
-			align-items: center;
-			gap: 14px;
-			margin-left: 4px;
-			color: #C4C7C5;
-			font-size: 12px;
-			flex: none;
-		}
-		.browser-frame-win-box {
-			position: relative;
-			width: 10px;
-			height: 10px;
-			display: inline-block;
-		}
-		.browser-frame-win-box::before,
-		.browser-frame-win-box::after {
-			content: "";
-			position: absolute;
-			width: 7px;
-			height: 7px;
-			border: 1px solid currentColor;
-			border-radius: 1px;
-		}
-		.browser-frame-win-box::before {
-			top: 0;
-			right: 0;
-		}
-		.browser-frame-win-box::after {
-			bottom: 0;
-			left: 0;
-			background: #35363A;
-		}
-		.browser-frame-url {
-			flex: 1 1 auto;
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			margin-left: 4px;
-			padding: 0 12px 0 7px;
-			height: 28px;
-			border-radius: 999px;
-			background: #202124;
-			color: #E8EAED;
-			font-size: 12px;
-			white-space: nowrap;
-			overflow: hidden;
-		}
-		.browser-frame-url img {
-			flex: none;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-		.browser-frame-url span { overflow: hidden; text-overflow: ellipsis; }
-		.browser-frame-url-scheme { color: #9AA0A6; }
-		.browser-frame > img { display: block; width: 100%; }
 		.phone-frame-navbar {
 			position: absolute;
 			bottom: 2px;
@@ -274,10 +195,10 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="img-fluid mb-3"><img class="img-fluid rounded-4" src="../store-assets/feature-graphics/feature-graphic-it.png" alt="GS Ballistics"></div>
+							<div class="img-fluid mb-3"><img class="img-fluid feature-graphic" src="../store-assets/feature-graphics/feature-graphic-it.png" alt="GS Ballistics"></div>
 							<div class="case-study-intro">
 
-							    <p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta per ogni distanza, con un vero motore balistico — tabelle G1/G7 e atmosfera reale, non una formula approssimata. Include una libreria di oltre 200 proiettili, profili arma e poligono che conservano le elevazioni verificate al tiro, più tabella e grafici corrispondenti.</p>
+							    <p class="mb-4">GS Ballistics è un'app Android per il tiro a lunga distanza: calcola l'alzo da impostare in torretta per ogni distanza, con un vero motore balistico — tabelle G1/G7 e atmosfera reale, non una formula approssimata. Include una libreria di oltre 200 proiettili, più munizioni e poligoni salvati che conservano le elevazioni verificate al tiro, con tabella e grafici corrispondenti.</p>
 
 							</div>
 							<div class="row mt-4">
@@ -287,7 +208,7 @@
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-2" class="fw-bold text-nowrap">Angolo di inclinazione</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-3" class="fw-bold text-nowrap">Ottiche e reticolo</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-4" class="fw-bold text-nowrap">Configurazione fucile</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Libreria munizioni e profili arma</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Munizioni e libreria proiettili</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-6" class="fw-bold text-nowrap">Correzione tiro verificata</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 									</ul>
 								</div><!--//col-->
@@ -398,7 +319,7 @@
 								<h3 class="case-study-heading mb-3">Configurazione fucile</h3>
 							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
-								<p>Un'altra serie di valori, inseriti una volta per arma anziché a ogni tiro, entra anch'essa nel calcolo. Vivono in una schermata dedicata, condivisa da tutti i profili arma.</p>
+								<p>Un'altra serie di valori, inseriti una volta per arma anziché a ogni tiro, entra anch'essa nel calcolo. Vivono in una schermata dedicata, condivisa da tutte le munizioni salvate.</p>
 								<div class="row g-3 mb-4 align-items-center">
 									<div class="col-12 col-md-5">
 										<div class="phone-frame">
@@ -425,11 +346,11 @@
 					<section class="case-study-section section mx-auto" id="cap-5">
 						<div class="row gx-5">
 							<div class="col-12">
-								<h3 class="case-study-heading mb-3">Libreria munizioni e profili arma</h3>
+								<h3 class="case-study-heading mb-3">Munizioni e libreria proiettili</h3>
 							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
 								<p>Il calcolo dell'alzo dipende dal coefficiente balistico (BC) del proiettile: senza una munizione selezionata, o con un BC errato, il valore calcolato non è attendibile. Dove sono disponibili sia il G1 che il G7, l'app propone come predefinito il G7, più accurato per i proiettili match a ogiva lunga tipici del tiro a lunga distanza.</p>
-								<p>La libreria munizioni contiene oltre 200 proiettili con i dati di fabbrica dei principali produttori. Ogni profilo arma memorizza calibro, peso, velocità alla volata e i coefficienti balistici G1 e G7. Un profilo può essere creato selezionando un proiettile dalla libreria — i dati vengono precompilati e possono essere modificati — oppure inserendo manualmente tutti i valori.</p>
+								<p>La libreria proiettili contiene oltre 200 voci con i dati di fabbrica dei principali produttori. Ogni munizione salvata memorizza calibro, peso, velocità alla volata e i coefficienti balistici G1 e G7. Una munizione può essere creata selezionando un proiettile dalla libreria — i dati vengono precompilati e possono essere modificati — oppure inserendo manualmente tutti i valori.</p>
 								<p>Se un proiettile manca dalla libreria, o i valori mostrati sembrano sbagliati, è possibile segnalarlo direttamente dalla scheda Report della finestra di modifica: la segnalazione include i dati attualmente mostrati nella scheda e un campo per una nota facoltativa, ed è inviata come email allo sviluppatore.</p>
 								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
 									<div class="col-4">
@@ -545,7 +466,7 @@
 									</div><!--col-->
 									<div class="col-12 col-md-7">
 										<p>Ogni tabella dell'app ha il suo grafico corrispondente, raggiungibile con la stessa icona di scambio tabella/grafico in alto a destra: la curva mostra a colpo d'occhio dove la traiettoria comincia a scendere davvero, cosa che una colonna di numeri rende meno immediata.</p>
-										<p><strong>Confronto fra due proiettili.</strong> Dalla libreria munizioni, con il menu di una riga, si può impostare un secondo proiettile come <em>confronto</em>: da quel momento la sua curva viene disegnata sugli stessi assi del proiettile attivo, con un colore diverso, e la legenda in alto indica quale curva è quale.</p>
+										<p><strong>Confronto fra due proiettili.</strong> Dall'elenco munizioni, con il menu di una riga, si può impostare una seconda munizione come <em>confronto</em>: da quel momento la sua curva viene disegnata sugli stessi assi del proiettile attivo, con un colore diverso, e la legenda in alto indica quale curva è quale.</p>
 										<p>È il modo più rapido per vedere come si comportano due ricariche o due palle diverse sulle stesse distanze — quanto cade una rispetto all'altra, dove le curve si separano e di quanto — senza dover cambiare profilo attivo o confrontare due tabelle a mano.</p>
 										<p>Sugli assi: verticale la caduta in centimetri, orizzontale la distanza in metri. Le unità seguono quelle scelte nelle impostazioni.</p>
 									</div><!--col-->
@@ -642,16 +563,15 @@
 								<p>La voce "Import &amp; Export" del menu principale esporta un unico file HTML che contiene tutti i profili munizione, i poligoni e le impostazioni del fucile. Il file si apre subito, nel visualizzatore HTML scelto sul dispositivo: da lì, come per qualsiasi altra pagina, resta a un tocco di distanza condividerlo su Drive, email, WhatsApp o salvarlo tra i file.</p>
 								<p>Il file esportato è al tempo stesso un report leggibile e un backup completo. Aperto in un browser qualsiasi mostra il profilo munizione attivo con la sua tabella balistica, il grafico della caduta e quello della velocità residua, con le stesse soglie transoniche tratteggiate viste sopra; tutti i dati necessari a ripristinare la configurazione completa — inclusi i profili non mostrati a schermo — restano incorporati nello stesso file, senza bisogno di connessione a internet. Per ripristinarlo su questo o un altro dispositivo, basta importarlo dalla stessa voce di menu.</p>
 								<div class="mb-4">
-									<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
-										<div class="browser-frame">
+									<div class="browser-frame">
+										
 											<div class="browser-frame-bar">
 												<span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span>
-												<span class="browser-frame-url"><img src="../favicon.ico" alt=""><span><span class="browser-frame-url-scheme">https://</span>giorgio160586.github.io</span></span>
-												<span class="browser-frame-win"><i class="bi bi-dash"></i><span class="browser-frame-win-box"></span><i class="bi bi-x-lg"></i></span>
+												<span class="browser-frame-url"><img src="../favicon.ico" alt=""><span><span class="browser-frame-url-scheme">https://</span>giorgio160586.github.io/store-assets/sample/gs-ballistics-sample-report.html</span></span>
+												<span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../store-assets/screenshots/desktop/export-report-browser.png"></button><i class="bi bi-x-lg"></i></span>
 											</div>
-											<img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Report esportato, aperto in un browser">
+											<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener"><img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Report esportato, aperto in un browser"></a>
 										</div>
-									</a>
 								</div>
 							</div><!--//col-->
 						</div><!--//row-->
@@ -683,6 +603,22 @@
 	</footer>
 
 	<!-- Javascript -->
+
+
+	<!-- Screenshot lightbox, opened by the maximize button in the browser frame -->
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content border-0 bg-transparent">
+		  <div class="modal-body d-flex justify-content-center align-items-center p-0 position-relative">
+			<img id="modalImage" src="" alt="Popup Image"
+				 style="max-width: none; height: auto; display: block; margin: auto;">
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Image Modal JS -->
+	<script src="../assets/js/image-modal.js"></script>
 
 	<script src="../assets/plugins/popper.min.js"></script>
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>

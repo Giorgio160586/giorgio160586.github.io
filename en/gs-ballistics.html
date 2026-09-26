@@ -38,6 +38,8 @@
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
 	<style>
+		/* Feature graphic: a touch less rounded than Bootstrap's rounded-4 (16px). */
+		.feature-graphic { border-radius: 12px; }
 		/* Decorative phone mockup wrapped around each screenshot — border, notch and a fake
 		   status bar/home indicator only; the screenshot image itself is never touched. */
 		.phone-frame {
@@ -89,87 +91,6 @@
 			font-weight: 700;
 			line-height: 1.5;
 		}
-		/* Decorative browser chrome (Chrome-like, dark) for desktop screenshots. */
-		.browser-frame {
-			position: relative;
-			border-radius: 8px;
-			overflow: hidden;
-			box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-			background: #292A2D;
-		}
-		.browser-frame-bar {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			padding: 7px 12px;
-			background: #35363A;
-		}
-		.browser-frame-nav {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-left: 2px;
-			color: #C4C7C5;
-			font-size: 14px;
-			flex: none;
-		}
-		.browser-frame-win {
-			display: flex;
-			align-items: center;
-			gap: 14px;
-			margin-left: 4px;
-			color: #C4C7C5;
-			font-size: 12px;
-			flex: none;
-		}
-		.browser-frame-win-box {
-			position: relative;
-			width: 10px;
-			height: 10px;
-			display: inline-block;
-		}
-		.browser-frame-win-box::before,
-		.browser-frame-win-box::after {
-			content: "";
-			position: absolute;
-			width: 7px;
-			height: 7px;
-			border: 1px solid currentColor;
-			border-radius: 1px;
-		}
-		.browser-frame-win-box::before {
-			top: 0;
-			right: 0;
-		}
-		.browser-frame-win-box::after {
-			bottom: 0;
-			left: 0;
-			background: #35363A;
-		}
-		.browser-frame-url {
-			flex: 1 1 auto;
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			margin-left: 4px;
-			padding: 0 12px 0 7px;
-			height: 28px;
-			border-radius: 999px;
-			background: #202124;
-			color: #E8EAED;
-			font-size: 12px;
-			white-space: nowrap;
-			overflow: hidden;
-		}
-		.browser-frame-url img {
-			flex: none;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-		}
-		.browser-frame-url span { overflow: hidden; text-overflow: ellipsis; }
-		.browser-frame-url-scheme { color: #9AA0A6; }
-		.browser-frame > img { display: block; width: 100%; }
 		.phone-frame-navbar {
 			position: absolute;
 			bottom: 2px;
@@ -274,10 +195,10 @@
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">GS Ballistics</h1>
 
-							<div class="img-fluid mb-3"><img class="img-fluid rounded-4" src="../store-assets/feature-graphics/feature-graphic-en.png" alt="GS Ballistics"></div>
+							<div class="img-fluid mb-3"><img class="img-fluid feature-graphic" src="../store-assets/feature-graphics/feature-graphic-en.png" alt="GS Ballistics"></div>
 							<div class="case-study-intro">
 
-							    <p class="mb-4">GS Ballistics is an Android app for long-range shooting: it works out the elevation to dial on the turret for any distance, with a real ballistic engine — G1/G7 drag tables and real atmosphere, not an approximate formula. It comes with a library of over 200 bullets, weapon and range profiles that keep the elevations verified on the range, plus the matching table and charts.</p>
+							    <p class="mb-4">GS Ballistics is an Android app for long-range shooting: it works out the elevation to dial on the turret for any distance, with a real ballistic engine — G1/G7 drag tables and real atmosphere, not an approximate formula. It comes with a library of over 200 bullets, plus saved bullets and ranges that keep the elevations verified on the range, and the matching table and charts.</p>
 
 							</div>
 							<div class="row mt-4">
@@ -287,7 +208,7 @@
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-2" class="fw-bold text-nowrap">Slope angle</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-3" class="fw-bold text-nowrap">Optics and reticle</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-4" class="fw-bold text-nowrap">Scope and rifle configuration</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
-										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Bullet library and weapon profiles</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
+										<li class="d-flex align-items-baseline mb-2"><a href="#cap-5" class="fw-bold text-nowrap">Bullets and the bullet library</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 										<li class="d-flex align-items-baseline mb-2"><a href="#cap-6" class="fw-bold text-nowrap">Verified shot correction</a><span class="flex-grow-1 mx-2" style="border-bottom: 1px dotted #ccc;"></span></li>
 									</ul>
 								</div><!--//col-->
@@ -398,7 +319,7 @@
 								<h3 class="case-study-heading mb-3">Scope and rifle configuration</h3>
 							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
-								<p>Another set of values, entered once per rifle rather than at every shot, goes into the calculation as well. They live on a dedicated screen, shared by every weapon profile.</p>
+								<p>Another set of values, entered once per rifle rather than at every shot, goes into the calculation as well. They live on a dedicated screen, shared by every saved bullet.</p>
 								<div class="row g-3 mb-4 align-items-center">
 									<div class="col-12 col-md-5">
 										<div class="phone-frame">
@@ -425,11 +346,11 @@
 					<section class="case-study-section section mx-auto" id="cap-5">
 						<div class="row gx-5">
 							<div class="col-12">
-								<h3 class="case-study-heading mb-3">Bullet library and weapon profiles</h3>
+								<h3 class="case-study-heading mb-3">Bullets and the bullet library</h3>
 							</div><!--//col-auto-->
 							<div class="col-12 case-study-section-content">
 								<p>The elevation calculation depends on the bullet's ballistic coefficient (BC): with no bullet selected, or with the wrong BC, the calculated value cannot be trusted. Where both G1 and G7 are available the app defaults to G7, more accurate for the long-ogive match bullets typical of long-range shooting.</p>
-								<p>The bullet library holds over 200 bullets with factory data from the main manufacturers. Every weapon profile stores caliber, weight, muzzle velocity and the G1 and G7 ballistic coefficients. A profile can be created by picking a bullet from the library — the data is pre-filled and can be edited — or by entering every value by hand.</p>
+								<p>The bullet library holds over 200 entries with factory data from the main manufacturers. Every saved bullet stores caliber, weight, muzzle velocity and the G1 and G7 ballistic coefficients. A bullet can be created by picking one from the library — the data is pre-filled and can be edited — or by entering every value by hand.</p>
 								<p>If a bullet is missing from the library, or the values shown look wrong, it can be reported straight from the Report tab of the edit popup: the report carries the data currently shown on the card plus a field for an optional note, and is sent to the developer by email.</p>
 								<div class="row g-3 mb-4 mx-auto" style="max-width: 876px;">
 									<div class="col-4">
@@ -545,7 +466,7 @@
 									</div><!--col-->
 									<div class="col-12 col-md-7">
 										<p>Every table in the app has its matching chart, reached with the same table/chart swap icon at the top right: the curve shows at a glance where the trajectory really starts to fall away, something a column of numbers makes far less immediate.</p>
-										<p><strong>Comparing two bullets.</strong> From the bullet library, through a row's menu, a second bullet can be set as a <em>comparison</em>: from then on its curve is drawn on the same axes as the active bullet, in a different color, and the legend at the top says which curve is which.</p>
+										<p><strong>Comparing two bullets.</strong> From the bullet list, through a row's menu, a second bullet can be set as a <em>comparison</em>: from then on its curve is drawn on the same axes as the active bullet, in a different color, and the legend at the top says which curve is which.</p>
 										<p>It is the quickest way to see how two loads or two different bullets behave over the same distances — how much one drops against the other, where the curves separate and by how much — without switching the active profile or comparing two tables by hand.</p>
 										<p>On the axes: drop in centimeters vertically, distance in meters horizontally. The units follow the ones chosen in the settings.</p>
 									</div><!--col-->
@@ -642,16 +563,15 @@
 								<p>The "Import &amp; Export" entry in the main menu writes out a single HTML file holding every bullet profile, range and rifle setting. The file opens straight away, in whichever HTML viewer the device is set to use: from there, as with any other page, it is one tap away from being shared to Drive, email or WhatsApp, or saved among your files.</p>
 								<p>The exported file is a readable report and a full backup at the same time. Opened in any browser it shows the active bullet profile with its ballistic table, the drop chart and the remaining velocity chart, with the same dashed transonic thresholds seen above; everything needed to restore the complete configuration — including the profiles not shown on screen — stays embedded in that one file, with no internet connection required. To restore it on this or another device, just import it from the same menu entry.</p>
 								<div class="mb-4">
-									<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener">
-										<div class="browser-frame">
+									<div class="browser-frame">
+										
 											<div class="browser-frame-bar">
 												<span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span>
-												<span class="browser-frame-url"><img src="../favicon.ico" alt=""><span><span class="browser-frame-url-scheme">https://</span>giorgio160586.github.io</span></span>
-												<span class="browser-frame-win"><i class="bi bi-dash"></i><span class="browser-frame-win-box"></span><i class="bi bi-x-lg"></i></span>
+												<span class="browser-frame-url"><img src="../favicon.ico" alt=""><span><span class="browser-frame-url-scheme">https://</span>giorgio160586.github.io/store-assets/sample/gs-ballistics-sample-report.html</span></span>
+												<span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Open the screenshot full size" aria-label="Open the screenshot full size" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../store-assets/screenshots/desktop/export-report-browser.png"></button><i class="bi bi-x-lg"></i></span>
 											</div>
-											<img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Exported report, opened in a browser">
+											<a href="../store-assets/sample/gs-ballistics-sample-report.html" target="_blank" rel="noopener"><img class="img-fluid" src="../store-assets/screenshots/desktop/export-report-browser.png" alt="Exported report, opened in a browser"></a>
 										</div>
-									</a>
 								</div>
 							</div><!--//col-->
 						</div><!--//row-->
@@ -683,6 +603,22 @@
 	</footer>
 
 	<!-- Javascript -->
+
+
+	<!-- Screenshot lightbox, opened by the maximize button in the browser frame -->
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content border-0 bg-transparent">
+		  <div class="modal-body d-flex justify-content-center align-items-center p-0 position-relative">
+			<img id="modalImage" src="" alt="Popup Image"
+				 style="max-width: none; height: auto; display: block; margin: auto;">
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Image Modal JS -->
+	<script src="../assets/js/image-modal.js"></script>
 
 	<script src="../assets/plugins/popper.min.js"></script>
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>

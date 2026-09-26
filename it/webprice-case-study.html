@@ -39,7 +39,10 @@
 
 	<style>
 		/* ── Carousel ── */
-		.wp-carousel { position: relative; margin-bottom: 1rem; }
+		/* The side padding is the gutter the arrows sit in, so they never cover the
+		   screenshot — same 44px the old GS Ballistics gallery used for the same discs. */
+		.wp-carousel { position: relative; margin-bottom: 1rem; padding: 0 44px; }
+		@media (max-width: 576px) { .wp-carousel { padding: 0 36px; } }
 		.wpc-slide { display: none; }
 		.wpc-slide.active { display: block; }
 		.wpc-controls {
@@ -49,30 +52,40 @@
 			gap: .75rem;
 			margin-top: .6rem;
 		}
+		/* Same arrows as the old GS Ballistics gallery: a dark disc resting inside the
+		   edge of the active slide. The negative margin pulls them back onto the image,
+		   since .wp-carousel also spans the caption and the dots underneath. */
 		.wpc-btn {
-			background: none;
-			border: 2px solid var(--bs-primary);
-			color: var(--bs-primary);
+			position: absolute;
+			top: 50%;
+			margin-top: -23px;
+			transform: translateY(-50%);
+			z-index: 2;
+			width: 36px; height: 36px;
+			padding: 0;
+			border: none;
 			border-radius: 50%;
-			width: 34px; height: 34px;
-			font-size: 20px; line-height: 1;
+			background: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			font-size: 1.1rem; line-height: 1;
 			cursor: pointer;
 			display: flex; align-items: center; justify-content: center;
-			opacity: .65;
-			transition: opacity .2s;
-			padding: 0;
 		}
-		.wpc-btn:hover { opacity: 1; }
+		.wpc-btn:hover { background: rgba(0, 0, 0, 0.8); }
+		.wpc-prev { left: 0; }
+		.wpc-next { right: 0; }
 		.wpc-dots { display: flex; gap: 6px; align-items: center; }
+		/* Same palette as the arrows: the current dot matches their resting shade,
+		   the others sit lighter, and hovering any of them darkens it like an arrow. */
 		.wpc-dot {
 			width: 8px; height: 8px;
 			border-radius: 50%;
-			background: var(--bs-primary);
-			opacity: .3;
+			background: rgba(0, 0, 0, 0.25);
 			cursor: pointer;
-			transition: opacity .2s;
+			transition: background .2s;
 		}
-		.wpc-dot.active { opacity: 1; }
+		.wpc-dot:hover { background: rgba(0, 0, 0, 0.8); }
+		.wpc-dot.active { background: rgba(0, 0, 0, 0.55); }
 		.wpc-caption {
 			font-size: .8rem;
 			text-align: center;
@@ -81,12 +94,15 @@
 		}
 
 		/* ── Screenshot images ── */
-		.wp-carousel img,
-		.case-study-screenshot {
-			width: 100%;
-			border-radius: .375rem;
-			display: block;
-		}
+		/* Every screenshot now sits inside .browser-frame, which sets its own width and
+		   corner radius — a rule reaching into the frame would round the page content
+		   inside a square window. */
+		.browser-frame { margin-bottom: 0; }
+		/* A screenshot standing on its own borrows the carousel's side gutter, so it comes
+		   out the same width as the ones between the arrows. The opening image is the
+		   exception: it runs full width as the presentation shot. */
+		.wp-single { padding: 0 44px; }
+		@media (max-width: 576px) { .wp-single { padding: 0 36px; } }
 
 	</style>
 </head>
@@ -168,13 +184,13 @@
 
 						<div class="intro-holder">
 							<h1 class="intro-name text-center mb-4">WebPrice</h1>
-							<div class="post-author text-center mb-3">Su richiesta di <a href="https://demieurope.eu/">DE.MI Europe</a></div>
 
 							<!-- Hero image: Dashboard -->
 							<div class="mb-4">
-								<div class="img-blur-container">
-									<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp26-articoli-chart.png" alt="WebPrice Andamento Prezzi">
-								</div>
+								<div class="browser-frame">
+										<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-9-articoli-detail.png"></button><i class="bi bi-x-lg"></i></span></div>
+										<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp-9-articoli-detail.png" alt="WebPrice Andamento Prezzi">
+									</div>
 							</div>
 
 							<div class="case-study-intro">
@@ -232,27 +248,30 @@
 
 								<div class="wp-carousel mb-4">
 									<div class="wpc-slide active">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-prezzi-overview.png" alt="Prezzi – Overview">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-2-prezzi-overview.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-2-prezzi-overview.png" alt="Prezzi – Overview">
 										</div>
 										<p class="wpc-caption">Overview: indici per punto vendita + grafico comparativo</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-prezzi-detail.png" alt="Prezzi – Dettaglio">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-3-prezzi-detail.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-3-prezzi-detail.png" alt="Prezzi – Dettaglio">
 										</div>
 										<p class="wpc-caption">Dettaglio: griglia <a href="https://www.ag-grid.com" target="_blank">AG Grid</a> con prezzi per ogni prodotto e punto vendita</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-prezzi-indici.png" alt="Prezzi – Indici per categoria">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-4-prezzi-indici.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-4-prezzi-indici.png" alt="Prezzi – Indici per categoria">
 										</div>
 										<p class="wpc-caption">Indici per categoria ECR: breakdown a 3 livelli per ogni punto vendita</p>
 									</div>
 									<div class="wpc-controls">
-										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#10094;</button>
 										<div class="wpc-dots"></div>
-										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#10095;</button>
 									</div>
 								</div>
 
@@ -264,27 +283,30 @@
 
 								<div class="wp-carousel mb-4">
 									<div class="wpc-slide active">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-pv-overview.png" alt="Punto Vendita – Overview">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-5-pv-overview.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-5-pv-overview.png" alt="Punto Vendita – Overview">
 										</div>
 										<p class="wpc-caption">Overview con KPI, distribuzione categorie e dinamica prezzi</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-pv-storico.png" alt="Punto Vendita – Storico indici">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-6-pv-donut.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-6-pv-donut.png" alt="Punto Vendita – Distribuzione e dinamica prezzi">
 										</div>
-										<p class="wpc-caption">Storico indici: andamento temporale con slider interattivo</p>
+										<p class="wpc-caption">Donut chart: distribuzione categorie, private label e dinamica prezzi rispetto al listino</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-pv-filtri.png" alt="Punto Vendita – Filtri">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-7-filtri.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-7-filtri.png" alt="Punto Vendita – Filtri">
 										</div>
 										<p class="wpc-caption">Pannello filtri: formula indice, gestione promozioni e scostamento</p>
 									</div>
 									<div class="wpc-controls">
-										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#10094;</button>
 										<div class="wpc-dots"></div>
-										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#10095;</button>
 									</div>
 								</div>
 
@@ -296,21 +318,23 @@
 
 								<div class="wp-carousel mb-4">
 									<div class="wpc-slide active">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-articoli-chart.png" alt="Articoli – Grafico andamento prezzi">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-9-articoli-detail.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-9-articoli-detail.png" alt="Articoli – Grafico andamento prezzi">
 										</div>
 										<p class="wpc-caption">Andamento prezzi multi-store con grafico interattivo Chart.js</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-articoli-table.png" alt="Articoli – Tabella storico">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-8-articoli-ricerca.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-8-articoli-ricerca.png" alt="Articoli – Ricerca">
 										</div>
-										<p class="wpc-caption">Tabella storico rilevamenti con tutti i dettagli per punto vendita</p>
+										<p class="wpc-caption">Ricerca articoli full-text: da qui si apre il dettaglio o si imposta un alert sul prodotto</p>
 									</div>
 									<div class="wpc-controls">
-										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#10094;</button>
 										<div class="wpc-dots"></div>
-										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#10095;</button>
 									</div>
 								</div>
 
@@ -322,27 +346,30 @@
 
 								<div class="wp-carousel mb-4">
 									<div class="wpc-slide active">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-promo-list.png" alt="Promozioni – Lista">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-10-promo-list.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-10-promo-list.png" alt="Promozioni – Lista">
 										</div>
 										<p class="wpc-caption">Lista promozioni con miniatura volantino e periodo di validità</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-promo-overview.png" alt="Promozioni – Overview">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-11-promo-overview.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-11-promo-overview.png" alt="Promozioni – Overview">
 										</div>
 										<p class="wpc-caption">Overview promozione: punti vendita coperti e distribuzione categorie</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-promo-volantino.png" alt="Promozioni – Viewer volantino">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-13-promo-volantino.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-13-promo-volantino.png" alt="Promozioni – Viewer volantino">
 										</div>
 										<p class="wpc-caption">Viewer PDF integrato (pdf.js) per sfogliare il volantino</p>
 									</div>
 									<div class="wpc-controls">
-										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#10094;</button>
 										<div class="wpc-dots"></div>
-										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#10095;</button>
 									</div>
 								</div>
 
@@ -352,8 +379,11 @@
 								<h4 class="mt-4 mb-3">Rilevamenti — Planning</h4>
 								<p>Calendario a 3 mesi che visualizza le campagne di rilevamento programmate tramite codice colore. Mostra i KPI principali: prossimo rilevamento, totale rilevamenti annuali, rilevamenti nei prossimi 30 giorni e conclusi.</p>
 
-								<div class="mb-4">
-									<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp26-planning.png" alt="Planning Rilevamenti">
+								<div class="mb-4 wp-single">
+									<div class="browser-frame">
+										<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-14-planning.png"></button><i class="bi bi-x-lg"></i></span></div>
+										<img class="case-study-screenshot" src="../assets/images/projects/webprice2026/wp-14-planning.png" alt="Planning Rilevamenti">
+									</div>
 								</div>
 
 								<!-- ──────────────────────────────────────── -->
@@ -368,21 +398,23 @@
 
 								<div class="wp-carousel mb-4">
 									<div class="wpc-slide active">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-categorie-ecr.png" alt="Categorie ECR">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-15-categorie-ecr.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-15-categorie-ecr.png" alt="Categorie ECR">
 										</div>
 										<p class="wpc-caption">Categorie ECR: albero gerarchico a 5 livelli con checkbox</p>
 									</div>
 									<div class="wpc-slide">
-										<div class="img-blur-container">
-											<img src="../assets/images/projects/webprice2026/wp26-fornitori.png" alt="Fornitori">
+										<div class="browser-frame">
+											<div class="browser-frame-bar"><span class="browser-frame-nav"><i class="bi bi-arrow-left"></i><i class="bi bi-arrow-right"></i><i class="bi bi-arrow-clockwise"></i></span><span class="browser-frame-url"><i class="bi bi-globe2"></i><span><span class="browser-frame-url-scheme">https://</span>rilevamenti.demieurope.com</span></span><span class="browser-frame-win"><span class="browser-frame-win-min"></span><button type="button" class="browser-frame-win-max" title="Apri lo screenshot a dimensione piena" aria-label="Apri lo screenshot a dimensione piena" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/webprice2026/wp-16-fornitori.png"></button><i class="bi bi-x-lg"></i></span></div>
+											<img src="../assets/images/projects/webprice2026/wp-16-fornitori.png" alt="Fornitori">
 										</div>
 										<p class="wpc-caption">Fornitori: catalogo prodotti per brand con ricerca full-text</p>
 									</div>
 									<div class="wpc-controls">
-										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#8249;</button>
+										<button class="wpc-btn wpc-prev" aria-label="Precedente">&#10094;</button>
 										<div class="wpc-dots"></div>
-										<button class="wpc-btn wpc-next" aria-label="Successivo">&#8250;</button>
+										<button class="wpc-btn wpc-next" aria-label="Successivo">&#10095;</button>
 									</div>
 								</div>
 
@@ -443,6 +475,22 @@
 	<footer class="footer text-center py-4">
 		<small class="copyright">Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a> All rights reserved. All trademarks or registered trademarks are property of their respective owners.</small>
 	</footer>
+
+
+	<!-- Screenshot lightbox, opened by the maximize button in each browser frame -->
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content border-0 bg-transparent">
+		  <div class="modal-body d-flex justify-content-center align-items-center p-0 position-relative">
+			<img id="modalImage" src="" alt="Popup Image"
+				 style="max-width: none; height: auto; display: block; margin: auto;">
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Image Modal JS -->
+	<script src="../assets/js/image-modal.js"></script>
 
 	<script src="../assets/plugins/popper.min.js"></script>
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>

@@ -13353,11 +13353,11 @@ a.more-link .link-arrow .bi {
 }
 .light-mode .social-list a {
   background: white;
-  color: #1B1F23;
+  color: #43567b;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
 .light-mode .social-list a:hover {
-  color: #1a8fe3;
+  color: #4f6591;
 }
 .light-mode .side-panel .main-nav {
   background: white;
@@ -13368,10 +13368,12 @@ a.more-link .link-arrow .bi {
   color: #5A636D;
 }
 .light-mode .side-panel .navbar-nav .nav-link .icon-holder,
-.light-mode .side-panel .navbar-nav .nav-link svg,
+.light-mode .side-panel .navbar-nav .nav-link svg {
+  color: #43567b;
+}
 .light-mode .side-panel .navbar-nav .nav-link:hover .icon-holder,
 .light-mode .side-panel .navbar-nav .nav-link:hover svg {
-  color: #1B1F23;
+  color: #4f6591;
 }
 .light-mode .side-panel .navbar-nav .nav-link.active,
 .light-mode .side-panel .navbar-nav .nav-link.active .icon-holder,
@@ -13744,3 +13746,101 @@ body {
 }
 
 
+
+/* ── Decorative browser chrome (Chrome-like, dark) for desktop screenshots ──
+   Shared by the GS Ballistics guide and the WebPrice case study, so it lives
+   here instead of being pasted into each page. */
+.browser-frame {
+	position: relative;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+	background: #292A2D;
+}
+.browser-frame-bar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 12px;
+	background: #35363A;
+}
+.browser-frame-nav {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-left: 2px;
+	color: #C4C7C5;
+	font-size: 14px;
+	flex: none;
+}
+.browser-frame-win {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-left: 4px;
+	color: #C4C7C5;
+	font-size: 12px;
+	flex: none;
+}
+/* All three window buttons are drawn to the same 9px box. Bootstrap's bi-dash
+   renders a 4x2px stub next to a 9px square, which reads as a defect rather than
+   a minimize button, so the line is drawn here instead. */
+.browser-frame-win-min {
+	width: 9px;
+	height: 1px;
+	background: currentColor;
+	display: inline-block;
+}
+.browser-frame-win i {
+	font-size: 12px;
+	line-height: 1;
+}
+/* Bootstrap Icons drops its glyphs by -.125em off the baseline, which leaves the
+   close X sitting a pixel above the square next to it. */
+.browser-frame-win i::before {
+	vertical-align: middle;
+}
+.browser-frame-url {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: 4px;
+	padding: 0 12px 0 7px;
+	height: 28px;
+	border-radius: 999px;
+	background: #202124;
+	color: #E8EAED;
+	font-size: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.browser-frame-url img {
+	flex: none;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+}
+.browser-frame-url span { overflow: hidden; text-overflow: ellipsis; }
+.browser-frame-url-scheme { color: #9AA0A6; }
+.browser-frame > a { display: block; }
+.browser-frame > img,
+.browser-frame > a > img { display: block; width: 100%; }
+.browser-frame-url i { flex: none; font-size: 11px; color: #9AA0A6; }
+
+/* Maximize button in the browser chrome: a plain square rather than the restore
+   icon's two overlapping ones, because here it really does open the screenshot
+   full size instead of toggling a window. */
+.browser-frame-win-max {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+  background: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+  transition: color .2s;
+}
+.browser-frame-win-max:hover { color: #fff; }
