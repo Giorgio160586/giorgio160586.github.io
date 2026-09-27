@@ -12390,11 +12390,19 @@ a.more-link .link-arrow .bi {
    diagonals. Gradients painted by the browser are rasterised at the size they are
    shown, so there is nothing left to enlarge. The 112.4deg axis is perpendicular
    to the old artwork's slant (70 across, 170 down), keeping the same diagonal. */
+/* The layers redraw the SVG's shapes at 1.5x its 680-unit canvas, measured in px along
+   each gradient axis so they stay anchored on the left like the LinkedIn banner:
+   two hairlines (their own, steeper 117.76deg slant), then the three bands, each
+   shaded across its width the way the SVG's shape gradients shade them. The 1px
+   ramps at every edge keep the diagonals from stair-stepping. */
 .page-intro-section.home-intro,
 .light-mode .page-intro-section.home-intro {
   background-color: #1a8fe3;
   background-image:
-    linear-gradient(112.4deg, rgba(255, 255, 255, 0.1) 0 18%, rgba(255, 255, 255, 0.04) 18% 34%, rgba(0, 0, 0, 0.05) 34% 50%, rgba(255, 255, 255, 0.07) 50% 64%, transparent 64%),
+    linear-gradient(117.76deg, transparent 489.5px, rgba(255, 255, 255, 0.18) 491px, transparent 492.5px, transparent 555.5px, rgba(255, 255, 255, 0.11) 557px, transparent 558.5px),
+    linear-gradient(112.4deg, transparent 277px, rgba(26, 143, 227, 0.25) 278px, rgba(26, 143, 227, 0.25) 499px, transparent 500px),
+    linear-gradient(112.4deg, transparent 110px, rgba(42, 175, 248, 0.3) 111px, rgba(14, 122, 201, 0.18) 402px, transparent 403px),
+    linear-gradient(112.4deg, rgba(31, 154, 240, 0.66) 0, rgba(10, 95, 160, 0.4) 249px, transparent 250px),
     linear-gradient(90deg, #0d6ebd 0%, #1a8fe3 100%);
 }
 .page-intro-section.home-intro .intro-name,
@@ -12420,9 +12428,11 @@ a.more-link .link-arrow .bi {
 }
 
 /* Dark/Light Mode Toggle */
+/* The top bar sits inside the padding of the inner .container-fluid; the negative
+   offset cancels that gutter so the switcher is anchored to the page's right edge. */
 .mode-toggle {
   position: absolute;
-  right: 0;
+  right: -0.75rem;
   top: 1.2rem;
 }
 /* The flags carry me-3 for the gap between them; on the last one that margin is
@@ -12672,7 +12682,7 @@ a.more-link .link-arrow .bi {
 
 .tech-stack img {
   width: auto;
-  height: 25px;
+  height: 40px;
 }
 .tech-stack .list-label {
   color: #AAAAAA;
@@ -13019,8 +13029,15 @@ a.more-link .link-arrow .bi {
   left: 0;
 }
 
+/* Same chip as the company label in the resume (.resume-company-name). */
 .post-tags .tag-badge {
-  background: #373737;
+  background: rgba(0, 0, 0, 0.1);
+  color: inherit;
+  font-weight: 600;
+}
+.light-mode .post-tags .tag-badge {
+  background: #e4e9f2;
+  color: #3D444A;
 }
 
 .featured-post-item {
@@ -13508,6 +13525,18 @@ a.more-link .link-arrow .bi {
 }
 .light-mode .blog-quote-holder {
   background: #F5F7FA;
+}
+/* Resource cards inside a post: Bootstrap's .card is themed dark (#222B32) and had no
+   light-mode counterpart, so they use the same light panel as quotes and comments. */
+.light-mode .post-content .card {
+  background: #F5F7FA;
+  color: #3D444A;
+}
+.light-mode .post-content .card .card-title {
+  color: #1B1F23;
+}
+.light-mode .post-content .card .card-title:hover {
+  color: #1a8fe3;
 }
 .light-mode .blog-quote-holder .blockquote {
   color: #3D444A;

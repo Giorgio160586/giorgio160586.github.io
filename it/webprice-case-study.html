@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
 	<title>WebPrice Case Study – SPA Angular per il Monitoraggio Prezzi | Giorgio Saad</title>
@@ -39,10 +39,9 @@
 
 	<style>
 		/* ── Carousel ── */
-		/* The side padding is the gutter the arrows sit in, so they never cover the
-		   screenshot — same 44px the old GS Ballistics gallery used for the same discs. */
-		.wp-carousel { position: relative; margin-bottom: 1rem; padding: 0 44px; }
-		@media (max-width: 576px) { .wp-carousel { padding: 0 36px; } }
+		/* The arrows now sit in the control row under the slide, so the screenshots no
+		   longer need a side gutter and run the full width of the column. */
+		.wp-carousel { position: relative; margin-bottom: 1rem; }
 		.wpc-slide { display: none; }
 		.wpc-slide.active { display: block; }
 		.wpc-controls {
@@ -52,15 +51,9 @@
 			gap: .75rem;
 			margin-top: .6rem;
 		}
-		/* Same arrows as the old GS Ballistics gallery: a dark disc resting inside the
-		   edge of the active slide. The negative margin pulls them back onto the image,
-		   since .wp-carousel also spans the caption and the dots underneath. */
+		/* The dark discs of the old GS Ballistics gallery, sitting in the control row
+		   either side of the dots rather than floating over the slide. */
 		.wpc-btn {
-			position: absolute;
-			top: 50%;
-			margin-top: -23px;
-			transform: translateY(-50%);
-			z-index: 2;
 			width: 36px; height: 36px;
 			padding: 0;
 			border: none;
@@ -72,8 +65,6 @@
 			display: flex; align-items: center; justify-content: center;
 		}
 		.wpc-btn:hover { background: rgba(0, 0, 0, 0.8); }
-		.wpc-prev { left: 0; }
-		.wpc-next { right: 0; }
 		.wpc-dots { display: flex; gap: 6px; align-items: center; }
 		/* Same palette as the arrows: the current dot matches their resting shade,
 		   the others sit lighter, and hovering any of them darkens it like an arrow. */
@@ -98,11 +89,6 @@
 		   corner radius — a rule reaching into the frame would round the page content
 		   inside a square window. */
 		.browser-frame { margin-bottom: 0; }
-		/* A screenshot standing on its own borrows the carousel's side gutter, so it comes
-		   out the same width as the ones between the arrows. The opening image is the
-		   exception: it runs full width as the presentation shot. */
-		.wp-single { padding: 0 44px; }
-		@media (max-width: 576px) { .wp-single { padding: 0 36px; } }
 
 	</style>
 </head>
@@ -180,6 +166,9 @@
 
 						<div class="profile-holder text-center">
 							<img class="profile-pic rounded-circle" src="../assets/images/profile.png" alt="image">
+						</div>
+						<div class="blog-breadcrumb">
+							<a class="blog-home-link" href="projects.html"><i class="bi bi-arrow-left"></i> Back To Projects</a>
 						</div>
 
 						<div class="intro-holder">

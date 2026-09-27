@@ -1,61 +1,114 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-	<title>iPrice2024 Case Study – Data Processing with DevExpress | Giorgio Saad</title>
+	<title>iPrice Case Study – DevExpress Desktop App for Retail Price Surveys | Giorgio Saad</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Case study: iPrice2024, an advanced data processing solution handling millions of records, built with DevExpress and .NET by Giorgio Saad.">
+	<meta name="description" content="Case study: iPrice2026, a WinForms desktop application built with DevExpress and SQL Server that DE.MI Europe uses to organise, check and publish retail price surveys. Developed by Giorgio Saad.">
 	<meta name="author" content="Giorgio Saad">
 	<link rel="canonical" href="https://giorgio160586.github.io/en/iprice-case-study.html" />
 	<link rel="alternate" hreflang="en" href="https://giorgio160586.github.io/en/iprice-case-study.html" />
 	<link rel="alternate" hreflang="it" href="https://giorgio160586.github.io/it/iprice-case-study.html" />
 	<link rel="alternate" hreflang="x-default" href="https://giorgio160586.github.io/en/iprice-case-study.html" />
-	<meta property="og:title" content="iPrice2024 Case Study – Data Processing with DevExpress | Giorgio Saad" />
-	<meta property="og:description" content="Case study: iPrice2024, an advanced data processing solution handling millions of records, built with DevExpress and .NET by Giorgio Saad." />
+	<meta property="og:title" content="iPrice Case Study – DevExpress Desktop App for Retail Price Surveys | Giorgio Saad" />
+	<meta property="og:description" content="Case study: iPrice2026, a WinForms desktop application built with DevExpress and SQL Server that DE.MI Europe uses to organise, check and publish retail price surveys. Developed by Giorgio Saad." />
 	<meta property="og:url" content="https://giorgio160586.github.io/en/iprice-case-study.html" />
 	<meta property="og:type" content="article" />
 	<meta property="og:image" content="https://giorgio160586.github.io/assets/images/share-image.png" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="iPrice2024 Case Study – Data Processing with DevExpress | Giorgio Saad" />
-	<meta name="twitter:description" content="Case study: iPrice2024, an advanced data processing solution handling millions of records, built with DevExpress and .NET by Giorgio Saad." />
+	<meta name="twitter:title" content="iPrice Case Study – DevExpress Desktop App for Retail Price Surveys | Giorgio Saad" />
+	<meta name="twitter:description" content="Case study: iPrice2026, a WinForms desktop application built with DevExpress and SQL Server that DE.MI Europe uses to organise, check and publish retail price surveys. Developed by Giorgio Saad." />
 	<meta name="twitter:image" content="https://giorgio160586.github.io/assets/images/share-image.png" />
 	<link rel="shortcut icon" href="https://giorgio160586.github.io/favicon.ico">
-	
+
 	<!-- Google Fonts -->
-	
 	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
+
 	<!-- Bootstrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-	
+
 	<!-- FontAwesome JS -->
     <script defer src="../assets/fontawesome/js/all.js"></script>
-    
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="../assets/plugins/tiny-slider/tiny-slider.css">
 
-	<!-- Theme CSS -->  
+	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
 
-</head> 
+	<style>
+		/* ── Carousel ── */
+		/* The arrows now sit in the control row under the slide, so the screenshots no
+		   longer need a side gutter and run the full width of the column. */
+		.wp-carousel { position: relative; margin-bottom: 1rem; }
+		.wpc-slide { display: none; }
+		.wpc-slide.active { display: block; }
+		.wpc-controls {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: .75rem;
+			margin-top: .6rem;
+		}
+		.wpc-btn {
+			width: 36px; height: 36px;
+			padding: 0;
+			border: none;
+			border-radius: 50%;
+			background: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			font-size: 1.1rem; line-height: 1;
+			cursor: pointer;
+			display: flex; align-items: center; justify-content: center;
+		}
+		.wpc-btn:hover { background: rgba(0, 0, 0, 0.8); }
+		.wpc-dots { display: flex; gap: 6px; align-items: center; }
+		.wpc-dot {
+			width: 8px; height: 8px;
+			border-radius: 50%;
+			background: rgba(0, 0, 0, 0.25);
+			cursor: pointer;
+			transition: background .2s;
+		}
+		.wpc-dot:hover { background: rgba(0, 0, 0, 0.8); }
+		.wpc-dot.active { background: rgba(0, 0, 0, 0.55); }
+		.wpc-caption {
+			font-size: .8rem;
+			text-align: center;
+			margin-top: .4rem;
+			opacity: .55;
+		}
+
+		/* ── Screenshot images ── */
+		/* iPrice is a desktop app: its screenshots already carry the Windows title bar,
+		   so they stand on their own instead of inside the browser frame WebPrice uses.
+		   Clicking the image opens the same lightbox the frame's maximize button does. */
+		.app-shot {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 6px;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+			cursor: zoom-in;
+		}
+
+	</style>
+</head>
 
 
 <body class="light-mode">
-	
+
 	<div class="container-fluid">
 
-	
+
 			<div class="side-panel position-relative">
-				 
+
 				<nav class="navbar">
 			        <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-start show d-flex" id="offcanvasNavbar" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1">
 			            <div class="offcanvas-body d-flex align-items-center ">
 			                <ul class="main-nav navbar-nav text-center">
-				                
+
 								<li class="nav-item">
 									<a class="nav-link d-flex flex-column" href="index.html"><span class="icon-holder"><i class="fa-solid fa-circle-user"></i></span><span class="nav-text">About</span></a>
 								</li>
@@ -77,22 +130,21 @@
 							</ul>
 			            </div>
 			        </div>
-				  
+
 				</nav>
 			</div><!--//side-panel-->
-			
+
 			<div class="main-content-wrapper">
 				<div class="container-fluid">
 					<div class="top-bar text-center position-relative">
 						<div class="top-bar-inner">
-							
+
 							<a class="menu-toggler" data-bs-toggle="offcanvas" href="#offcanvasNavbar" role="button" aria-controls="offcanvasNavbar">
 								 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
 								  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
 								</svg>
 					        </a>
-							<!--//mode-toggle-->
-							<div class="mode-toggle d-flex">  
+							<div class="mode-toggle d-flex">
 								<a href="/it/" class="d-flex align-items-center me-3">
 									<img src="../assets/images/flag-it-svgrepo-com.svg" alt="Italian Flag" height="24" class="me-1">
 									<span>ITA</span>
@@ -103,176 +155,231 @@
 								</a>
 							</div>
 							<ul class="social-list list-inline mx-auto d-none d-lg-block">
-								<!--<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-x-twitter fa-fw"></i></a></li>-->
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://github.com/giorgio160586"><i class="fa-brands fa-github fa-fw"></i></a></li>
-								
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://www.linkedin.com/in/giorgio160586"><i class="fa-brands fa-linkedin-in fa-fw"></i></a></li>
-								
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://wa.me/393807475873" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp fa-fw"></i></a></li>
 								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="mailto:giorgio160586@email.com"><i class="fa-solid fa-envelope fa-fw"></i></a></li>
-							</ul><!--//social-list-->
-							
+							</ul>
+
 						</div><!--//top-bar-inner-->
-						
+
 					</div><!--//top-bar-->
-					
-					<section class="page-intro-section section has-profile-image mx-auto ">
-						
+
+					<section class="page-intro-section section has-profile-image mx-auto">
+
 						<div class="profile-holder text-center">
 							<img class="profile-pic rounded-circle" src="../assets/images/profile.png" alt="image">
 						</div>
-						
-						
-						<!--//profile-holder-->
+						<div class="blog-breadcrumb">
+							<a class="blog-home-link" href="projects.html"><i class="bi bi-arrow-left"></i> Back To Projects</a>
+						</div>
 
 						<div class="intro-holder">
-							<h1 class="intro-name text-center mb-4">iPrice2024</h1>
-							<div class="img-fluid mb-3"><img class="img-fluid rounded" src="../assets/images/projects/iprice-1.png"></div>
-							<div class="case-study-intro">
-								
-							    <p class="mb-4">iPrice2024 è una soluzione avanzata per l'elaborazione di dati complessi, offrendo al cliente tutte le funzionalità che solitamente usa con Excel. L'uso di <a href="https://www.devexpress.com" targert="_blank">DevExpress</a> consente la gestione ottimale di tabelle con milioni di record, assicurando prestazioni eccellenti. L'affidabilità e la costante manutenzione, insieme agli aggiornamenti, sono elementi fondamentali per garantire il buon funzionamento del software. </p>
-							   
-							    
+							<h1 class="intro-name text-center mb-4">iPrice2026</h1>
+
+							<!-- Hero image: price grid of a survey -->
+							<div class="mb-4">
+								<img class="app-shot" src="../assets/images/projects/iprice2026/ip-4-situazione-prezzi.png" alt="iPrice – Price grid of a survey" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-4-situazione-prezzi.png">
 							</div>
-							
-							
-							
+
+							<div class="case-study-intro">
+								<p class="mb-4">iPrice is the desktop application the staff at <a href="https://demieurope.eu/" target="_blank">DE.MI Europe</a> use to run the whole price survey cycle: they prepare the baskets of products to survey, plan the store visits, import the prices collected by the field surveyors, check and correct them, and finally publish them to clients, who browse them in <a href="webprice-case-study.html">WebPrice</a>. It works every day on tables with hundreds of thousands of rows, with the same freedom as an Excel sheet.</p>
+							</div>
+
 						</div><!--//intro-holder-->
-						
+
 					</section><!--//page-intro-section-->
-					
-	
+
+					<!-- ── The Challenge ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12">
-								<h3 class="case-study-heading mb-3">La Sfida</h3>
+								<h3 class="case-study-heading mb-3">The Challenge</h3>
 							</div>
 							<div class="col-12 case-study-section-content">
-								<p>Il sistema precedente presentava significative limitazioni nell'elaborazione dei dati. L'analisi e la correzione di grandi volumi di informazioni erano processi macchinosi e poco efficienti.</p>
-								
-								<h4 class="py-3">Problemi Principali</h4>
+								<p>Behind every survey a client sees in WebPrice there is a lot of back-office work: a product catalogue of almost 800,000 items, thousands of surveys, EAN and client codes to keep aligned, and prices to verify one by one before they are published. The previous system made this work slow and cumbersome, especially for bulk operations.</p>
+
+								<h4 class="py-3">Goals</h4>
 								<ul class="py-3">
-									<li class="mb-3">Elaborazione dati complessa e poco intuitiva</li>
-									<li class="mb-3">Prestazioni insufficienti con grandi dataset</li>
-									<li class="mb-3">Interfaccia non ottimizzata per operazioni massive</li>
+									<li class="mb-3">Handle the whole survey cycle in a single application, from the product basket to publication</li>
+									<li class="mb-3">Open, filter and edit tables of hundreds of thousands of records without slowdowns</li>
+									<li class="mb-3">Classify the whole product catalogue by the ECR standard and keep it consistent over time</li>
+									<li class="mb-3">Offer tools that work like Excel: copy and paste between cells, find and replace, grouping, per-column filters and export</li>
+									<li class="mb-3">Automatically catch errors (duplicates, inconsistent promotions, abnormal prices) before they reach the client</li>
+									<li class="mb-3">Roll out updates to every workstation without manual reinstalls</li>
 								</ul>
-								
-								<h4 class="py-3">Obiettivo del Progetto</h4>
-								<p>Creare un sistema che permettesse al cliente di controllare e correggere grandi quantità di dati in tempi ridotti, migliorando significativamente l'efficienza operativa.</p>
+
+								<h4 class="py-3">Key Challenges</h4>
+								<p>The price grid of a survey places next to each product the columns of every surveyed store (price, promotion, original price), with headers showing the retailer, address, date and index. Keeping it smooth across hundreds of rows and dozens of columns, with in-place editing and colours that flag anomalies, together with the consistency checks run on the data before publication, were the hardest technical parts.</p>
 							</div>
 						</div>
 					</section>
-					
+
+					<!-- ── The Solution ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12">
-								<h3 class="case-study-heading mb-3">La Soluzione</h3>
+								<h3 class="case-study-heading mb-3">The Solution</h3>
 							</div>
 							<div class="col-12 case-study-section-content">
-								<p>Ho sviluppato iPrice2024 come applicazione personalizzata, sfruttando la potenza di <a href="https://www.devexpress.com" targert="_blank">DevExpress</a> per gestire dataset di dimensioni enterprise che pochi programmi possono gestire senza blocchi del sistema.</p>
-								
-								<div class="row g-3 mb-5">
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/iprice-1.png" alt="iPrice2024" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice-1.png">
+								<p>I designed and built iPrice as a Windows Forms application on .NET Framework, using the <a href="https://www.devexpress.com" target="_blank">DevExpress</a> controls: ribbon, side navigation, multiple tabs and grids with filters, grouping and in-place editing. The data lives in SQL Server and is read and written through a data access library shared with the WebPrice backend.</p>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 1. Surveys and prices -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Surveys and Prices</h4>
+								<p>A survey groups the store visits made for one client over a given period. The list can be grouped by year and shows, under each survey, the individual store visits with store, date, handheld terminal and service type. From here visits can be merged, duplicated or imported.</p>
+								<p>Opening a survey leads to the price grid: one row per product and, for each store, price, promotion and original price. Price colours show the change from the previous survey, duplicated client codes and descriptions are highlighted, and the ribbon turns on advanced filters, promotions and percentage views, and generates the file for the client. A survey stays private until it has been checked. Once it is made public it becomes read-only and shows up in WebPrice.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<img class="app-shot" src="../assets/images/projects/iprice2026/ip-2-situazioni.png" alt="Public surveys" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-2-situazioni.png">
+										<p class="wpc-caption">Public surveys, with the store visits of the selected survey</p>
 									</div>
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/iprice-2.png" alt="iPrice2024" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice-2.png">
+									<div class="wpc-slide">
+										<img class="app-shot" src="../assets/images/projects/iprice2026/ip-4-situazione-prezzi.png" alt="Price grid of a survey" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-4-situazione-prezzi.png">
+										<p class="wpc-caption">Price grid: one column per store, with index and change colours</p>
 									</div>
-									<div class="col">
-										<img class="img-fluid clickable-img" src="../assets/images/projects/iprice-3.png" alt="iPrice2024" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice-3.png">
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Previous">&#10094;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Next">&#10095;</button>
 									</div>
 								</div>
-								
-								<h4 class="mb-3">Vantaggi Tecnici</h4>
-								<ul class="py-3">
-									<li class="mb-3"><strong>Performance Superiori:</strong> Gestione fluida di milioni di record senza rallentamenti</li>
-									<li class="mb-3"><strong>Interfaccia Ottimizzata:</strong> Maschere riorganizzate per massimizzare l'efficienza operativa</li>
-									<li class="mb-3"><strong>Personalizzazione Avanzata:</strong> Funzionalità sviluppate su misura per le esigenze specifiche del cliente</li>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 2. Baskets -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Product Baskets</h4>
+								<p>A basket is the list of products the surveyors have to look for on the shelves. It is imported from the client's file, fully, partially or as a replacement, and its items are linked to the product catalogue. Baskets can be cloned to prepare the next campaign and archived when no longer needed; the item list also shows the buyer responsible for each product.</p>
+
+								<div class="mb-4 wp-single">
+									<img class="app-shot" src="../assets/images/projects/iprice2026/ip-3-panieri.png" alt="Product baskets" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-3-panieri.png">
+									<p class="wpc-caption">Baskets: list with number of items and products linked to the catalogue</p>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 3. Master data -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Master Data</h4>
+								<p>Products, families, ECR categories, stores, suppliers and clients each have their own master data screen, all built on the same grid: per-column filters, grouping by dragging a header, search, copy and paste between cells and Excel export. The product catalogue holds almost 800,000 items, with highlighted EAN codes and the option to merge duplicates.</p>
+
+								<div class="mb-4 wp-single">
+									<img class="app-shot" src="../assets/images/projects/iprice2026/ip-1-anagrafica-prodotti.png" alt="Product catalogue" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-1-anagrafica-prodotti.png">
+									<p class="wpc-caption">Product catalogue: almost 800,000 items in a single grid</p>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 4. ECR classification -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">ECR Classification</h4>
+								<p>ECR is the standard product classification used in grocery retail: a five-level tree running from the department (for example <em>Household care</em>) down to the finest segment (<em>Hand laundry – Liquid</em>), with more than 10,000 entries. Each level adds two digits to the code, so a category's code gives its whole path. Moving the entire product catalogue onto this classification, and keeping it aligned over time, was one of the largest pieces of work in the project.</p>
+								<ul class="mb-3">
+									<li class="mb-2"><strong>ECR master data:</strong> each entry shows its level, code and full path. To create a new one you just type the code: the application finds the parent category by itself, builds the full description as you type and blocks codes that already exist</li>
+									<li class="mb-2"><strong>Bulk import:</strong> a file of EANs and ECR codes assigns the category to thousands of products at once. Rows that cannot be matched go into a separate file, ready to be fixed and imported again</li>
+									<li class="mb-2"><strong>Five levels in the grid:</strong> in the product and price grids each ECR level has its own column, filterable and editable from a drop-down. The ribbon chooses which levels to show, and the choice is remembered</li>
+									<li class="mb-2"><strong>Consistency check:</strong> the <em>Family ≠ ECR</em> filter shows only the products whose internal family does not match their ECR category, or that have neither, so inconsistencies are found and fixed straight away</li>
 								</ul>
-								
-								<h4 class="mb-3">Tecnologie Utilizzate:</h4>
+								<p>The same tree feeds WebPrice, where each client analyses price indices by ECR category and each user sees only the categories they are responsible for.</p>
+
+								<div class="wp-carousel mb-4">
+									<div class="wpc-slide active">
+										<img class="app-shot" src="../assets/images/projects/iprice2026/ip-5-anagrafica-ecr.png" alt="ECR categories" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-5-anagrafica-ecr.png">
+										<p class="wpc-caption">First ECR level: the departments, from grocery to DIY and services</p>
+									</div>
+									<div class="wpc-slide">
+										<img class="app-shot" src="../assets/images/projects/iprice2026/ip-6-anagrafica-ecr-2.png" alt="ECR categories – other departments" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="../assets/images/projects/iprice2026/ip-6-anagrafica-ecr-2.png">
+										<p class="wpc-caption">Second level: each department splits into categories and the code grows by two digits</p>
+									</div>
+									<div class="wpc-controls">
+										<button class="wpc-btn wpc-prev" aria-label="Previous">&#10094;</button>
+										<div class="wpc-dots"></div>
+										<button class="wpc-btn wpc-next" aria-label="Next">&#10095;</button>
+									</div>
+								</div>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- 5. Store visits and quality control -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Store Visits and Quality Control</h4>
+								<p>Each store visit goes through a sequence of states: created, exported to the surveyor's handheld terminal, imported with the collected prices, and finally confirmed or suspended. The database maintenance section, reserved for administrators, looks for the anomalies that manual checks miss: promotional prices higher than the full price, promotions without a code, prices far off their history. Corrections are made directly in the grid, even on all flagged rows at once.</p>
+
+								<!-- ──────────────────────────────────────── -->
+								<!-- Technologies -->
+								<!-- ──────────────────────────────────────── -->
+								<h4 class="mt-4 mb-3">Technologies Used</h4>
 								<ul class="tech-stack list-inline">
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/c-sharp.svg" alt="C#"></li>
-							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/devexpress.jpg" alt="DevExpress"></li>
-									<li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/net.png" alt="NET"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/c-sharp.svg" alt="C#" title="C#"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/net.png" alt=".NET Framework" title=".NET Framework 4.8.1 – Windows Forms"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/devexpress.jpg" alt="DevExpress" title="DevExpress WinForms"></li>
+							        <li class="list-inline-item"><img class="rounded" src="../assets/images/tech-icons/sql-server.svg" alt="SQL Server" title="SQL Server"></li>
 						        </ul>
 							</div>
 						</div>
 					</section>
-					
+
+					<!-- ── Development ── -->
 					<section class="case-study-section section mx-auto">
 						<div class="row gx-5">
 							<div class="col-12">
-								<h3 class="case-study-heading mb-3">I Risultati</h3>
+								<h3 class="case-study-heading mb-3">Development</h3>
 							</div>
 							<div class="col-12 case-study-section-content">
-								<p>Il successo di iPrice2024 è dimostrato dall'adozione immediata da parte del cliente, che ha scelto di utilizzare l'applicazione fin dalle prime versioni, richiedendo progressivamente l'implementazione di tutte le funzionalità del vecchio sistema.</p>
-								
-								<h4 class="py-3">Benefici Raggiunti</h4>
+								<p>iPrice grew alongside the previous system: the client adopted it from the very first versions and gradually asked for every feature of the old program to be brought over, until it replaced it entirely. It has now reached version 2.5 and keeps evolving with frequent releases.</p>
+
+								<h4 class="py-3">Methodology</h4>
 								<ul class="py-3">
-									<li class="mb-3"><strong>Velocità Operativa:</strong> Riduzione significativa del tempo necessario per l'elaborazione e correzione dei dati</li>
-									<li class="mb-3"><strong>Efficienza Massimizzata:</strong> Meccanismi intuitivi che permettono di controllare grandi volumi di dati in pochissimo tempo</li>
-									<li class="mb-3"><strong>Affidabilità Totale:</strong> Sistema stabile e senza interruzioni, con supporto continuo per miglioramenti e manutenzione</li>
-									<li class="mb-3"><strong>Migrazione Graduale:</strong> Transizione smooth dal vecchio sistema al nuovo, con piena soddisfazione del cliente</li>
+									<li class="mb-3"><strong>Frequent releases:</strong> small updates agreed with the people who use the application every day, each one described in release notes available from inside the app</li>
+									<li class="mb-3"><strong>Automatic updates:</strong> on startup the application checks for a new version and installs it by itself, with no manual steps on the workstations</li>
+									<li class="mb-3"><strong>Shared data access:</strong> SQL queries written with Dapper in a library shared by iPrice and the WebPrice backend, so both applications read the same data with the same rules</li>
+									<li class="mb-3"><strong>Reusable components:</strong> extensions to the DevExpress controls (grids, editors, bars) that give every screen the same behaviour</li>
 								</ul>
-								
-								<p>La disponibilità costante per miglioramenti, fix e manutenzione garantisce che iPrice2024 continui a evolversi insieme alle esigenze aziendali di DE.MI Europe.</p>
 							</div>
 						</div>
 					</section>
 
-					
                     <section class="leadgen-section section mx-auto">
-	   
-					   <h3 class="section-heading text-start text-md-center text-highlight"> How can I help you?</h3>
-					   <div class="intro text-md-center">Message me to let me know what you need, I'll be happy to help. </div>
+
+					   <h3 class="section-heading text-start text-md-center text-highlight">How can I help you?</h3>
+					   <div class="intro text-md-center">Write to me and let me know what you need, I'll be happy to help.</div>
 						<div class="text-center mt-4">
 									<a class="btn btn-secondary" href="contact.html">Contact me <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
 </svg></a>
 						</div>
-	                    
+
                    </section><!--//leadgen-section-->
-                   
-                   
-					
+
 				</div>
 			</div><!--//main-content-wrapper-->
 
 		</div><!--//row-->
-	
+
 	</div><!--//container-->
-	
+
 	<footer class="footer text-center py-4">
 		<small class="copyright">Copyright &copy; <a href="https://giorgio160586.github.io" target="_blank">giorgio160586.github.io</a> All rights reserved. All trademarks or registered trademarks are property of their respective owners.</small>
 	</footer>
-	
-	<!-- Modal -->
+
+
+	<!-- Screenshot lightbox, opened by clicking a screenshot -->
 	<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content border-0 bg-transparent">
 		  <div class="modal-body d-flex justify-content-center align-items-center p-0 position-relative">
-			
-			<img id="modalImage" src="" alt="Popup Image" 
+			<img id="modalImage" src="" alt="Popup Image"
 				 style="max-width: 95vw; max-height: 90vh; width: auto; height: auto; display: block; margin: auto;">
 		  </div>
 		</div>
 	  </div>
 	</div>
-	
+
 	<!-- Image Modal JS -->
 	<script src="../assets/js/image-modal.js"></script>
-	
-	<!-- Javascript -->
 
-	<script src="../assets/plugins/popper.min.js"></script> 
+	<script src="../assets/plugins/popper.min.js"></script>
 	<script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Page Specific JS -->
-	<script src="../assets/plugins/tiny-slider/min/tiny-slider.js"></script> 
-	<script src="../assets/js/tinyslider-custom.js"></script> 
-	
-	<!-- Dark/Light Mode Toggle  -->
+	<script src="../assets/js/wp-carousel.js"></script>
 	<script src="../assets/plugins/js-cookie.min.js"></script>
 </body>
 </html>
