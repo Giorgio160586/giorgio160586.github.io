@@ -12384,11 +12384,18 @@ a.more-link .link-arrow .bi {
   margin: 0 auto;
 }
 
-.page-intro-section.home-intro {
-  background-image: url('../images/banner_bg_notext.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* The diagonal banner used to be an SVG drawn on a 680x170 canvas and blown up by
+   background-size: cover — over three times on a tall card. Each step of the
+   gradients inside it stretched into a visible horizontal band cutting across the
+   diagonals. Gradients painted by the browser are rasterised at the size they are
+   shown, so there is nothing left to enlarge. The 112.4deg axis is perpendicular
+   to the old artwork's slant (70 across, 170 down), keeping the same diagonal. */
+.page-intro-section.home-intro,
+.light-mode .page-intro-section.home-intro {
+  background-color: #1a8fe3;
+  background-image:
+    linear-gradient(112.4deg, rgba(255, 255, 255, 0.1) 0 18%, rgba(255, 255, 255, 0.04) 18% 34%, rgba(0, 0, 0, 0.05) 34% 50%, rgba(255, 255, 255, 0.07) 50% 64%, transparent 64%),
+    linear-gradient(90deg, #0d6ebd 0%, #1a8fe3 100%);
 }
 .page-intro-section.home-intro .intro-name,
 .page-intro-section.home-intro .profile-intro,
@@ -12415,8 +12422,13 @@ a.more-link .link-arrow .bi {
 /* Dark/Light Mode Toggle */
 .mode-toggle {
   position: absolute;
-  right: 4px;
+  right: 0;
   top: 1.2rem;
+}
+/* The flags carry me-3 for the gap between them; on the last one that margin is
+   just padding the switcher away from the right edge. */
+.mode-toggle a:last-child {
+  margin-right: 0 !important;
 }
 .mode-toggle .toggle {
   display: none;
@@ -13393,10 +13405,8 @@ a.more-link .link-arrow .bi {
   color: #3D444A;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }
-.light-mode .page-intro-section.home-intro {
-  background-image: url('../images/banner_bg_notext.svg');
-  background-color: transparent;
-}
+/* Light mode kept its own copy of the same banner; the gradients above already
+   apply in both modes, so there is nothing to override here any more. */
 .light-mode .section.has-profile-image .profile-pic {
   border-color: white;
 }
