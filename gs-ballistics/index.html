@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GS Ballistics su Google Play</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://play.google.com/store/apps/details?id=com.gsballistics.app">
+<!-- Fallback for clients that run no script: plain redirect to the store page. -->
+<meta http-equiv="refresh" content="2;url=https://play.google.com/store/apps/details?id=com.gsballistics.app">
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #0A1626; color: #EAF2FA; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         text-align: center; padding: 16px; box-sizing: border-box; }
+  img.icon { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 1.4rem; margin: 16px 0 8px; }
+  p { color: #9FB3C8; margin: 0 0 24px; }
+  img.badge { height: 72px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../store-assets/icons/icon-512.png" alt="GS Ballistics">
+  <h1>GS Ballistics</h1>
+  <p>Apertura di Google Play… / Opening Google Play…</p>
+  <a id="store" href="https://play.google.com/store/apps/details?id=com.gsballistics.app">
+    <img class="badge" src="../assets/images/google-play/badge-it.png" alt="Disponibile su Google Play">
+  </a>
+</main>
+<script>
+  // In-app browsers (Instagram, Facebook, ...) often show the Play web page instead of handing
+  // off to the Play Store app. On Android an intent:// URL opens the Store app directly and falls
+  // back to the web page if the Store isn't there; every other device gets the web page.
+  (function () {
+    var web = "https://play.google.com/store/apps/details?id=com.gsballistics.app";
+    var target = web;
+    if (/Android/i.test(navigator.userAgent)) {
+      target = "intent://details?id=com.gsballistics.app#Intent;scheme=market;package=com.android.vending;" +
+               "S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
+      document.getElementById("store").href = target;
+    }
+    window.location.replace(target);
+  })();
+</script>
+</body>
+</html>
